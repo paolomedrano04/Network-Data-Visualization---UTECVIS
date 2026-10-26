@@ -1,0 +1,924 @@
+{
+  "nodes": [
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/25754110/aguilar-alfaro-jose-manuel.jpg?w=160&f=jpg",
+      "department": "Departamento de Negocios Digitales",
+      "email": "jaguilar@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+      "research_areas": "Estrategia Organizacional; Gestión de la Innovación; Gestión Financiera; Comportamiento del Consumidor",
+      "citations": 0,
+      "id": 0,
+      "name": "José Manuel Aguilar Alfaro"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24799661/alexandrino-ocana-grace.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "",
+      "research_groups": "",
+      "research_areas": "Arqueología; Antropología; Estudios de Patrimonio",
+      "citations": 8,
+      "id": 1,
+      "name": "Grace Alexandrino Ocaña"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/18891305/alvarez_sanchez_helard.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "halvarez@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas; Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+      "research_areas": "Diseño, fabricación y construcción de estructuras mecánicas.; Estructuras mecánicas para minería.",
+      "citations": 7,
+      "id": 2,
+      "name": "Helard Alvarez Sanchez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/18891487/antonini_bova_claudia.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "cantonini@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+      "research_areas": "Matemática aplicada; estadística; geoestadística; investigación de operaciones; simulaciones; sistemas logísticos alimentarios; logística y ventas del canal tradicional.",
+      "citations": 25,
+      "id": 3,
+      "name": "Claudia Antonini Bova"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19172342/aranda_egusquiza_sergio.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "saranda@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Sistemas inteligentes.; Redes de comunicación.",
+      "citations": 1,
+      "id": 4,
+      "name": "Sergio Aranda Egusquiza"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/25783439/araujo-pantoja-patricia.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "paraujo@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas",
+      "research_areas": "Área de energía; Responsabilidad social.; Educación; Medio ambiente; Énfasis en hidrocarburos (captura y almacenamiento de CO2, combustibles sintéticos, tecnología emergentes como creación de nuevos catalizadores,  nanotecnología, tecnologías de gasificación); Biogás y energías de biomasa; Procesos químicos industriales,",
+      "citations": 68,
+      "id": 5,
+      "name": "Patricia Araujo Pantoja"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19169634/arias_moreno_andres.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "aariasm@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Biomecánica; Biomateriales; Elementos micro-finitos; Estructura ósea",
+      "citations": 70,
+      "id": 6,
+      "name": "Andrés Julián Arias Moreno"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/18892117/bedrinana_mera_luis.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "lbedrinana@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon); Centro de Investigación del Cemento y Concreto - CIC; Centro de Investigación y Conservación del Patrimonio",
+      "research_areas": "Evaluación experimental y numérica de estructuras de hormigón armado sometidas a cargas extremas; ingeniería sísmica basada en el rendimiento y el riesgo sísmico; sistemas estructurales innovadores de bajo daño; aislamiento sísmico y control de respuesta estructural; vigilancia de la salud estructural; materiales de construcción innovadores; \"ciívionoics\" para respuestas ambientales y mecánicas; materiales concretos en 3D; sistemas estructurales con materiales reciclados.",
+      "citations": 75,
+      "id": 7,
+      "name": "Luis Bedriñana Mera"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21902885/bejarano_grandez_omar.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "obejarano@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas; Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+      "research_areas": "análisis por elementos finitos; dinámica rígida; análisis modal; térmico de sólidos y fluidos",
+      "citations": 0,
+      "id": 8,
+      "name": "Omar Bejarano Grández"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/18891996/bellido_angulo_jesus.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "jbellido@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Inteligencia Artificial (GINIA); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Ingeniería de software; arquitectura de software; Arquitectura Orientada a Servicios; Big Data",
+      "citations": 84,
+      "id": 9,
+      "name": "Jesús Edwin Bellido Angulo"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24489212/benedetty-carlos.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "cbenedetty@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)",
+      "research_areas": "Análisis del comportamiento de materiales para estructuras; Análisis no lineal de estructuras de concreto armado.; Concretos reforzados con fibras; Concretos de ultra alto desempeño; Estructuras mixtas de acero-concreto.; Concretos con agregados reciclados",
+      "citations": 72,
+      "id": 10,
+      "name": "Carlos Alberto Benedetty Torres"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19489355/bueno_villanueva_juan.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "jbueno@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Sistemas de Información",
+      "citations": 0,
+      "id": 11,
+      "name": "Juan Bueno Villanueva"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/25685604/callupe-luna-jhedmar-jhonatan.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "jcallupe@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)",
+      "research_areas": "Bioingeniería; Inteligencia Artificial",
+      "citations": 9,
+      "id": 12,
+      "name": "Jhedmar Jhonatan Callupe Luna"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19169709/canahuire_cabello_ruth.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "rcanahuire@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC); Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Modelado y control de sistemas mecánicos y mecatrónicos; Robótica médica; Robótica móvil",
+      "citations": 97,
+      "id": 13,
+      "name": "Ruth Canahuire Cabello"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19169784/cardenas_lizana_paul.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "pcardenas@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Señalización temprana de células T.; mecanobiología de células T y receptores PD 1; coreceptores CD8 / CD4; dominios de señalización CD3; dinámica molecular; inmunología molecular; modelado probabilístico para entender interacciones de biomoléculas; aprendizaje automático en inmunología; modelamiento de fluidos a macroescala en sistemas biológicos",
+      "citations": 16,
+      "id": 14,
+      "name": "Paul Cardenas Lizana"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19169804/charca_mamani_samuel.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "scharca@utec.edu.pe",
+      "research_groups": "Centro de Investigación y Conservación del Patrimonio",
+      "research_areas": "Diseño estructural y caracterización de materiales; Materiales compuestos con fibras naturales; Caracterización de materiales para robótica blanda; Evaluación de daños en materiales estructurales",
+      "citations": 378,
+      "id": 15,
+      "name": "Samuel Charca Mamani"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19169822/chavez_pacheco_xyoby.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "xchavez@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Matemática Aplicada; Modelado de sistemas estocásticos",
+      "citations": 0,
+      "id": 16,
+      "name": "Xyoby Chavez Pacheco"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19169853/corniller_fabien.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "fypcornillier@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Investigación de operaciones; optimización combinatoria; métodos heurísticos; aplicaciones en problemas de logística y de planificación (en particular: transporte, minería).",
+      "citations": 537,
+      "id": 17,
+      "name": "Fabien Cornillier"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170012/delaflor_basterrechea_antuane.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "adelaflor@utec.edu.pe",
+      "research_groups": "Centro de Impacto y Responsabilidad Social - CIRSO",
+      "research_areas": "Género; Arte",
+      "citations": 0,
+      "id": 18,
+      "name": "Antuané De La Flor Basterrechea"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170040/delapuente_maldonado_jose.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "jdelapuente@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Opeaciones industriales; Gestión empresarial",
+      "citations": 0,
+      "id": 19,
+      "name": "Jose De La Puente Maldonado"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170063/deleo_martinez_jose.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "adeleo@utec.edu.pe",
+      "research_groups": "Centro de Investigación y Conservación del Patrimonio",
+      "research_areas": "Arte de los Virreinatos Americanos; Materialidad y técnicas de patrimonio cultural; Curaduría y museografía",
+      "citations": 3,
+      "id": 20,
+      "name": "José Andrés De Leo Martínez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21821347/deustua_rossel_jose_gerardo.jpg?w=160&f=jpg",
+      "department": "Unknown Department",
+      "email": "jdeustua@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 0,
+      "id": 21,
+      "name": "Jose Gerardo Deustua Rossel"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24106839/deza-figueroa-arturo.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "mdeza@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Inteligencia Artificial (GINIA)",
+      "research_areas": "Sistemas perceptivos híbridos; Representation Learning; Robótica",
+      "citations": 118,
+      "id": 22,
+      "name": "Manuel Arturo Deza Figueroa"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170083/donayre_torres_alberto.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "adonayre@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Biología Sintética; Biotecnología; Síntesis y producción de bioproductos; Bioinformática",
+      "citations": 129,
+      "id": 23,
+      "name": "Alberto Donayre Torres"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170115/fiestas_iquira_jose.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "jfiestas@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Modelos interdisciplinarios de alto rendimiento computacional (HPC, BigData); Desarrollo de algoritmos para GPU y sistemas híbridos (CPU+GPU); Desarrollo de Hardware y Software para HPC",
+      "citations": 166,
+      "id": 24,
+      "name": "Jose Fiestas Iquira"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170139/flores_barreda_carmen_elena.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "cfloresb@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Uso de fibras naturales para biomateriales y químicos; Descontaminación del agua; Recuperación de residuos industriales; Materiales compuestos para construcción",
+      "citations": 136,
+      "id": 25,
+      "name": "Elena Flores Barreda"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/assets/no-portrait-473c6d005990baa1f418d9c668dcd4ec.png",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "lfloresl@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+      "research_areas": "",
+      "citations": 0,
+      "id": 26,
+      "name": "Luis Ernesto Flores Luyo"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170237/flores_vega_christian.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "cflores@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)",
+      "research_areas": "Procesamiento de señales biomédicas; Interfase Cerebro Computadora (BCI); aprendizaje automático para clasificación y pronóstico en diversas aplicaciones",
+      "citations": 158,
+      "id": 27,
+      "name": "Christian Flores Vega"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170257/galvez_ghersi_jose.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "jgalvezg@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Física Fundamental (GIFF); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Cosmología del universo primitivo: inflación cósmica y teorías alternativas; fenomenología de la gravedad fuerte y ondas gravitacionales.; dinámica no lineal y conexiones entre gravedad y termodinámica",
+      "citations": 961,
+      "id": 28,
+      "name": "José Tomás Gálvez Ghersi"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170274/gamonal_pajares_oscar.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "ogamonal@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 0,
+      "id": 29,
+      "name": "Oscar Gamonal Pajares"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24148814/garcia-zanabria-germain_1_.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de Datos y Sistemas de Información",
+      "email": "",
+      "research_groups": "Grupo de Investigación en Inteligencia Artificial (GINIA)",
+      "research_areas": "Visualización de datos; machine learning; data science; análisis de crímenes; predicción de crímenes; dropout análisis; datos geo-referenciados; análisis espacio-temporales; computación aplicada a problemas sociales",
+      "citations": 98,
+      "id": 30,
+      "name": "Germain García Zanabria"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170336/gonzales_reano_jorge.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "jgonzalez@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Nivel  VII",
+      "citations": 32,
+      "id": 31,
+      "name": "Jorge Gonzalez Reaño"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/assets/no-portrait-473c6d005990baa1f418d9c668dcd4ec.png",
+      "department": "Unknown Department",
+      "email": "",
+      "research_groups": "Centro de Investigación y Tecnología del Agua - CITA",
+      "research_areas": "",
+      "citations": 16,
+      "id": 32,
+      "name": "Leo Guerrero"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170355/gutierrez_alva_juan.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "jgutierreza@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Nivel V",
+      "citations": 25,
+      "id": 33,
+      "name": "Juan Gabriel Gutierrez Alva"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170374/gutierrez_alva_julio.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de Datos y Sistemas de Información",
+      "email": "jgutierreza@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+      "research_areas": "",
+      "citations": 1,
+      "id": 34,
+      "name": "Julio Gutierrez Alva"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/23816546/Dise_o_sin_t_tulo_46_.png?w=160&f=jpg",
+      "department": "Departamento de Negocios Digitales",
+      "email": "yherrera@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 6,
+      "id": 35,
+      "name": "Yuri Herrera Burstein"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170394/hidalgo_wuest_oscar.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "ohidalgo@utec.edu.pe",
+      "research_groups": "Centro de Impacto y Responsabilidad Social - CIRSO",
+      "research_areas": "Lingüística con estudios en fonoaudiología; interfaz cerebro-lenguaje; neurociencia; amazonas y poblaciones nativas.",
+      "citations": 0,
+      "id": 36,
+      "name": "Oscar Hidalgo Wuest"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170477/horna_munoz_daniel.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "",
+      "research_groups": "Grupo de Investigación en Seguridad Hídrica y Cambio Climático (SeHClim); Centro de Investigación y Tecnología del Agua - CITA",
+      "research_areas": "Calidad de aire; modelamiento computacional; hidráulica; high performance computing; LiDAR; inundaciones; Modelos computacionales tridimensionales y bidimensionales de dinámica de fluidos para estudiar una variedad de fluidos ambientales y problemas de ingeniería",
+      "citations": 185,
+      "id": 37,
+      "name": "Daniel Vicente Horna Muñoz"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/20164343/hoyos_diaz_rocio.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "rhoyos@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 0,
+      "id": 38,
+      "name": "Rocío Hoyos Diaz"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170519/huamanchaua_canchanya_deyby.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "dhuamanchahua@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Innovación Educativa y Competencia Docente (INECOD); Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC); Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Nivel VII",
+      "citations": 381,
+      "id": 39,
+      "name": "Deyby Huamanchahua Canchanya"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170535/inga_narvaez_dante.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "dinga@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC); Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Nivel VI",
+      "citations": 59,
+      "id": 40,
+      "name": "Dante Inga Narvaez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170555/jara_alegria_elvis.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "ejara@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)",
+      "research_areas": "Automatización; análisis de datos; modelamiento de sistemas no lineales; identificación de sistemas; ; inteligencia artificial; aprendizaje automático",
+      "citations": 41,
+      "id": 41,
+      "name": "Elvis Jara Alegria"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21819856/juarez_aquino_enrique.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "ejuarez@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Gestión de proyectos de construcción con un enfoque en la Entrega Integrada de Proyectos (IPD) con el apoyo de LEAN; PMO",
+      "citations": 0,
+      "id": 42,
+      "name": "Enrique Juarez Aquino"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170595/kim_wangdo.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "mwdkim@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Biomechanics; Bioengineering; Rehabilitation; Biocemánica ortopédica",
+      "citations": 565,
+      "id": 43,
+      "name": "Wangdo Kim"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170830/larco_martinelli_jose_antonio.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "jlarco@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+      "research_areas": "Gestión de operaciones; estudio del comportamiento de las operaciones para modelos de planificación y flujos de trabajo; sistemas logísticos alimentarios; sistemas de distribución del canal tradicional",
+      "citations": 92,
+      "id": 44,
+      "name": "Jose Larco Martinelli"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19170865/lopez_delalamo_cristian.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "clopezd@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Inteligencia Artificial (GINIA); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Aprendizaje profundo de geometría; Aprendizaje automático y algorítmica; Procesamiento de imágenes; Data Mining",
+      "citations": 100,
+      "id": 45,
+      "name": "Cristian Lopez Del Alamo"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21820262/lunga_calderon_milagros_cecilia.jpg?w=160&f=jpg",
+      "department": "Departamento de Negocios Digitales",
+      "email": "mlunga@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Business and Economics; Finanas",
+      "citations": 0,
+      "id": 46,
+      "name": "Milagros Lunga Calderón"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21820910/mantari_laureano_jose_luis.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "jmantari@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+      "research_areas": "diseño de productos; simulaciones computacionales; biomecánica; diseño y cálculo estructural en acero y materiales compuestos y plásticos; elementos finitos; elementos discretos; estructuras inteligentes; estrés térmico; estabilidad y seguridad de embarcaciones pesqueras y buques",
+      "citations": 3930,
+      "id": 47,
+      "name": "José Luis Mantari Laureano"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24694625/marcone-flores-giancarlo.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "gmarcone@utec.edu.pe",
+      "research_groups": "Centro de Impacto y Responsabilidad Social - CIRSO",
+      "research_areas": "Patrimonio y su gestión participativa; antropología del movimiento e Interacciones interregionales",
+      "citations": 47,
+      "id": 48,
+      "name": "Giancarlo Marcone Flores"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/25685589/milanes-carrenio-diego-alejandro.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "dmilanes@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Física Fundamental (GIFF)",
+      "research_areas": "Física experimental de partículas fundamentales; Simetría materia y antimateria; Física de hadrones pesados; Física Computacional",
+      "citations": 57680,
+      "id": 49,
+      "name": "Diego Alejandro Milanés Carreño"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/25783575/mora-colque-rensso-victor-hugo_.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "rmora@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Visión por computadora; Aprendizaje automático; Series temporales",
+      "citations": 245,
+      "id": 50,
+      "name": "Rensso Victor Hugo Mora Colque"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/assets/no-portrait-473c6d005990baa1f418d9c668dcd4ec.png",
+      "department": "Unknown Department",
+      "email": "",
+      "research_groups": "Centro de Investigación y Tecnología del Agua - CITA",
+      "research_areas": "",
+      "citations": 0,
+      "id": 51,
+      "name": "Monica Cristina Moreno Brush"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21850417/napa_bernuy_angel.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "anapa@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)",
+      "research_areas": "Algoritmos; Teoría de Grafos; Optimización Combinatoria; Investigación de Operaciones; Matemáticas Discretas",
+      "citations": 0,
+      "id": 52,
+      "name": "Angel Napa Bernuy"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171121/julien_noel.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "jnoel@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas",
+      "research_areas": "Redes eléctricas inteligentes; Vehículos eléctricos; ciberseguridad para la distribución de energía de la red; ciencia ambiental para el sector energético: transición energética; ingeniería social para la base de la pirámide; Sistemas microelectomecánicos (MEMS); ciencia de los materiales",
+      "citations": 403,
+      "id": 53,
+      "name": "Julien Noel"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171193/nunez_ochoa_moises.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "mnunez@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Sistemas Embebidos, Reconfigurables, Monitoreo Inteligente, y Comunicaciones (SERMIC)",
+      "research_areas": "MARIA ROSTWOROWSKI II",
+      "citations": 108,
+      "id": 54,
+      "name": "Moises Nuñez Ochoa"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171246/ortiz_garcia_maria_belen.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+      "email": "mortizg@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Sistemas Integrados de Gestión; Gestión por Procesos y herramientas de Mejora Continua; Ingeniería Cognitiva/Factores Humanos.",
+      "citations": 7,
+      "id": 55,
+      "name": "Maria Belén Ortiz García"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171263/pantoja_carhuavilca_hermes.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "hpantoja@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Carlos Monge IV",
+      "citations": 0,
+      "id": 56,
+      "name": "Hermes Pantoja Carhuavilca"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171281/parada_quinaya_diana.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "dparada@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Compuestos sostenibles; polímeros lignocelulósicos compuestos de residuos agrícolas; biomateriales y bioplásticos; revestimientos de polímeros bioactivos; ingeniería de bioprocesos; mejora del proceso de electrodeposición de cobre utilizando soluciones libres de cianuro",
+      "citations": 71,
+      "id": 57,
+      "name": "Carolina Parada Quinaya"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171302/pena_nevado_alexander.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "apena@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 0,
+      "id": 58,
+      "name": "Alexander Peña Nevado"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171327/quispe_rodriguez_sergio.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "squispe@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 0,
+      "id": 59,
+      "name": "Sergio Quispe Rodriguez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171353/ramirez_quiroz_elmer.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "eramirez@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas",
+      "research_areas": "",
+      "citations": 9,
+      "id": 60,
+      "name": "Elmer Ramirez Quiroz"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21816239/ramos_ponce_oscar.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "oramos@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)",
+      "research_areas": "Machine learning y deep learning a sistemas inteligentes; robótica autónoma; ontrol de movimiento para robots móviles y redundantes con base en visión computacional y deep reinforcement learning.",
+      "citations": 600,
+      "id": 61,
+      "name": "Oscar Ramos Ponce"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171379/ramos_saravia_jose.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "jramos@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas; Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+      "research_areas": "Termodinámica; Valorización de Residuos; Gasificación de Residuos Sólidos; Gasificación con Plasma; Eficiencia Energética Térmica; Producción de Hidrógeno con Energías; Sistemas Energéticos Térmicos; Procesos Térmicos; Pilas de Combustible accionados con Hidrógeno; Integración de Energías Renovables; Sistemas Energéticos de Poligeneración; Cogeneración; Trigeneración; Centrales de Ciclo Combinado; Centrales Térmicas Convencionales",
+      "citations": 630,
+      "id": 62,
+      "name": "José Ramos Saravia"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171395/ratti_parandelli_alejandra.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "aratti@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Ciencia y cocina; bioquímica clínica; microbiología; proteómica; sistemas de expresión en levaduras; diseño de enzimas recombiantes; ingeniería genética; Investigación e innovación en métodos de enseñanza y de evaluación en universidades",
+      "citations": 0,
+      "id": 63,
+      "name": "Alejandra Ratti Parandelli"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171498/rau_lavado_pedro.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "prau@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Seguridad Hídrica y Cambio Climático (SeHClim); Centro de Investigación y Tecnología del Agua - CITA",
+      "research_areas": "Procesos hidrológicos.; hidrología de montaña; hidrología de zonas áridas; hidroclimatología; impactos de la variabilidad y el cambio climático; ingeniería hidrológica; administracion del agua",
+      "citations": 524,
+      "id": 64,
+      "name": "Pedro Rau Lavado"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21816332/renom_andara_jose.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "jrenom@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Teoría de grafos; Estadística aplicada; Probabilidades; Simulación y análisis de datos",
+      "citations": 173,
+      "id": 65,
+      "name": "Jose Renom Andara"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171519/rios_cuadros_alejandro.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "arios@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Nanomateriales y Semiconductores",
+      "citations": 0,
+      "id": 66,
+      "name": "Alejandro Rios Cuadros"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171551/rodriguez_reyes_juancarlos.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "jcrodriguez@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas; Centro de Investigación y Conservación del Patrimonio",
+      "research_areas": "Conservación del Patrimonio; Nanomateriales; Procesamiento de minerales; Metalurgia extractiva",
+      "citations": 713,
+      "id": 67,
+      "name": "Juan Carlos Rodríguez Reyes"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171564/rodriguez_zuniga_ursula.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "urodriguez@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Análisis Espectroscópicas; Ingeniería Ambiental; Bioprocesos; Ingeniería bioquímica; Fermentación para producción de enzimas; Biocombustibles",
+      "citations": 380,
+      "id": 68,
+      "name": "Ursula Rodriguez Zuñiga"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171593/saavedra_espinoza_harry_gustavo.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "hsaavedra@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Biofísica de proteínas; sistemas biológicos para combatir enfermedades; Machine Learning",
+      "citations": 387,
+      "id": 69,
+      "name": "Harry Gustavo Saavedra Espinoza"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21849976/sanchez_enriquez_heider.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "hsanchez@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Análisis y desarrollo de software; minería de datos; inteligencia artificial",
+      "citations": 43,
+      "id": 70,
+      "name": "Heider Sánchez Enriquez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/20164583/sanchez_ramirez_nedher.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "nsanchezr@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Ciencias químicas; Electroquímica en particular baterías de ion litio y líquidos iónicos",
+      "citations": 353,
+      "id": 71,
+      "name": "Nedher Sanchez Ramirez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171063/santamaria_fuster_monica.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "msantamaria@utec.edu.pe",
+      "research_groups": "Centro de Investigación y Tecnología del Agua - CITA",
+      "research_areas": "Barcoding, metabarcoding y ADN ambiental para monitoreo ambiental; Ingeniería de sistemas biológicos para aplicaciones ambientales; Epidemiología basada en aguas residuales",
+      "citations": 369,
+      "id": 72,
+      "name": "Monica C. Santa-Maria"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24269202/santi.png?w=160&f=jpg",
+      "department": "Unknown Department",
+      "email": "jsantivanez@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "",
+      "citations": 0,
+      "id": 73,
+      "name": "José Santiváñez Guarniz"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171627/serrano_llerena_yamilet.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de Datos y Sistemas de Información",
+      "email": "yserrano@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Inteligencia Artificial (GINIA); Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS); Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Ingenieria de software; Computación Sostenible; Inteligencia Artificial; Ciencia de Datos; Proyectos relacionados con las áreas de Ciencia de Computación",
+      "citations": 21,
+      "id": 74,
+      "name": "Yamilet Rosario Serrano Llerena"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24103768/igor.png?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "isiveroni@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Sostenibilidad Computacional - CompSust",
+      "research_areas": "Métodos formales; computación científica y aplicada; análisis filodinámico; l estudio de la dinámica de las enfermedades infecciosas",
+      "citations": 9853,
+      "id": 75,
+      "name": "Igor Siveroni Salinas"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/26454982/soriano-vargas-aurea-rossy.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "asoriano@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Inteligencia artificial; análisis visual; ciencia de datos; representación de datos; aprendizaje automático; aprendizaje profundo",
+      "citations": 131,
+      "id": 76,
+      "name": "Aurea Rossy Soriano Vargas"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/23816640/Dise_o_sin_t_tulo_49_.png?w=160&f=jpg",
+      "department": "Facultad de Negocios",
+      "email": "estiglich@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Transformación de los modelos educativos; consultoría empresarial; finanzas corporativas",
+      "citations": 0,
+      "id": 77,
+      "name": "Enrique Stiglich Labarthe"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24097563/stiglich-labarthe-matteo.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "mstiglich@utec.edu.pe",
+      "research_groups": "Centro de Impacto y Responsabilidad Social - CIRSO",
+      "research_areas": "Economía política de la planificación urbana; planificación de infraestructura y transporte urbano; historia urbana contemporánea",
+      "citations": 8,
+      "id": 78,
+      "name": "Matteo Stiglich Labarthe"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171653/tarazona_vasquez_francisco.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "ftarazona@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Simulación molecular; análisis termodinámicos; imulación e ingeniería de procesos",
+      "citations": 207,
+      "id": 79,
+      "name": "Francisco Tarazona Vásquez"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171742/tarrillo_olano_jimmy.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Electrónica y Mecatrónica",
+      "email": "jtarrillo@utec.edu.pe",
+      "research_groups": "Grupo de Investigación en Sistemas Embebidos, Reconfigurables, Monitoreo Inteligente, y Comunicaciones (SERMIC)",
+      "research_areas": "Tolerancia a fallos en FPGAs; efectos de radiación en circuitos digitales; sistemas reconfigurables; redes de sensores inalámbricos; adquisición de señales; sistemas embebidos",
+      "citations": 120,
+      "id": 80,
+      "name": "Jimmy Tarrillo Olano"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21817571/tipe_villanueva_jorge.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencia de la Computación",
+      "email": "jtipe@utec.edu..pe",
+      "research_groups": "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)",
+      "research_areas": "Matemática aplicada; Informática; Métodos de Demostración; Estructuras Discretas; Conteo y Teoría de Grafos",
+      "citations": 0,
+      "id": 81,
+      "name": "Jorge Tipe Villanueva"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/25754099/torres-escobar-david-wilfredo.jpg?w=160&f=jpg",
+      "department": "Unknown Department",
+      "email": "dtorres@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "biodiversidad; servicios ecosistémicos; gestión; capital natural; mercados ambientales",
+      "citations": 0,
+      "id": 82,
+      "name": "David Wilfredo Torres Escobar"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171765/valdivia_silva_julio.jpg?w=160&f=jpg",
+      "department": "Departamento de Bioingeniería e Ingeniería Química",
+      "email": "jvaldivias@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Astrobiología; inmunología del cáncer (oncología); regeneración de tejidos y biología de células madre; biología sintética; microdispositivos; tecnología de laboratorio en un chip.",
+      "citations": 322,
+      "id": 83,
+      "name": "Julio Ernesto Valdivia Silva"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/24148806/vazques-arrieta-rosaura.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Civil y Ambiental",
+      "email": "rvasqueza@utec.edu.pe",
+      "research_groups": "Centro de Investigación del Cemento y Concreto - CIC",
+      "research_areas": "Desarrollo de cementos de bajo carbono; ingeniería metalúrgica",
+      "citations": 0,
+      "id": 84,
+      "name": "Elba Rosaura Vazques Arrieta"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171783/vela_saavedra_emir_augusto.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "evela@utec.edu.pe",
+      "research_groups": "Centro de Investigación en Bioingeniería - BIO",
+      "research_areas": "Biomecánica; Robótica para rehabilitación y asistencia; MicroRobótica; Dispositivos sensoriales",
+      "citations": 470,
+      "id": 85,
+      "name": "Emir Augusto Vela Saavedra"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171819/vera_pomalaza_rafael.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "rvera@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas",
+      "research_areas": "Energías renovables; sistemas eléctricos; electrotecnia industrial",
+      "citations": 0,
+      "id": 86,
+      "name": "Rafael Vera Pomalaza"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171837/villicana_ortiz_eunice.jpg?w=160&f=jpg",
+      "department": "Departamento de Ingeniería Mecánica y de la Energía",
+      "email": "evillicana@utec.edu.pe",
+      "research_groups": "Grupo de investigación en energía y minas",
+      "research_areas": "Energías renovables; Eficiencia energética; Ingeniería electrónica",
+      "citations": 140,
+      "id": 87,
+      "name": "Eunice Villicaña Ortiz"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/26455000/wong-sato-akira-armando-2.jpg?w=160&f=jpg",
+      "department": "Unknown Department",
+      "email": "awong@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Ecología; Interacciones ecológicas; Biología de Conservación; Dinámica Forestal",
+      "citations": 46,
+      "id": 88,
+      "name": "Akira Armando Wong Sato"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/21816575/yalonetzky_mankevich_romina_perla_.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "ryalonetzky@utec.edu.pe",
+      "research_groups": "Centro de Impacto y Responsabilidad Social - CIRSO",
+      "research_areas": "Sociología; Filosofía; Minorías religiosas",
+      "citations": 5,
+      "id": 89,
+      "name": "Romina Perla Yalonetzky Mankevich"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19171861/zegarra_sierra_katia.jpg?w=160&f=jpg",
+      "department": "Departamento de Ciencias",
+      "email": "kzegarras@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Física y óptica aplicada; Caracterización óptica de materiales semiconductores; Dinámica de sistemas",
+      "citations": 4,
+      "id": 90,
+      "name": "Katia Zegarra Sierra"
+    },
+    {
+      "image_url": "https://cris.utec.edu.pe/files-asset/19489162/zorrilla_aranguren_carlos.jpg?w=160&f=jpg",
+      "department": "Departamento de Humanidades, Artes y Ciencias Sociales",
+      "email": "czorrilla@utec.edu.pe",
+      "research_groups": "",
+      "research_areas": "Comunicación social; Marketing y Comunicaciones; Sociología de las Organizaciones",
+      "citations": 0,
+      "id": 91,
+      "name": "Carlos Zorrilla Aranguren"
+    }
+  ]
+}

@@ -1,0 +1,594 @@
+{
+ "source": "https://cris.utec.edu.pe/es/organisations/ (páginas guardadas)",
+ "collected": "2026-10-25",
+ "method": "scrape_cris.py --html-dir",
+ "organisations": [
+  {
+   "name": "Universidad de Ingeniería y Tecnología - UTEC",
+   "type": "Universidad",
+   "parent": null,
+   "url": "https://cris.utec.edu.pe/es/organisations/universidad-de-ingenier%C3%ADa-y-tecnolog%C3%ADa-utec/",
+   "leaders": []
+  },
+  {
+   "name": "Facultad de Ingeniería",
+   "type": "Facultad",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/facultad-de-ingenier%C3%ADa/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Bioingeniería e Ingeniería Química",
+   "type": "Departamento",
+   "parent": "Facultad de Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-bioingenier%C3%ADa-e-ingenier%C3%ADa-qu%C3%ADmica/",
+   "leaders": [
+    {
+     "name": "Julio Ernesto Valdivia Silva",
+     "role": "Director Académico"
+    }
+   ]
+  },
+  {
+   "name": "L401 Laboratorio de Ensayos Especiales",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l401-laboratorio-de-ensayos-especiales/",
+   "leaders": []
+  },
+  {
+   "name": "L403 Laboratorio de Procesos a Escala Piloto 1",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l403-laboratorio-de-procesos-a-escala-piloto-1/",
+   "leaders": []
+  },
+  {
+   "name": "L404 Laboratorio de Caracterización y Análisis Instrumental",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l404-laboratorio-de-caracterizaci%C3%B3n-y-an%C3%A1lisis-instrumental/",
+   "leaders": []
+  },
+  {
+   "name": "L405 Laboratorio de Investigación y Desarrollo de Procesos 1",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l405-laboratorio-de-investigaci%C3%B3n-y-desarrollo-de-procesos-1/",
+   "leaders": []
+  },
+  {
+   "name": "L407 Laboratorio de Investigación y Desarrollo de Procesos 2",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l407-laboratorio-de-investigaci%C3%B3n-y-desarrollo-de-procesos-2/",
+   "leaders": []
+  },
+  {
+   "name": "L503 Laboratorio de microfluidos y BioMEMS",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l503-laboratorio-de-microfluidos-y-biomems/",
+   "leaders": []
+  },
+  {
+   "name": "L504 Laboratorio de Ingeniería de Tejidos y Biología Sintética",
+   "type": "Laboratorio",
+   "parent": "Departamento de Bioingeniería e Ingeniería Química",
+   "url": "https://cris.utec.edu.pe/es/organisations/l504-laboratorio-de-ingenier%C3%ADa-de-tejidos-y-biolog%C3%ADa-sint%C3%A9tica/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Ingeniería Civil y Ambiental",
+   "type": "Departamento",
+   "parent": "Facultad de Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-civil-y-ambiental/",
+   "leaders": []
+  },
+  {
+   "name": "L204 Laboratorio de Mecánica de Fluidos",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Civil y Ambiental",
+   "url": "https://cris.utec.edu.pe/es/organisations/l204-laboratorio-de-mec%C3%A1nica-de-fluidos/",
+   "leaders": []
+  },
+  {
+   "name": "L406 Laboratorio de Química Avanzada",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Civil y Ambiental",
+   "url": "https://cris.utec.edu.pe/es/organisations/l406-laboratorio-de-qu%C3%ADmica-avanzada/",
+   "leaders": []
+  },
+  {
+   "name": "L505 Laboratorio de Ecología, Biotecnología, y Microbiología Ambiental",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Civil y Ambiental",
+   "url": "https://cris.utec.edu.pe/es/organisations/l505-laboratorio-de-ecolog%C3%ADa-biotecnolog%C3%ADa-y-microbiolog%C3%ADa-ambien/",
+   "leaders": []
+  },
+  {
+   "name": "L508 Laboratorio de Mecánica de Suelo",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Civil y Ambiental",
+   "url": "https://cris.utec.edu.pe/es/organisations/l508-laboratorio-de-mec%C3%A1nica-de-suelo/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "type": "Departamento",
+   "parent": "Facultad de Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-electr%C3%B3nica-y-mecatr%C3%B3nica-2/",
+   "leaders": [
+    {
+     "name": "Emir Augusto Vela Saavedra",
+     "role": "Director Académico"
+    }
+   ]
+  },
+  {
+   "name": "L201 Laboratorio de Mecatrónica y Robótica",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "url": "https://cris.utec.edu.pe/es/organisations/l201-laboratorio-de-mecatr%C3%B3nica-y-rob%C3%B3tica/",
+   "leaders": []
+  },
+  {
+   "name": "L206 Laboratorio de Sistemas Hidráulicos y Neumáticos",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "url": "https://cris.utec.edu.pe/es/organisations/l206-laboratorio-de-sistemas-hidr%C3%A1ulicos-y-neum%C3%A1ticos/",
+   "leaders": []
+  },
+  {
+   "name": "L409 Laboratorio de Electrónica y Telecomunicaciones",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "url": "https://cris.utec.edu.pe/es/organisations/l409-laboratorio-de-electr%C3%B3nica-y-telecomunicaciones/",
+   "leaders": []
+  },
+  {
+   "name": "L413 Laboratorio de Sistemas de Control",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "url": "https://cris.utec.edu.pe/es/organisations/l413-laboratorio-de-sistemas-de-control/",
+   "leaders": []
+  },
+  {
+   "name": "L414 Laboratorio de Sistemas Embebidos",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "url": "https://cris.utec.edu.pe/es/organisations/l414-laboratorio-de-sistemas-embebidos/",
+   "leaders": []
+  },
+  {
+   "name": "L415 Laboratorio de Automatización",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+   "url": "https://cris.utec.edu.pe/es/organisations/l415-laboratorio-de-automatizaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+   "type": "Departamento",
+   "parent": "Facultad de Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-industrial-y-gesti%C3%B3n-de-la-ingenier%C3%ADa/",
+   "leaders": []
+  },
+  {
+   "name": "L410/L411 Laboratorio de Prototipado y Fabricación Digital",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/l410l411-laboratorio-de-prototipado-y-fabricaci%C3%B3n-digital/",
+   "leaders": []
+  },
+  {
+   "name": "L506 Colaboratorio - Diseño de productos",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/l506-colaboratorio-dise%C3%B1o-de-productos/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Ingeniería Mecánica y de la Energía",
+   "type": "Departamento",
+   "parent": "Facultad de Ingeniería",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-mec%C3%A1nica-y-de-la-energ%C3%ADa-2/",
+   "leaders": []
+  },
+  {
+   "name": "L022 Laboratorio de perforación",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l022-laboratorio-de-perforaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "L202 Laboratorio de Energía Renovable y Smart Grid",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l202-laboratorio-de-energ%C3%ADa-renovable-y-smart-grid/",
+   "leaders": []
+  },
+  {
+   "name": "L203 Proyectos de Energía y Mecánica",
+   "type": "Unidad",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l203-proyectos-de-energ%C3%ADa-y-mec%C3%A1nica/",
+   "leaders": []
+  },
+  {
+   "name": "L205 Laboratorio de Sistemas Térmicos e Hidráulicos",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l205-laboratorio-de-sistemas-t%C3%A9rmicos-e-hidr%C3%A1ulicos/",
+   "leaders": []
+  },
+  {
+   "name": "L402 Laboratorio de Tecnología de los materiales",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l402-laboratorio-de-tecnolog%C3%ADa-de-los-materiales/",
+   "leaders": []
+  },
+  {
+   "name": "L408 Laboratorio de Electricidad y Automatización",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l408-laboratorio-de-electricidad-y-automatizaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "L412 Laboratorio de Hidrocarburos y Simulación",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l412-laboratorio-de-hidrocarburos-y-simulaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Utec Garage",
+   "type": "Unidad",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/utec-garage/",
+   "leaders": []
+  },
+  {
+   "name": "L101 Laboratorio de Manufactura y Metrología",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+   "url": "https://cris.utec.edu.pe/es/organisations/l101-laboratorio-de-manufactura-y-metrolog%C3%ADa/",
+   "leaders": []
+  },
+  {
+   "name": "Departamentos Académicos Transversales",
+   "type": "Agrupación",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamentos-acad%C3%A9micos-transversales/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Ciencias",
+   "type": "Departamento",
+   "parent": "Departamentos Académicos Transversales",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ciencias/",
+   "leaders": [
+    {
+     "name": "Daniel Vicente Horna Muñoz",
+     "role": "Director"
+    }
+   ]
+  },
+  {
+   "name": "L501/L502 Laboratorio Multiuso de Ciencias",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ciencias",
+   "url": "https://cris.utec.edu.pe/es/organisations/l501l502-laboratorio-multiuso-de-ciencias/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Física",
+   "type": "Departamento",
+   "parent": "Departamentos Académicos Transversales",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-f%C3%ADsica/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Humanidades, Artes y Ciencias Sociales",
+   "type": "Departamento",
+   "parent": "Departamentos Académicos Transversales",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-humanidades-artes-y-ciencias-sociales/",
+   "leaders": [
+    {
+     "name": "Giancarlo Marcone Flores",
+     "role": "Director Académico"
+    }
+   ]
+  },
+  {
+   "name": "Dirección de Calidad y Transformación Educativa - DICTE",
+   "type": "Dirección",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/direcci%C3%B3n-de-calidad-y-transformaci%C3%B3n-educativa-dicte/",
+   "leaders": []
+  },
+  {
+   "name": "Centro de Excelencia en Enseñanza y Aprendizaje - CE2A",
+   "type": "Centro",
+   "parent": "Dirección de Calidad y Transformación Educativa - DICTE",
+   "url": "https://cris.utec.edu.pe/es/organisations/centro-de-excelencia-en-ense%C3%B1anza-y-aprendizaje-ce2a/",
+   "leaders": []
+  },
+  {
+   "name": "Dirección General de Innovación e Investigación",
+   "type": "Dirección",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/direcci%C3%B3n-general-de-innovaci%C3%B3n-e-investigaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Dirección de Investigación",
+   "type": "Dirección",
+   "parent": "Dirección General de Innovación e Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/direcci%C3%B3n-de-investigaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Centro de Investigación del Cemento y Concreto - CIC",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/centro-de-investigaci%C3%B3n-del-cemento-y-concreto-cic/",
+   "leaders": []
+  },
+  {
+   "name": "Centro de Investigación en Bioingeniería - BIO",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/centro-de-investigaci%C3%B3n-en-bioingenier%C3%ADa-bio/",
+   "leaders": [
+    {
+     "name": "Julio Ernesto Valdivia Silva",
+     "role": "Director"
+    }
+   ]
+  },
+  {
+   "name": "Centro de Investigación y Conservación del Patrimonio",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/centro-de-investigaci%C3%B3n-y-conservaci%C3%B3n-del-patrimonio/",
+   "leaders": []
+  },
+  {
+   "name": "Centro de Investigación y Tecnología del Agua - CITA",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/httpscitautecedupe/",
+   "leaders": []
+  },
+  {
+   "name": "Grupos de Investigación",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupos-de-investigaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-algoritmos-combinatoria-y-teor%C3%ADa-de-la-/",
+   "leaders": [
+    {
+     "name": "Juan Gabriel Gutierrez Alva",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-anal%C3%ADtica-de-datos-y-ciencias-de-decisi/",
+   "leaders": [
+    {
+     "name": "Fabien Cornillier",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-dise%C3%B1o-de-productos-con-simulaci%C3%B3n-comp/",
+   "leaders": [
+    {
+     "name": "José Luis Mantari Laureano",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de investigación en energía y minas",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-energ%C3%ADa-y-minas/",
+   "leaders": []
+  },
+  {
+   "name": "Grupo de Investigación en Física Fundamental (GIFF)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-f%C3%ADsica-fundamental-giff/",
+   "leaders": [
+    {
+     "name": "Diego Alejandro Milanés Carreño",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-infraestructura-de-concreto-resiliente-/",
+   "leaders": [
+    {
+     "name": "Luis Bedriñana Mera",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Innovación Educativa y Competencia Docente (INECOD)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-innovaci%C3%B3n-educativa-y-competencia-doce/",
+   "leaders": [
+    {
+     "name": "Silvia Lavandera Ponce",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Inteligencia Artificial (GINIA)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-inteligencia-artificial-ginia/",
+   "leaders": [
+    {
+     "name": "Cristian Lopez Del Alamo",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-rob%C3%B3tica-inteligencia-artificial-y-cont/",
+   "leaders": [
+    {
+     "name": "Christian Flores Vega",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Seguridad Hídrica y Cambio Climático (SeHClim)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-seguridad-h%C3%ADdrica-y-cambio-clim%C3%A1tico-se/",
+   "leaders": [
+    {
+     "name": "Pedro Rau Lavado",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Grupo de Investigación en Sistemas Embebidos, Reconfigurables, Monitoreo Inteligente, y Comunicaciones (SERMIC)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-sistemas-embebidos-reconfigurables-moni/",
+   "leaders": [
+    {
+     "name": "Jimmy Tarrillo Olano",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI",
+   "type": "Instituto",
+   "parent": "Dirección de Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/instituto-de-investigaci%C3%B3n-para-la-sostenibilidad-de-la-amazon%C3%ADa-/",
+   "leaders": []
+  },
+  {
+   "name": "UTEC Ventures",
+   "type": "Unidad",
+   "parent": "Dirección General de Innovación e Investigación",
+   "url": "https://cris.utec.edu.pe/es/organisations/utec-ventures/",
+   "leaders": []
+  },
+  {
+   "name": "Escuela de Posgrado",
+   "type": "Unidad de enseñanza",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/escuela-de-posgrado-3/",
+   "leaders": []
+  },
+  {
+   "name": "Educación Ejecutiva",
+   "type": "Unidad",
+   "parent": "Escuela de Posgrado",
+   "url": "https://cris.utec.edu.pe/es/organisations/educaci%C3%B3n-ejecutiva/",
+   "leaders": []
+  },
+  {
+   "name": "Programas de Doctorado",
+   "type": "Unidad",
+   "parent": "Escuela de Posgrado",
+   "url": "https://cris.utec.edu.pe/es/organisations/programas-de-doctorado/",
+   "leaders": []
+  },
+  {
+   "name": "Programas de Maestría",
+   "type": "Unidad",
+   "parent": "Escuela de Posgrado",
+   "url": "https://cris.utec.edu.pe/es/organisations/programas-de-maestr%C3%ADa/",
+   "leaders": []
+  },
+  {
+   "name": "Facultad de Computación",
+   "type": "Facultad",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/facultad-de-computaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Ciencia de Computación y de Datos",
+   "type": "Departamento",
+   "parent": "Facultad de Computación",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ciencia-de-computaci%C3%B3n-y-de-datos/",
+   "leaders": []
+  },
+  {
+   "name": "L507 Laboratorio de Computación Avanzada",
+   "type": "Laboratorio",
+   "parent": "Departamento de Ciencia de Computación y de Datos",
+   "url": "https://cris.utec.edu.pe/es/organisations/l507-laboratorio-de-computaci%C3%B3n-avanzada/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Sistemas y Seguridad de la Información",
+   "type": "Departamento",
+   "parent": "Facultad de Computación",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-sistemas-y-seguridad-de-la-informaci%C3%B3n/",
+   "leaders": []
+  },
+  {
+   "name": "Facultad de Negocios",
+   "type": "Facultad",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/facultad-de-negocios/",
+   "leaders": []
+  },
+  {
+   "name": "Departamento de Negocios Digitales",
+   "type": "Departamento",
+   "parent": "Facultad de Negocios",
+   "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-negocios-digitales/",
+   "leaders": []
+  },
+  {
+   "name": "Global Academy",
+   "type": "Unidad",
+   "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+   "url": "https://cris.utec.edu.pe/es/organisations/global-academy/",
+   "leaders": []
+  }
+ ],
+ "people_roles": []
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>{{ n.name }}: ficha de colaboración UtecVis</title>{% include "_print.css.html" %}</head>
+<body><div class="page">
+  <div class="bar"><a href="/#p={{ n.id }}">Ver en la red</a><button onclick="print()">Guardar como PDF</button></div>
+  <div class="brand">Utec<span>Vis</span> <span class="muted">Ficha de colaboración</span></div>
+  <h1>{{ n.name }}</h1>
+  <p class="muted">{{ n.department }}. {{ n.faculty }}.{% for l in n.leadership %} {{ l.role }}: {{ l.unit }}.{% endfor %}</p>
+  {% for t in ins.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+  <h2>Lo que dice la red</h2>
+  <ul>{% for l in ins.lines %}<li>{{ l }}</li>{% endfor %}</ul>
+  <table><tr><th>Métrica</th><th class="n">Valor</th><th class="n">Puesto (de {{ nodes|length }})</th></tr>
+    <tr><td>Publicaciones registradas</td><td class="n">{{ n.publications }}</td><td class="n">{{ n.rank.publications }}</td></tr>
+    <tr><td>Coautores UTEC (grado)</td><td class="n">{{ n.coauthors }}</td><td class="n">{{ n.rank.coauthors }}</td></tr>
+    <tr><td>Intermediación (puente)</td><td class="n">{{ "%.3f"|format(n.betweenness) }}</td><td class="n">{{ n.rank.betweenness }}</td></tr>
+    <tr><td>PageRank</td><td class="n">{{ "%.3f"|format(n.pagerank) }}</td><td class="n">{{ n.rank.pagerank }}</td></tr></table>
+  {% if n.recommendations %}
+  <h2>A quién escribirle</h2>
+  <table><tr><th>Colega</th><th>Departamento</th><th>Por qué</th></tr>
+  {% for r in n.recommendations %}<tr><td>{{ nodes[r.id].name }}</td><td>{{ nodes[r.id].department }}</td><td>{% if r.same_group %}Mismo grupo. {% endif %}{% if r.shared_terms %}Temas: {{ r.shared_terms|join(", ") }}{% endif %}</td></tr>{% endfor %}</table>
+  {% endif %}
+  <h2>Coautorías UTEC</h2>
+  {% if edges %}<table><tr><th>Colega</th><th class="n">Publicaciones</th><th>Ejemplo</th></tr>
+  {% for e in edges %}{% set o = nodes[e.target] if e.source == n.id else nodes[e.source] %}<tr><td>{{ o.name }}</td><td class="n">{{ e.weight }}</td><td>{{ (e.publications[0].title if e.publications else "") }}</td></tr>{% endfor %}</table>
+  {% else %}<p>Aún no registra coautorías con otros investigadores de la lista.</p>{% endif %}
+  <p class="muted">Fuente: cris.utec.edu.pe (perfiles, grupos, estructura y publicaciones). Métricas calculadas con NetworkX.</p>
+</div></body></html>

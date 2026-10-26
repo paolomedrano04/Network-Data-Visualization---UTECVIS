@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- sin referer: el portal CRIS acepta mejor la carga directa de fotos -->
+  <meta name="referrer" content="no-referrer">
+  <title>UtecVis: red de colaboración científica de UTEC</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<main class="stage" id="stage">
+  <div id="chart" class="chart"></div>
+
+  <!-- Título y respuesta de la tarea activa -->
+  <header class="caption">
+    <div class="brand">Utec<span>Vis</span></div>
+    <label class="me">
+      <span>Soy de</span>
+      <select id="my-dept" aria-label="Elegir mi departamento"><option value="">toda la universidad</option></select>
+    </label>
+    <p class="terms" id="terms"></p>
+    <p class="kicker" id="kicker"></p>
+    <h1 id="question"></h1>
+    <p class="answer" id="answer"></p>
+    <button class="why" id="why" aria-expanded="false">¿Por qué?</button>
+    <div class="why-body" id="why-body" hidden></div>
+  </header>
+
+  <!-- Herramientas flotantes -->
+  <div class="toolbar" role="toolbar" aria-label="Herramientas">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+      <input id="search" list="people" placeholder="Buscar investigador" autocomplete="off" aria-label="Buscar investigador">
+      <datalist id="people"></datalist>
+    </label>
+    <button class="tool" data-pop="ranking" aria-expanded="false">Ranking</button>
+    <button class="tool" data-pop="org" aria-expanded="false">Estructura</button>
+    <button class="tool" data-pop="metrics" aria-expanded="false">Métricas</button>
+    <button class="tool" data-pop="settings" aria-expanded="false">Ajustes</button>
+    <a class="tool tool-cta" id="report-link" href="/reporte" target="_blank" rel="noopener">Mi reporte</a>
+  </div>
+
+  <section class="float pop" id="pop-ranking" hidden></section>
+  <section class="float pop" id="pop-org" hidden></section>
+  <section class="float pop" id="pop-metrics" hidden></section>
+  <section class="float pop" id="pop-settings" hidden>
+    <h2>Ajustes de la vista</h2>
+    <div class="set">
+      <span class="set-l">Disposición</span>
+      <div class="seg" role="group" aria-label="Disposición">
+        <button data-layout="clusters" class="on">Territorios</button>
+        <button data-layout="swarm">Beeswarm</button>
+      </div>
+    </div>
+    <div class="set">
+      <span class="set-l">Tamaño del nodo</span>
+      <select id="size-metric">
+        <option value="publications">Publicaciones</option>
+        <option value="coauthors">Coautores</option>
+        <option value="coauthorships">Coautorías</option>
+        <option value="betweenness">Intermediación</option>
+        <option value="pagerank">PageRank</option>
+        <option value="citations">Citas</option>
+      </select>
+    </div>
+    <div class="set">
+      <span class="set-l">Capas</span>
+      <div class="chips-t">
+        <button class="tg on" data-layer="coauthor">Coautoría</button>
+        <button class="tg" data-layer="halo">Puentes</button>
+        <button class="tg" data-layer="affinity">Afinidad</button>
+        <button class="tg" data-layer="group">Grupos</button>
+        <button class="tg" data-layer="leaders">Cargos</button>
+      </div>
+    </div>
+    <div class="set">
+      <span class="set-l">Resistencia al arrastrar <output id="res-out">media</output></span>
+      <input id="resistance" type="range" min="0" max="1" step="0.05" value="0.55" aria-label="Resistencia al arrastrar">
+      <span class="hint">Arrastre un investigador: lo sigue con retraso, sus coautores se estiran y al soltarlo vuelve a su lugar.</span>
+    </div>
+  </section>
+
+  <aside class="float profile" id="profile" hidden aria-label="Ficha del investigador"></aside>
+
+  <ul class="legend" id="legend" aria-label="Cómo leer la vista"></ul>
+
+  <nav class="stepper" aria-label="Tareas analíticas">
+    <button id="prev" class="nav-btn" aria-label="Tarea anterior">‹ Anterior</button>
+    <ol class="steps" id="steps"></ol>
+    <button id="next" class="nav-btn" aria-label="Tarea siguiente">Siguiente ›</button>
+  </nav>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+</main>
+
+<script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/utecvis.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

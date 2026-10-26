@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>{{ d }}: reporte de colaboración UtecVis</title>{% include "_print.css.html" %}</head>
+<body><div class="page">
+  <div class="bar"><a href="/">Volver a la red</a><button onclick="print()">Guardar como PDF</button></div>
+  <div class="brand">Utec<span>Vis</span> <span class="muted">Reporte para el departamento</span></div>
+  <h1>{{ d }}</h1>
+  <p class="muted">{{ D.members }} investigadores. {{ meta.organisation.faculty_of_department.get(d, "") }}. Temas principales: {{ D.terms|join(", ") }}.</p>
+
+  <h2>En una frase por tarea</h2>
+  <table>
+    {% for t in tasks if t.id in D.headlines %}<tr><td style="width:34%"><span class="k">{{ t.id }}</span> {{ t.question }}</td><td>{{ D.headlines[t.id] }}</td></tr>{% endfor %}
+  </table>
+
+  <h2>Departamentos más afines por temas</h2>
+  <p class="muted">Similitud de áreas de investigación (TF-IDF, coseno) y publicaciones conjuntas registradas. Afinidad alta sin coautorías = oportunidad.</p>
+  <table><tr><th>Departamento</th><th class="n">Afinidad</th><th class="n">Publicaciones conjuntas</th></tr>
+  {% for o, v in closest %}<tr><td>{{ o }}</td><td class="n">{{ "%.2f"|format(v) }}</td><td class="n">{{ prof.coauthorships_with.get(o, 0) }}{% if prof.coauthorships_with.get(o, 0) == 0 %} <b style="color:#0084b8">oportunidad</b>{% endif %}</td></tr>{% endfor %}</table>
+
+  <h2>Integrantes</h2>
+  <table><tr><th>Investigador</th><th>Rol en la red</th><th class="n">Publ.</th><th class="n">Coautores UTEC</th><th>Podría escribirle a</th></tr>
+  {% for n in mem %}{% set r = n.recommendations[0] if n.recommendations else None %}<tr>
+    <td>{{ n.name }}{% if n.leadership %}<br><span class="muted">{{ n.leadership[0].role }}</span>{% endif %}</td>
+    <td>{{ (n.betweenness > 0) and ("Puente, n.º %d"|format(n.rank.betweenness)) or (n.coauthors and "Colabora" or "Sin coautorías UTEC") }}</td>
+    <td class="n">{{ n.publications }}</td><td class="n">{{ n.coauthors }}</td>
+    <td>{% if r %}{{ nodes[r.id].name }}<br><span class="muted">{{ r.same_group and "mismo grupo" or nodes[r.id].department }}{% if r.shared_terms %}; {{ r.shared_terms|join(", ") }}{% endif %}</span>{% endif %}</td></tr>{% endfor %}</table>
+
+  {% if pairs %}<h2>Colaboraciones probables que involucran al departamento</h2>
+  <table><tr><th>Pareja</th><th>Por qué</th><th class="n">Puntaje</th></tr>
+  {% for a in pairs %}<tr><td>{{ nodes[a.source].name }} y {{ nodes[a.target].name }}</td><td>{% if a.shared_groups %}Mismo grupo. {% endif %}{{ a.shared_terms|join(", ") }}</td><td class="n">{{ "%.2f"|format(a.score) }}</td></tr>{% endfor %}</table>{% endif %}
+  <p class="muted">Fuente: cris.utec.edu.pe. Cada integrante tiene su reporte individual en /investigador/&lt;id&gt;.</p>
+</div></body></html>

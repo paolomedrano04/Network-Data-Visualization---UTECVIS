@@ -1,0 +1,1564 @@
+{
+ "generated_at": "2026-10-26T03:05:45+00:00",
+ "params": {
+  "ext_w_coauthor": 2.0,
+  "ext_w_group": 1.0,
+  "aff_w_topic": 0.5,
+  "aff_w_adamic": 0.3,
+  "aff_w_group": 0.2,
+  "aff_min_topic": 0.05,
+  "n_affinity": 40,
+  "keep_people_not_in_cris": false
+ },
+ "sources": {
+  "publication_records": 2500,
+  "new_people_from_cris": [
+   "Luz Antuanet Adanaque Infante",
+   "Walter Sebastian Barrutia Alta",
+   "Aoife Bennett",
+   "Rayna Alexandra Benzeev",
+   "Eric Javier Biagioli",
+   "Ana Rocio Cardenas Maita",
+   "Jose Javier Cerda Hernandez",
+   "Sheyla Chero Osorio",
+   "Ada Congrains Castillo",
+   "Heinner Hilario Guio Chunga",
+   "Ronald R. Gutierrez",
+   "Jaime Landinez Aceros",
+   "Leandro Neodini Remedio",
+   "Vanessa Orihuela Munive",
+   "Bryam Orihuela-Pinto",
+   "Kevin Arturo Redosado Leon",
+   "Lucia Rivera Charún",
+   "Luciano Arnaldo Romero Calla",
+   "Evgenii Vladimirovich Shmanin",
+   "Sashwat Tanay",
+   "Jonathan Tapullima",
+   "Candy Veronica Tenorio Gonzales"
+  ],
+  "linked_publications": 1433,
+  "coauthorship_cross_check": {
+   "verified_pairs": 17,
+   "csv_pairs": 17,
+   "identical": true,
+   "only_in_verified": 0,
+   "only_in_csv": 0
+  },
+  "scraping": {
+   "scraped_profiles": 104,
+   "updated": 82,
+   "added": 22,
+   "new_people": [
+    "Luz Antuanet Adanaque Infante",
+    "Walter Sebastian Barrutia Alta",
+    "Aoife Bennett",
+    "Rayna Alexandra Benzeev",
+    "Eric Javier Biagioli",
+    "Ana Rocio Cardenas Maita",
+    "Jose Javier Cerda Hernandez",
+    "Sheyla Chero Osorio",
+    "Ada Congrains Castillo",
+    "Heinner Hilario Guio Chunga",
+    "Ronald R. Gutierrez",
+    "Jaime Landinez Aceros",
+    "Leandro Neodini Remedio",
+    "Vanessa Orihuela Munive",
+    "Bryam Orihuela-Pinto",
+    "Kevin Arturo Redosado Leon",
+    "Lucia Rivera Charún",
+    "Luciano Arnaldo Romero Calla",
+    "Evgenii Vladimirovich Shmanin",
+    "Sashwat Tanay",
+    "Jonathan Tapullima",
+    "Candy Veronica Tenorio Gonzales"
+   ],
+   "not_in_cris": [
+    "Omar Bejarano Grández",
+    "Manuel Arturo Deza Figueroa",
+    "Leo Guerrero",
+    "Yuri Herrera Burstein",
+    "Monica Cristina Moreno Brush",
+    "Julien Noel",
+    "José Santiváñez Guarniz",
+    "Igor Siveroni Salinas",
+    "David Wilfredo Torres Escobar",
+    "Romina Perla Yalonetzky Mankevich"
+   ],
+   "photos_copied": 0
+  },
+  "scraped_coauthorship_pairs": 0
+ },
+ "summary": {
+  "researchers": 104,
+  "with_publications": 56,
+  "coauthorships": 17,
+  "coauthorships_cross": 9,
+  "with_coauthors": 19,
+  "coauthor_components": [
+   8,
+   7,
+   2,
+   2
+  ],
+  "nonzero_betweenness_coauthor": 5,
+  "nonzero_betweenness_extended": 14,
+  "coauthorships_cross_faculty": 4,
+  "leaders": 15,
+  "group_ties": 185,
+  "group_ties_coauthored": 9,
+  "groups_total": 18,
+  "groups_multi_department": 9,
+  "external_available": false,
+  "affinity_links": 40,
+  "affinity_cross": 18
+ },
+ "departments": [
+  {
+   "name": "Física",
+   "researchers": 2,
+   "publications": 532,
+   "with_publications": 1,
+   "per_researcher": 266.0,
+   "median_publications": 266.0,
+   "top_author": "Diego Alejandro Milanés Carreño",
+   "top_share": 1.0,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Electrónica y Mecatrónica",
+   "researchers": 12,
+   "publications": 285,
+   "with_publications": 10,
+   "per_researcher": 23.8,
+   "median_publications": 22.5,
+   "top_author": "Deyby Huamanchahua Canchanya",
+   "top_share": 0.351,
+   "coauthorships_internal": 17,
+   "coauthorships_external": 5
+  },
+  {
+   "name": "Ciencias",
+   "researchers": 12,
+   "publications": 159,
+   "with_publications": 6,
+   "per_researcher": 13.2,
+   "median_publications": 0.5,
+   "top_author": "José Luis Mantari Laureano",
+   "top_share": 0.805,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 8
+  },
+  {
+   "name": "Bioingeniería y Química",
+   "researchers": 13,
+   "publications": 123,
+   "with_publications": 9,
+   "per_researcher": 9.5,
+   "median_publications": 7.0,
+   "top_author": "Julio Ernesto Valdivia Silva",
+   "top_share": 0.26,
+   "coauthorships_internal": 1,
+   "coauthorships_external": 3
+  },
+  {
+   "name": "Ciencia de Computación y de Datos",
+   "researchers": 14,
+   "publications": 111,
+   "with_publications": 8,
+   "per_researcher": 7.9,
+   "median_publications": 8.0,
+   "top_author": "Aurea Rossy Soriano Vargas",
+   "top_share": 0.207,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Mecánica y Energía",
+   "researchers": 10,
+   "publications": 98,
+   "with_publications": 6,
+   "per_researcher": 9.8,
+   "median_publications": 2.5,
+   "top_author": "Emir Augusto Vela Saavedra",
+   "top_share": 0.357,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 11
+  },
+  {
+   "name": "Civil y Ambiental",
+   "researchers": 11,
+   "publications": 62,
+   "with_publications": 3,
+   "per_researcher": 5.6,
+   "median_publications": 0.0,
+   "top_author": "Pedro Rau Lavado",
+   "top_share": 0.565,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Humanidades y Artes",
+   "researchers": 8,
+   "publications": 21,
+   "with_publications": 4,
+   "per_researcher": 2.6,
+   "median_publications": 1.5,
+   "top_author": "Giancarlo Marcone Flores",
+   "top_share": 0.524,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Industrial y Gestión",
+   "researchers": 8,
+   "publications": 19,
+   "with_publications": 4,
+   "per_researcher": 2.4,
+   "median_publications": 0.5,
+   "top_author": "Fabien Cornillier",
+   "top_share": 0.421,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Facultad de Ingeniería",
+   "researchers": 1,
+   "publications": 14,
+   "with_publications": 1,
+   "per_researcher": 14.0,
+   "median_publications": 14.0,
+   "top_author": "Eunice Villicaña Ortiz",
+   "top_share": 1.0,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 1
+  },
+  {
+   "name": "Sin departamento",
+   "researchers": 5,
+   "publications": 12,
+   "with_publications": 1,
+   "per_researcher": 2.4,
+   "median_publications": 0.0,
+   "top_author": "Akira Armando Wong Sato",
+   "top_share": 1.0,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Sistemas y Seguridad de la Información",
+   "researchers": 4,
+   "publications": 5,
+   "with_publications": 2,
+   "per_researcher": 1.2,
+   "median_publications": 1.0,
+   "top_author": "Maria Belén Ortiz García",
+   "top_share": 0.6,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Facultad de Computación",
+   "researchers": 1,
+   "publications": 4,
+   "with_publications": 1,
+   "per_researcher": 4.0,
+   "median_publications": 4.0,
+   "top_author": "Jesús Edwin Bellido Angulo",
+   "top_share": 1.0,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Facultad de Negocios",
+   "researchers": 1,
+   "publications": 0,
+   "with_publications": 0,
+   "per_researcher": 0.0,
+   "median_publications": 0.0,
+   "top_author": "",
+   "top_share": 0,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  },
+  {
+   "name": "Negocios Digitales",
+   "researchers": 2,
+   "publications": 0,
+   "with_publications": 0,
+   "per_researcher": 0.0,
+   "median_publications": 0.0,
+   "top_author": "",
+   "top_share": 0,
+   "coauthorships_internal": 0,
+   "coauthorships_external": 0
+  }
+ ],
+ "department_profile": {
+  "Bioingeniería y Química": {
+   "terms": [
+    "biomateriales",
+    "biología",
+    "molecular",
+    "producción"
+   ],
+   "similarity": {
+    "Ciencia de Computación y de Datos": 0.094,
+    "Ciencias": 0.074,
+    "Civil y Ambiental": 0.066,
+    "Electrónica y Mecatrónica": 0.063,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.022,
+    "Industrial y Gestión": 0.017,
+    "Mecánica y Energía": 0.095,
+    "Negocios Digitales": 0.008,
+    "Sin departamento": 0.072,
+    "Sistemas y Seguridad de la Información": 0.036
+   },
+   "coauthorships_with": {
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 1,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 2,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Ciencia de Computación y de Datos": {
+   "terms": [
+    "datos",
+    "aprendizaje",
+    "automático",
+    "análisis"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.094,
+    "Ciencias": 0.118,
+    "Civil y Ambiental": 0.055,
+    "Electrónica y Mecatrónica": 0.235,
+    "Facultad de Computación": 0.057,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.009,
+    "Física": 0.013,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.068,
+    "Mecánica y Energía": 0.02,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.135
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Ciencias": {
+   "terms": [
+    "semiconductores",
+    "aplicada",
+    "nanomateriales",
+    "óptica"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.074,
+    "Ciencia de Computación y de Datos": 0.118,
+    "Civil y Ambiental": 0.04,
+    "Electrónica y Mecatrónica": 0.044,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.043,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.049,
+    "Mecánica y Energía": 0.062,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.028,
+    "Sistemas y Seguridad de la Información": 0.03
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 1,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 7,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Civil y Ambiental": {
+   "terms": [
+    "concretos",
+    "ambientales",
+    "bajo",
+    "carbono"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.066,
+    "Ciencia de Computación y de Datos": 0.055,
+    "Ciencias": 0.04,
+    "Electrónica y Mecatrónica": 0.017,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.011,
+    "Física": 0.024,
+    "Humanidades y Artes": 0.005,
+    "Industrial y Gestión": 0.023,
+    "Mecánica y Energía": 0.056,
+    "Negocios Digitales": 0.023,
+    "Sin departamento": 0.01,
+    "Sistemas y Seguridad de la Información": 0.02
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Electrónica y Mecatrónica": {
+   "terms": [
+    "inteligencia artificial",
+    "inteligentes",
+    "aprendizaje",
+    "redes comunicación"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.063,
+    "Ciencia de Computación y de Datos": 0.235,
+    "Ciencias": 0.044,
+    "Civil y Ambiental": 0.017,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.035,
+    "Industrial y Gestión": 0.0,
+    "Mecánica y Energía": 0.047,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.047
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 1,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 1,
+    "Civil y Ambiental": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 1,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 2,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Facultad de Computación": {
+   "terms": [
+    "arquitectura",
+    "software",
+    "servicios"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.0,
+    "Ciencia de Computación y de Datos": 0.057,
+    "Ciencias": 0.0,
+    "Civil y Ambiental": 0.0,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.0,
+    "Mecánica y Energía": 0.0,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.057
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Facultad de Ingeniería": {
+   "terms": [
+    "renovables eficiencia",
+    "energética electrónica",
+    "eficiencia energética"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.0,
+    "Ciencia de Computación y de Datos": 0.0,
+    "Ciencias": 0.0,
+    "Civil y Ambiental": 0.0,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Computación": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.0,
+    "Mecánica y Energía": 0.196,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.0
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 1,
+    "Facultad de Computación": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Facultad de Negocios": {
+   "terms": [
+    "educativos",
+    "corporativas",
+    "consultoría empresarial"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.0,
+    "Ciencia de Computación y de Datos": 0.009,
+    "Ciencias": 0.0,
+    "Civil y Ambiental": 0.011,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.056,
+    "Mecánica y Energía": 0.0,
+    "Negocios Digitales": 0.078,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.0
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Física": {
+   "terms": [
+    "física",
+    "fundamentales",
+    "experimental partículas",
+    "simetría"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.0,
+    "Ciencia de Computación y de Datos": 0.013,
+    "Ciencias": 0.043,
+    "Civil y Ambiental": 0.024,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.0,
+    "Mecánica y Energía": 0.0,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.0
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Humanidades y Artes": {
+   "terms": [
+    "patrimonio",
+    "arte",
+    "antropología",
+    "género"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.022,
+    "Ciencia de Computación y de Datos": 0.0,
+    "Ciencias": 0.0,
+    "Civil y Ambiental": 0.005,
+    "Electrónica y Mecatrónica": 0.035,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Industrial y Gestión": 0.039,
+    "Mecánica y Energía": 0.0,
+    "Negocios Digitales": 0.04,
+    "Sin departamento": 0.022,
+    "Sistemas y Seguridad de la Información": 0.016
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Industrial y Gestión": {
+   "terms": [
+    "información",
+    "operaciones",
+    "gestión",
+    "logística"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.017,
+    "Ciencia de Computación y de Datos": 0.068,
+    "Ciencias": 0.049,
+    "Civil y Ambiental": 0.023,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.056,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.039,
+    "Mecánica y Energía": 0.026,
+    "Negocios Digitales": 0.056,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.04
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Mecánica y Energía": {
+   "terms": [
+    "biomecánica",
+    "energías",
+    "rehabilitación",
+    "estructuras mecánicas"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.095,
+    "Ciencia de Computación y de Datos": 0.02,
+    "Ciencias": 0.062,
+    "Civil y Ambiental": 0.056,
+    "Electrónica y Mecatrónica": 0.047,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.196,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.0,
+    "Industrial y Gestión": 0.026,
+    "Negocios Digitales": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.009
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 2,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 7,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 2,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Negocios Digitales": {
+   "terms": [
+    "negocio",
+    "economía finanzas",
+    "gestión"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.008,
+    "Ciencia de Computación y de Datos": 0.0,
+    "Ciencias": 0.0,
+    "Civil y Ambiental": 0.023,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.078,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.04,
+    "Industrial y Gestión": 0.056,
+    "Mecánica y Energía": 0.0,
+    "Sin departamento": 0.0,
+    "Sistemas y Seguridad de la Información": 0.05
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Sin departamento": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Sin departamento": {
+   "terms": [
+    "conservación dinámica",
+    "biología conservación",
+    "ecología",
+    "ecológicas"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.072,
+    "Ciencia de Computación y de Datos": 0.0,
+    "Ciencias": 0.028,
+    "Civil y Ambiental": 0.01,
+    "Electrónica y Mecatrónica": 0.0,
+    "Facultad de Computación": 0.0,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.022,
+    "Industrial y Gestión": 0.0,
+    "Mecánica y Energía": 0.0,
+    "Negocios Digitales": 0.0,
+    "Sistemas y Seguridad de la Información": 0.0
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sistemas y Seguridad de la Información": 0
+   }
+  },
+  "Sistemas y Seguridad de la Información": {
+   "terms": [
+    "computación",
+    "ciencia",
+    "gestión",
+    "sostenibles inteligencia artificial"
+   ],
+   "similarity": {
+    "Bioingeniería y Química": 0.036,
+    "Ciencia de Computación y de Datos": 0.135,
+    "Ciencias": 0.03,
+    "Civil y Ambiental": 0.02,
+    "Electrónica y Mecatrónica": 0.047,
+    "Facultad de Computación": 0.057,
+    "Facultad de Ingeniería": 0.0,
+    "Facultad de Negocios": 0.0,
+    "Física": 0.0,
+    "Humanidades y Artes": 0.016,
+    "Industrial y Gestión": 0.04,
+    "Mecánica y Energía": 0.009,
+    "Negocios Digitales": 0.05,
+    "Sin departamento": 0.0
+   },
+   "coauthorships_with": {
+    "Bioingeniería y Química": 0,
+    "Ciencia de Computación y de Datos": 0,
+    "Ciencias": 0,
+    "Civil y Ambiental": 0,
+    "Electrónica y Mecatrónica": 0,
+    "Facultad de Computación": 0,
+    "Facultad de Ingeniería": 0,
+    "Facultad de Negocios": 0,
+    "Física": 0,
+    "Humanidades y Artes": 0,
+    "Industrial y Gestión": 0,
+    "Mecánica y Energía": 0,
+    "Negocios Digitales": 0,
+    "Sin departamento": 0
+   }
+  }
+ },
+ "organisation": {
+  "source": "https://cris.utec.edu.pe/es/organisations/ (páginas guardadas)",
+  "collected": "2026-10-25",
+  "units": [
+   {
+    "name": "Universidad de Ingeniería y Tecnología - UTEC",
+    "type": "Universidad",
+    "parent": null,
+    "url": "https://cris.utec.edu.pe/es/organisations/universidad-de-ingenier%C3%ADa-y-tecnolog%C3%ADa-utec/",
+    "leaders": []
+   },
+   {
+    "name": "Facultad de Ingeniería",
+    "type": "Facultad",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/facultad-de-ingenier%C3%ADa/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Bioingeniería e Ingeniería Química",
+    "type": "Departamento",
+    "parent": "Facultad de Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-bioingenier%C3%ADa-e-ingenier%C3%ADa-qu%C3%ADmica/",
+    "leaders": [
+     {
+      "name": "Julio Ernesto Valdivia Silva",
+      "role": "Director Académico"
+     }
+    ]
+   },
+   {
+    "name": "L401 Laboratorio de Ensayos Especiales",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l401-laboratorio-de-ensayos-especiales/",
+    "leaders": []
+   },
+   {
+    "name": "L403 Laboratorio de Procesos a Escala Piloto 1",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l403-laboratorio-de-procesos-a-escala-piloto-1/",
+    "leaders": []
+   },
+   {
+    "name": "L404 Laboratorio de Caracterización y Análisis Instrumental",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l404-laboratorio-de-caracterizaci%C3%B3n-y-an%C3%A1lisis-instrumental/",
+    "leaders": []
+   },
+   {
+    "name": "L405 Laboratorio de Investigación y Desarrollo de Procesos 1",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l405-laboratorio-de-investigaci%C3%B3n-y-desarrollo-de-procesos-1/",
+    "leaders": []
+   },
+   {
+    "name": "L407 Laboratorio de Investigación y Desarrollo de Procesos 2",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l407-laboratorio-de-investigaci%C3%B3n-y-desarrollo-de-procesos-2/",
+    "leaders": []
+   },
+   {
+    "name": "L503 Laboratorio de microfluidos y BioMEMS",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l503-laboratorio-de-microfluidos-y-biomems/",
+    "leaders": []
+   },
+   {
+    "name": "L504 Laboratorio de Ingeniería de Tejidos y Biología Sintética",
+    "type": "Laboratorio",
+    "parent": "Departamento de Bioingeniería e Ingeniería Química",
+    "url": "https://cris.utec.edu.pe/es/organisations/l504-laboratorio-de-ingenier%C3%ADa-de-tejidos-y-biolog%C3%ADa-sint%C3%A9tica/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Ingeniería Civil y Ambiental",
+    "type": "Departamento",
+    "parent": "Facultad de Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-civil-y-ambiental/",
+    "leaders": []
+   },
+   {
+    "name": "L204 Laboratorio de Mecánica de Fluidos",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Civil y Ambiental",
+    "url": "https://cris.utec.edu.pe/es/organisations/l204-laboratorio-de-mec%C3%A1nica-de-fluidos/",
+    "leaders": []
+   },
+   {
+    "name": "L406 Laboratorio de Química Avanzada",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Civil y Ambiental",
+    "url": "https://cris.utec.edu.pe/es/organisations/l406-laboratorio-de-qu%C3%ADmica-avanzada/",
+    "leaders": []
+   },
+   {
+    "name": "L505 Laboratorio de Ecología, Biotecnología, y Microbiología Ambiental",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Civil y Ambiental",
+    "url": "https://cris.utec.edu.pe/es/organisations/l505-laboratorio-de-ecolog%C3%ADa-biotecnolog%C3%ADa-y-microbiolog%C3%ADa-ambien/",
+    "leaders": []
+   },
+   {
+    "name": "L508 Laboratorio de Mecánica de Suelo",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Civil y Ambiental",
+    "url": "https://cris.utec.edu.pe/es/organisations/l508-laboratorio-de-mec%C3%A1nica-de-suelo/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "type": "Departamento",
+    "parent": "Facultad de Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-electr%C3%B3nica-y-mecatr%C3%B3nica-2/",
+    "leaders": [
+     {
+      "name": "Emir Augusto Vela Saavedra",
+      "role": "Director Académico"
+     }
+    ]
+   },
+   {
+    "name": "L201 Laboratorio de Mecatrónica y Robótica",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "url": "https://cris.utec.edu.pe/es/organisations/l201-laboratorio-de-mecatr%C3%B3nica-y-rob%C3%B3tica/",
+    "leaders": []
+   },
+   {
+    "name": "L206 Laboratorio de Sistemas Hidráulicos y Neumáticos",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "url": "https://cris.utec.edu.pe/es/organisations/l206-laboratorio-de-sistemas-hidr%C3%A1ulicos-y-neum%C3%A1ticos/",
+    "leaders": []
+   },
+   {
+    "name": "L409 Laboratorio de Electrónica y Telecomunicaciones",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "url": "https://cris.utec.edu.pe/es/organisations/l409-laboratorio-de-electr%C3%B3nica-y-telecomunicaciones/",
+    "leaders": []
+   },
+   {
+    "name": "L413 Laboratorio de Sistemas de Control",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "url": "https://cris.utec.edu.pe/es/organisations/l413-laboratorio-de-sistemas-de-control/",
+    "leaders": []
+   },
+   {
+    "name": "L414 Laboratorio de Sistemas Embebidos",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "url": "https://cris.utec.edu.pe/es/organisations/l414-laboratorio-de-sistemas-embebidos/",
+    "leaders": []
+   },
+   {
+    "name": "L415 Laboratorio de Automatización",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Electrónica y Mecatrónica",
+    "url": "https://cris.utec.edu.pe/es/organisations/l415-laboratorio-de-automatizaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+    "type": "Departamento",
+    "parent": "Facultad de Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-industrial-y-gesti%C3%B3n-de-la-ingenier%C3%ADa/",
+    "leaders": []
+   },
+   {
+    "name": "L410/L411 Laboratorio de Prototipado y Fabricación Digital",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/l410l411-laboratorio-de-prototipado-y-fabricaci%C3%B3n-digital/",
+    "leaders": []
+   },
+   {
+    "name": "L506 Colaboratorio - Diseño de productos",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Industrial y Gestión de la Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/l506-colaboratorio-dise%C3%B1o-de-productos/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Ingeniería Mecánica y de la Energía",
+    "type": "Departamento",
+    "parent": "Facultad de Ingeniería",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ingenier%C3%ADa-mec%C3%A1nica-y-de-la-energ%C3%ADa-2/",
+    "leaders": []
+   },
+   {
+    "name": "L022 Laboratorio de perforación",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l022-laboratorio-de-perforaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "L202 Laboratorio de Energía Renovable y Smart Grid",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l202-laboratorio-de-energ%C3%ADa-renovable-y-smart-grid/",
+    "leaders": []
+   },
+   {
+    "name": "L203 Proyectos de Energía y Mecánica",
+    "type": "Unidad",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l203-proyectos-de-energ%C3%ADa-y-mec%C3%A1nica/",
+    "leaders": []
+   },
+   {
+    "name": "L205 Laboratorio de Sistemas Térmicos e Hidráulicos",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l205-laboratorio-de-sistemas-t%C3%A9rmicos-e-hidr%C3%A1ulicos/",
+    "leaders": []
+   },
+   {
+    "name": "L402 Laboratorio de Tecnología de los materiales",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l402-laboratorio-de-tecnolog%C3%ADa-de-los-materiales/",
+    "leaders": []
+   },
+   {
+    "name": "L408 Laboratorio de Electricidad y Automatización",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l408-laboratorio-de-electricidad-y-automatizaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "L412 Laboratorio de Hidrocarburos y Simulación",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l412-laboratorio-de-hidrocarburos-y-simulaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Utec Garage",
+    "type": "Unidad",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/utec-garage/",
+    "leaders": []
+   },
+   {
+    "name": "L101 Laboratorio de Manufactura y Metrología",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ingeniería Mecánica y de la Energía",
+    "url": "https://cris.utec.edu.pe/es/organisations/l101-laboratorio-de-manufactura-y-metrolog%C3%ADa/",
+    "leaders": []
+   },
+   {
+    "name": "Departamentos Académicos Transversales",
+    "type": "Agrupación",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamentos-acad%C3%A9micos-transversales/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Ciencias",
+    "type": "Departamento",
+    "parent": "Departamentos Académicos Transversales",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ciencias/",
+    "leaders": [
+     {
+      "name": "Daniel Vicente Horna Muñoz",
+      "role": "Director"
+     }
+    ]
+   },
+   {
+    "name": "L501/L502 Laboratorio Multiuso de Ciencias",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ciencias",
+    "url": "https://cris.utec.edu.pe/es/organisations/l501l502-laboratorio-multiuso-de-ciencias/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Física",
+    "type": "Departamento",
+    "parent": "Departamentos Académicos Transversales",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-f%C3%ADsica/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Humanidades, Artes y Ciencias Sociales",
+    "type": "Departamento",
+    "parent": "Departamentos Académicos Transversales",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-humanidades-artes-y-ciencias-sociales/",
+    "leaders": [
+     {
+      "name": "Giancarlo Marcone Flores",
+      "role": "Director Académico"
+     }
+    ]
+   },
+   {
+    "name": "Dirección de Calidad y Transformación Educativa - DICTE",
+    "type": "Dirección",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/direcci%C3%B3n-de-calidad-y-transformaci%C3%B3n-educativa-dicte/",
+    "leaders": []
+   },
+   {
+    "name": "Centro de Excelencia en Enseñanza y Aprendizaje - CE2A",
+    "type": "Centro",
+    "parent": "Dirección de Calidad y Transformación Educativa - DICTE",
+    "url": "https://cris.utec.edu.pe/es/organisations/centro-de-excelencia-en-ense%C3%B1anza-y-aprendizaje-ce2a/",
+    "leaders": []
+   },
+   {
+    "name": "Dirección General de Innovación e Investigación",
+    "type": "Dirección",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/direcci%C3%B3n-general-de-innovaci%C3%B3n-e-investigaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Dirección de Investigación",
+    "type": "Dirección",
+    "parent": "Dirección General de Innovación e Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/direcci%C3%B3n-de-investigaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Centro de Investigación del Cemento y Concreto - CIC",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/centro-de-investigaci%C3%B3n-del-cemento-y-concreto-cic/",
+    "leaders": []
+   },
+   {
+    "name": "Centro de Investigación en Bioingeniería - BIO",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/centro-de-investigaci%C3%B3n-en-bioingenier%C3%ADa-bio/",
+    "leaders": [
+     {
+      "name": "Julio Ernesto Valdivia Silva",
+      "role": "Director"
+     }
+    ]
+   },
+   {
+    "name": "Centro de Investigación y Conservación del Patrimonio",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/centro-de-investigaci%C3%B3n-y-conservaci%C3%B3n-del-patrimonio/",
+    "leaders": []
+   },
+   {
+    "name": "Centro de Investigación y Tecnología del Agua - CITA",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/httpscitautecedupe/",
+    "leaders": []
+   },
+   {
+    "name": "Grupos de Investigación",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupos-de-investigaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-algoritmos-combinatoria-y-teor%C3%ADa-de-la-/",
+    "leaders": [
+     {
+      "name": "Juan Gabriel Gutierrez Alva",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-anal%C3%ADtica-de-datos-y-ciencias-de-decisi/",
+    "leaders": [
+     {
+      "name": "Fabien Cornillier",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-dise%C3%B1o-de-productos-con-simulaci%C3%B3n-comp/",
+    "leaders": [
+     {
+      "name": "José Luis Mantari Laureano",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de investigación en energía y minas",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-energ%C3%ADa-y-minas/",
+    "leaders": []
+   },
+   {
+    "name": "Grupo de Investigación en Física Fundamental (GIFF)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-f%C3%ADsica-fundamental-giff/",
+    "leaders": [
+     {
+      "name": "Diego Alejandro Milanés Carreño",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-infraestructura-de-concreto-resiliente-/",
+    "leaders": [
+     {
+      "name": "Luis Bedriñana Mera",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Innovación Educativa y Competencia Docente (INECOD)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-innovaci%C3%B3n-educativa-y-competencia-doce/",
+    "leaders": [
+     {
+      "name": "Silvia Lavandera Ponce",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Inteligencia Artificial (GINIA)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-inteligencia-artificial-ginia/",
+    "leaders": [
+     {
+      "name": "Cristian Lopez Del Alamo",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-rob%C3%B3tica-inteligencia-artificial-y-cont/",
+    "leaders": [
+     {
+      "name": "Christian Flores Vega",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Seguridad Hídrica y Cambio Climático (SeHClim)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-seguridad-h%C3%ADdrica-y-cambio-clim%C3%A1tico-se/",
+    "leaders": [
+     {
+      "name": "Pedro Rau Lavado",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Grupo de Investigación en Sistemas Embebidos, Reconfigurables, Monitoreo Inteligente, y Comunicaciones (SERMIC)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/grupo-de-investigaci%C3%B3n-en-sistemas-embebidos-reconfigurables-moni/",
+    "leaders": [
+     {
+      "name": "Jimmy Tarrillo Olano",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI",
+    "type": "Instituto",
+    "parent": "Dirección de Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/instituto-de-investigaci%C3%B3n-para-la-sostenibilidad-de-la-amazon%C3%ADa-/",
+    "leaders": []
+   },
+   {
+    "name": "UTEC Ventures",
+    "type": "Unidad",
+    "parent": "Dirección General de Innovación e Investigación",
+    "url": "https://cris.utec.edu.pe/es/organisations/utec-ventures/",
+    "leaders": []
+   },
+   {
+    "name": "Escuela de Posgrado",
+    "type": "Unidad de enseñanza",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/escuela-de-posgrado-3/",
+    "leaders": []
+   },
+   {
+    "name": "Educación Ejecutiva",
+    "type": "Unidad",
+    "parent": "Escuela de Posgrado",
+    "url": "https://cris.utec.edu.pe/es/organisations/educaci%C3%B3n-ejecutiva/",
+    "leaders": []
+   },
+   {
+    "name": "Programas de Doctorado",
+    "type": "Unidad",
+    "parent": "Escuela de Posgrado",
+    "url": "https://cris.utec.edu.pe/es/organisations/programas-de-doctorado/",
+    "leaders": []
+   },
+   {
+    "name": "Programas de Maestría",
+    "type": "Unidad",
+    "parent": "Escuela de Posgrado",
+    "url": "https://cris.utec.edu.pe/es/organisations/programas-de-maestr%C3%ADa/",
+    "leaders": []
+   },
+   {
+    "name": "Facultad de Computación",
+    "type": "Facultad",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/facultad-de-computaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Ciencia de Computación y de Datos",
+    "type": "Departamento",
+    "parent": "Facultad de Computación",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-ciencia-de-computaci%C3%B3n-y-de-datos/",
+    "leaders": []
+   },
+   {
+    "name": "L507 Laboratorio de Computación Avanzada",
+    "type": "Laboratorio",
+    "parent": "Departamento de Ciencia de Computación y de Datos",
+    "url": "https://cris.utec.edu.pe/es/organisations/l507-laboratorio-de-computaci%C3%B3n-avanzada/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Sistemas y Seguridad de la Información",
+    "type": "Departamento",
+    "parent": "Facultad de Computación",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-sistemas-y-seguridad-de-la-informaci%C3%B3n/",
+    "leaders": []
+   },
+   {
+    "name": "Facultad de Negocios",
+    "type": "Facultad",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/facultad-de-negocios/",
+    "leaders": []
+   },
+   {
+    "name": "Departamento de Negocios Digitales",
+    "type": "Departamento",
+    "parent": "Facultad de Negocios",
+    "url": "https://cris.utec.edu.pe/es/organisations/departamento-de-negocios-digitales/",
+    "leaders": []
+   },
+   {
+    "name": "Global Academy",
+    "type": "Unidad",
+    "parent": "Universidad de Ingeniería y Tecnología - UTEC",
+    "url": "https://cris.utec.edu.pe/es/organisations/global-academy/",
+    "leaders": []
+   },
+   {
+    "name": "Grupo de Investigación en Computación Científica (SciCompUTEC)",
+    "type": "Grupo de Investigación",
+    "parent": "Grupos de Investigación",
+    "leaders": [
+     {
+      "name": "Jose Fiestas Iquira",
+      "role": "Coordinador"
+     }
+    ]
+   },
+   {
+    "name": "Centro de Investigación en Sostenibilidad Computacional - CompSust",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "leaders": []
+   },
+   {
+    "name": "Centro de Impacto y Responsabilidad Social - CIRSO",
+    "type": "Centro",
+    "parent": "Dirección de Investigación",
+    "leaders": [
+     {
+      "name": "Giancarlo Marcone Flores",
+      "role": "Director"
+     }
+    ]
+   }
+  ],
+  "faculty_of_department": {
+   "Bioingeniería y Química": "Facultad de Ingeniería",
+   "Civil y Ambiental": "Facultad de Ingeniería",
+   "Electrónica y Mecatrónica": "Facultad de Ingeniería",
+   "Industrial y Gestión": "Facultad de Ingeniería",
+   "Mecánica y Energía": "Facultad de Ingeniería",
+   "Ciencias": "Departamentos Transversales",
+   "Física": "Departamentos Transversales",
+   "Humanidades y Artes": "Departamentos Transversales",
+   "Ciencia de Computación y de Datos": "Facultad de Computación",
+   "Sistemas y Seguridad de la Información": "Facultad de Computación",
+   "Negocios Digitales": "Facultad de Negocios",
+   "Facultad de Ingeniería": "Facultad de Ingeniería",
+   "Facultad de Computación": "Facultad de Computación",
+   "Facultad de Negocios": "Facultad de Negocios",
+   "Departamentos Académicos Transversales": "Departamentos Transversales"
+  }
+ },
+ "affinity_validation": {
+  "auc_affinity": 0.818,
+  "auc_topic_only": 0.679,
+  "positives": 17,
+  "pairs": 5356,
+  "note": "Coautorías reales como positivos; Adamic-Adar sin la capa de coautoría."
+ },
+ "network_stats": {
+  "coauthor": {
+   "nodes": 104,
+   "edges": 17,
+   "density": 0.0032,
+   "components": 89,
+   "isolates": 85,
+   "largest_component": 8,
+   "diameter_largest": 3,
+   "avg_path_largest": 1.893,
+   "avg_clustering": 0.0324
+  },
+  "extended": {
+   "nodes": 104,
+   "edges": 193,
+   "density": 0.036,
+   "components": 48,
+   "isolates": 40,
+   "largest_component": 33,
+   "diameter_largest": 6,
+   "avg_path_largest": 2.5,
+   "avg_clustering": 0.4962
+  }
+ },
+ "year_note": "La columna year del CSV no trae años válidos: no hay análisis temporal."
+}

@@ -1,0 +1,10 @@
+flask>=3.0
+networkx>=3.2
+scikit-learn>=1.3
+numpy>=1.26
+scipy>=1.11
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+# opcional, solo si el portal bloquea requests (scrape_cris.py --browser):
+# playwright>=1.45   y luego:  playwright install chromium

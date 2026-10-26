@@ -1,0 +1,1429 @@
+{
+ "tasks": [
+  {
+   "id": "T1",
+   "tab": "Colaboradores",
+   "headline": "Ruth Canahuire lidera: 5 coautores UTEC. Solo 19 de 104 publican con un colega.",
+   "question": "¿Quiénes son los colaboradores más prolíficos?",
+   "metric": "Grado (n.º de coautores UTEC) y grado ponderado (publicaciones compartidas)",
+   "finding": "Ruth Canahuire Cabello es quien más colabora dentro de UTEC: 5 coautores y 9 publicaciones compartidas. Le sigue José Luis Mantari Laureano (4 y 8).",
+   "evidence": [
+    "Solo 19 de 104 investigadores (18 %) tienen al menos una coautoría con un colega de la lista.",
+    "2 de los 5 que más publican no tienen ningún coautor UTEC: Diego Milanés (532), Pedro Rau (35)."
+   ],
+   "action": "Publicar mucho no implica colaborar adentro. Los investigadores muy productivos sin coautores UTEC son la mayor oportunidad para crear equipos internos.",
+   "ranking": [
+    {
+     "id": 13,
+     "value": 5,
+     "extra": 9
+    },
+    {
+     "id": 47,
+     "value": 4,
+     "extra": 8
+    },
+    {
+     "id": 54,
+     "value": 3,
+     "extra": 8
+    },
+    {
+     "id": 27,
+     "value": 3,
+     "extra": 3
+    },
+    {
+     "id": 85,
+     "value": 2,
+     "extra": 3
+    }
+   ]
+  },
+  {
+   "id": "T2",
+   "tab": "Puentes",
+   "headline": "Ruth Canahuire y José Mantari sostienen los puentes; 3 de los 5 principales tienen un cargo.",
+   "question": "¿Quiénes actúan como puentes entre departamentos y grupos?",
+   "metric": "Intermediación de Brandes (distancia = 1 / peso) en la red de coautoría + grupos; coeficiente de participación",
+   "finding": "0,027).",
+   "evidence": [
+    "La red tiene caminos alternativos: retirar a Ruth Canahuire no la divide, pero alarga las rutas.",
+    "Ruth Canahuire y José Mantari son puente también en la red de coautoría pura: conectan departamentos con publicaciones, no solo con pertenencia a grupos.",
+    "3 de los 5 principales puentes ocupan un cargo según la estructura de CRIS: Ruth Canahuire (directora general académica de UTEC); José Mantari (coordinador de MSP); Luis Bedriñana (coordinador de ReSusCon). Ser puente va de la mano con coordinar.",
+    "Con solo coautorías, 5 de 104 tendrían intermediación mayor que cero; por eso se mide sobre la red ampliada."
+   ],
+   "action": "Los puentes son los mejores intermediarios para presentar a colegas de otros departamentos. Depender de pocos puentes es un riesgo: conviene que surjan otros.",
+   "ranking": [
+    {
+     "id": 13,
+     "value": 0.04582,
+     "extra": 0.6688
+    },
+    {
+     "id": 47,
+     "value": 0.02703,
+     "extra": 0.2476
+    },
+    {
+     "id": 15,
+     "value": 0.02018,
+     "extra": 0.5796
+    },
+    {
+     "id": 7,
+     "value": 0.01694,
+     "extra": 0.7778
+    },
+    {
+     "id": 2,
+     "value": 0.01142,
+     "extra": 0.721
+    }
+   ]
+  },
+  {
+   "id": "T3",
+   "tab": "Interdisciplina",
+   "headline": "Los grupos ya mezclan departamentos, pero solo 9 de 185 pares de grupo han publicado juntos.",
+   "question": "¿Los departamentos colaboran entre sí o trabajan en silos?",
+   "metric": "Proporción de coautorías entre departamentos; grupos con miembros de varios departamentos; pares de grupo que publican juntos",
+   "finding": "La estructura ya es interdisciplinaria: 9 de 18 grupos de investigación reúnen a varios departamentos y 9 de 17 coautorías cruzan departamentos (4 incluso cruzan facultades). Pero compartir grupo casi no se traduce en publicar: solo 9 de 185 pares del mismo grupo tienen una coautoría (5 %).",
+   "evidence": [
+    "6 departamentos con 3 o más investigadores no registran ninguna coautoría UTEC: Ciencia de Computación y de Datos, Civil y Ambiental, Humanidades y Artes, Industrial y Gestión, Sin departamento, Sistemas y Seguridad de la Información.",
+    "Línea cian: coautoría entre departamentos. Punteado: comparten grupo pero no han publicado juntos."
+   ],
+   "action": "El potencial está dentro de los propios grupos: los pares punteados ya se conocen y comparten agenda; convertir esa pertenencia en una publicación es el paso más corto.",
+   "ranking": []
+  },
+  {
+   "id": "T4",
+   "tab": "Predicción",
+   "headline": "40 parejas afines aún no publican juntas. La más clara: Rafael Vera y Eunice Villicaña.",
+   "question": "¿Qué nuevas colaboraciones son más probables?",
+   "metric": "Predicción de enlaces: 0,5 similitud de áreas (NLP, TF-IDF) + 0,3 Adamic-Adar + 0,2 mismo grupo",
+   "finding": "40 pares con intereses afines aún no publican juntos; el más claro es Rafael Vera Pomalaza y Eunice Villicaña Ortiz, por renovables, energías.",
+   "evidence": [
+    "18 de las 40 sugerencias cruzan departamentos.",
+    "Validación: usando las 17 coautorías reales como positivos, el puntaje obtiene AUC 0,82 (solo texto: 0,68). Es mejor que el azar (0,5), así que las sugerencias tienen base."
+   ],
+   "action": "Cada investigador tiene en su ficha sus 3 colegas más afines y el porqué (grupo, temas en común).",
+   "ranking": [
+    {
+     "pair": [
+      86,
+      87
+     ],
+     "value": 0.7972
+    },
+    {
+     "pair": [
+      3,
+      44
+     ],
+     "value": 0.7423
+    },
+    {
+     "pair": [
+      43,
+      85
+     ],
+     "value": 0.7149
+    },
+    {
+     "pair": [
+      62,
+      87
+     ],
+     "value": 0.6994
+    },
+    {
+     "pair": [
+      23,
+      83
+     ],
+     "value": 0.6556
+    },
+    {
+     "pair": [
+      6,
+      43
+     ],
+     "value": 0.6194
+    },
+    {
+     "pair": [
+      30,
+      74
+     ],
+     "value": 0.6087
+    },
+    {
+     "pair": [
+      52,
+      81
+     ],
+     "value": 0.5909
+    },
+    {
+     "pair": [
+      7,
+      10
+     ],
+     "value": 0.5447
+    },
+    {
+     "pair": [
+      7,
+      15
+     ],
+     "value": 0.5348
+    }
+   ]
+  }
+ ],
+ "people": {
+  "0": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Jose Larco Martinelli (comparten grupo; temas: gestión, comportamiento)."
+   ]
+  },
+  "1": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Giancarlo Marcone Flores (temas: antropología, patrimonio)."
+   ]
+  },
+  "2": {
+   "tags": [
+    "Puente",
+    "Conector interdepartamental"
+   ],
+   "lines": [
+    "Publica con 2 colega(s) UTEC, 2 de otros departamentos.",
+    "Es puesto 5 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Luis Bedriñana Mera (temas: mecánicas, estructuras, construcción)."
+   ]
+  },
+  "3": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Jose Larco Martinelli (comparten grupo; temas: logísticos alimentarios, tradicional, canal)."
+   ]
+  },
+  "4": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Colega más afín sin coautoría: Oscar Ramos Ponce (comparten grupo; temas: inteligentes)."
+   ]
+  },
+  "5": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Rafael Vera Pomalaza (comparten grupo; temas: energías, industriales)."
+   ]
+  },
+  "6": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Wangdo Kim (comparten grupo; temas: biomecánica)."
+   ]
+  },
+  "7": {
+   "tags": [
+    "Puente"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Es puesto 4 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Carlos Alberto Benedetty Torres (comparten grupo; temas: concretos, estructuras, materiales)."
+   ]
+  },
+  "9": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Yamilet Rosario Serrano Llerena (comparten grupo; temas: software)."
+   ]
+  },
+  "10": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Luis Bedriñana Mera (comparten grupo; temas: concretos, estructuras, materiales)."
+   ]
+  },
+  "11": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "12": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Colega más afín sin coautoría: Elvis Jara Alegria (comparten grupo; temas: inteligencia artificial)."
+   ]
+  },
+  "13": {
+   "tags": [
+    "Núcleo de colaboración",
+    "Puente",
+    "Conector interdepartamental"
+   ],
+   "lines": [
+    "Publica con 5 colega(s) UTEC, 4 de otros departamentos.",
+    "Es puesto 1 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Xyoby Chavez Pacheco (temas: modelado)."
+   ]
+  },
+  "14": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Harry Gustavo Saavedra Espinoza (comparten grupo; temas: biológicos, automático, aprendizaje)."
+   ]
+  },
+  "15": {
+   "tags": [
+    "Puente"
+   ],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, 1 de otros departamentos.",
+    "Es puesto 3 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Luis Bedriñana Mera (comparten grupo; temas: estructural, materiales, daño)."
+   ]
+  },
+  "16": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Jorge Tipe Villanueva (temas: matemática aplicada)."
+   ]
+  },
+  "17": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Claudia Antonini Bova (comparten grupo; temas: logística, investigación operaciones)."
+   ]
+  },
+  "18": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: José Andrés De Leo Martínez (temas: arte)."
+   ]
+  },
+  "19": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Jose Larco Martinelli (temas: operaciones, gestión)."
+   ]
+  },
+  "20": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Antuané De La Flor Basterrechea (temas: arte)."
+   ]
+  },
+  "21": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "23": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Julio Ernesto Valdivia Silva (comparten grupo; temas: biología, sintética)."
+   ]
+  },
+  "24": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Daniel Vicente Horna Muñoz (temas: computacional, alto rendimiento, modelos)."
+   ]
+  },
+  "25": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Andrés Julián Arias Moreno (comparten grupo; temas: biomateriales)."
+   ]
+  },
+  "26": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "27": {
+   "tags": [
+    "Núcleo de colaboración"
+   ],
+   "lines": [
+    "Publica con 3 colega(s) UTEC, 1 de otros departamentos.",
+    "Es puesto 7 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Elvis Jara Alegria (comparten grupo; temas: automático, aprendizaje)."
+   ]
+  },
+  "28": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "29": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "30": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Yamilet Rosario Serrano Llerena (comparten grupo; temas: computación, datos, ciencia)."
+   ]
+  },
+  "31": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "33": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "34": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "36": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Christian Flores Vega (temas: cerebro, interfaz)."
+   ]
+  },
+  "37": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Jose Fiestas Iquira (temas: computacional, alto rendimiento, modelos)."
+   ]
+  },
+  "38": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "39": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Es puesto 9 de 104 como puente entre grupos."
+   ]
+  },
+  "40": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Es puesto 6 de 104 como puente entre grupos."
+   ]
+  },
+  "41": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Es puesto 14 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Jhedmar Jhonatan Callupe Luna (comparten grupo; temas: inteligencia artificial)."
+   ]
+  },
+  "42": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: José Manuel Aguilar Alfaro (temas: gestión)."
+   ]
+  },
+  "43": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Emir Augusto Vela Saavedra (comparten grupo; temas: biomecánica, rehabilitación)."
+   ]
+  },
+  "44": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Claudia Antonini Bova (comparten grupo; temas: logísticos alimentarios, tradicional, canal)."
+   ]
+  },
+  "45": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Aurea Rossy Soriano Vargas (temas: aprendizaje, datos, profundo)."
+   ]
+  },
+  "46": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Enrique Stiglich Labarthe (temas: finanzas)."
+   ]
+  },
+  "47": {
+   "tags": [
+    "Núcleo de colaboración",
+    "Puente",
+    "Conector interdepartamental"
+   ],
+   "lines": [
+    "Publica con 4 colega(s) UTEC, 4 de otros departamentos.",
+    "Es puesto 2 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Andrés Julián Arias Moreno (temas: elementos finitos, biomecánica, estructuras)."
+   ]
+  },
+  "48": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Grace Alexandrino Ocaña (temas: antropología, patrimonio)."
+   ]
+  },
+  "49": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Katia Zegarra Sierra (temas: física)."
+   ]
+  },
+  "50": {
+   "tags": [
+    "Alta producción, sin red interna",
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Oscar Ramos Ponce (temas: aprendizaje, visión computacional, automático)."
+   ]
+  },
+  "52": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Jorge Tipe Villanueva (comparten grupo; temas: discretas, teoría grafos, matemática)."
+   ]
+  },
+  "54": {
+   "tags": [
+    "Núcleo de colaboración"
+   ],
+   "lines": [
+    "Publica con 3 colega(s) UTEC, todos de su departamento.",
+    "Es puesto 8 de 104 como puente entre grupos."
+   ]
+  },
+  "55": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: José Manuel Aguilar Alfaro (temas: gestión)."
+   ]
+  },
+  "56": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "57": {
+   "tags": [
+    "Alta producción, sin red interna",
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Elena Flores Barreda (temas: compuestos, residuos, biomateriales)."
+   ]
+  },
+  "58": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "59": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "60": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "61": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Colega más afín sin coautoría: Elvis Jara Alegria (comparten grupo; temas: aprendizaje, automático)."
+   ]
+  },
+  "62": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, 1 de otros departamentos.",
+    "Colega más afín sin coautoría: Eunice Villicaña Ortiz (comparten grupo; temas: energías, eficiencia energética, renovables)."
+   ]
+  },
+  "63": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Ursula Rodriguez Zuñiga (temas: bioquímica, enzimas)."
+   ]
+  },
+  "64": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "65": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Germain García Zanabria (temas: datos, análisis, aplicada)."
+   ]
+  },
+  "66": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Juan Carlos Rodríguez Reyes (temas: nanomateriales)."
+   ]
+  },
+  "67": {
+   "tags": [
+    "Alta producción, sin red interna"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Es puesto 11 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Alejandro Rios Cuadros (temas: nanomateriales)."
+   ]
+  },
+  "68": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Colega más afín sin coautoría: Monica C. Santa-Maria (temas: ambientales)."
+   ]
+  },
+  "69": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Paul Cardenas Lizana (comparten grupo; temas: biológicos, automático, aprendizaje)."
+   ]
+  },
+  "70": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Cristian Lopez Del Alamo (temas: minería datos)."
+   ]
+  },
+  "71": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Yamilet Rosario Serrano Llerena (temas: ciencia)."
+   ]
+  },
+  "72": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Ursula Rodriguez Zuñiga (temas: ambientales)."
+   ]
+  },
+  "74": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Es puesto 12 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Germain García Zanabria (comparten grupo; temas: computación, datos, ciencia)."
+   ]
+  },
+  "76": {
+   "tags": [
+    "Alta producción, sin red interna",
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Cristian Lopez Del Alamo (temas: aprendizaje, datos, profundo)."
+   ]
+  },
+  "77": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Milagros Lunga Calderón (temas: finanzas)."
+   ]
+  },
+  "78": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Fabien Cornillier (temas: planificación, transporte)."
+   ]
+  },
+  "79": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, todos de su departamento.",
+    "Colega más afín sin coautoría: Jose Renom Andara (temas: ssimulación, análisis)."
+   ]
+  },
+  "80": {
+   "tags": [],
+   "lines": [
+    "Publica con 2 colega(s) UTEC, todos de su departamento.",
+    "Es puesto 13 de 104 como puente entre grupos."
+   ]
+  },
+  "81": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Angel Napa Bernuy (comparten grupo; temas: discretas, teoría grafos, matemática)."
+   ]
+  },
+  "83": {
+   "tags": [
+    "Conector interdepartamental"
+   ],
+   "lines": [
+    "Publica con 2 colega(s) UTEC, 2 de otros departamentos.",
+    "Colega más afín sin coautoría: Alberto Donayre Torres (comparten grupo; temas: biología, sintética)."
+   ]
+  },
+  "84": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Luis Bedriñana Mera (comparten grupo; temas: concretos, bajo)."
+   ]
+  },
+  "85": {
+   "tags": [
+    "Conector interdepartamental"
+   ],
+   "lines": [
+    "Publica con 2 colega(s) UTEC, 2 de otros departamentos.",
+    "Colega más afín sin coautoría: Wangdo Kim (comparten grupo; temas: biomecánica, rehabilitación)."
+   ]
+  },
+  "86": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Eunice Villicaña Ortiz (comparten grupo; temas: renovables, energías)."
+   ]
+  },
+  "87": {
+   "tags": [],
+   "lines": [
+    "Publica con 1 colega(s) UTEC, 1 de otros departamentos.",
+    "Es puesto 10 de 104 como puente entre grupos.",
+    "Colega más afín sin coautoría: Rafael Vera Pomalaza (comparten grupo; temas: renovables, energías)."
+   ]
+  },
+  "88": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Juan Carlos Rodríguez Reyes (temas: conservación)."
+   ]
+  },
+  "90": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista.",
+    "Colega más afín sin coautoría: Alejandro Rios Cuadros (temas: semiconductores)."
+   ]
+  },
+  "91": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "92": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "93": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "94": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "95": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "96": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "97": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "98": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "99": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "100": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "101": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "102": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "103": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "104": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "105": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "106": {
+   "tags": [],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "107": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "108": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "109": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "110": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "111": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "112": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  },
+  "113": {
+   "tags": [
+    "Por integrar"
+   ],
+   "lines": [
+    "Aún no registra coautorías con otros investigadores de la lista."
+   ]
+  }
+ },
+ "departments": {
+  "Bioingeniería y Química": {
+   "members": 13,
+   "terms": [
+    "biomateriales",
+    "biología",
+    "molecular",
+    "producción"
+   ],
+   "closest": [
+    "Mecánica y Energía",
+    "Ciencia de Computación y de Datos",
+    "Ciencias"
+   ],
+   "gap": "Ciencia de Computación y de Datos",
+   "headlines": {
+    "T1": "Julio Valdivia es su colaborador más activo (2 coautores). Juan Rodríguez publica mucho (28) pero sin coautores UTEC.",
+    "T2": "Juan Rodríguez es su principal puente. Ya publican con Electrónica y Mecatrónica, Mecánica y Energía.",
+    "T3": "Por temas, lo más cercano es Mecánica y Energía; con Ciencia de Computación y de Datos también son afines y no tienen ninguna coautoría.",
+    "T4": "6 colaboraciones probables involucran al departamento; la más clara: Alberto Donayre y Julio Valdivia."
+   },
+   "lonely": [
+    67,
+    57
+   ],
+   "affinity": [
+    5,
+    6,
+    11,
+    12,
+    16,
+    20
+   ]
+  },
+  "Ciencia de Computación y de Datos": {
+   "members": 14,
+   "terms": [
+    "datos",
+    "aprendizaje",
+    "automático",
+    "análisis"
+   ],
+   "closest": [
+    "Electrónica y Mecatrónica",
+    "Sistemas y Seguridad de la Información",
+    "Ciencias"
+   ],
+   "gap": "Electrónica y Mecatrónica",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC. Aurea Soriano publica mucho (23) pero sin coautores UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Electrónica y Mecatrónica, y aún no tienen ninguna coautoría.",
+    "T4": "12 colaboraciones probables involucran al departamento; la más clara: Germain García y Yamilet Serrano."
+   },
+   "lonely": [
+    76,
+    45,
+    50
+   ],
+   "affinity": [
+    7,
+    8,
+    15,
+    22,
+    24,
+    25,
+    29,
+    30
+   ]
+  },
+  "Ciencias": {
+   "members": 12,
+   "terms": [
+    "semiconductores",
+    "aplicada",
+    "nanomateriales",
+    "óptica"
+   ],
+   "closest": [
+    "Ciencia de Computación y de Datos",
+    "Bioingeniería y Química",
+    "Mecánica y Energía"
+   ],
+   "gap": "Ciencia de Computación y de Datos",
+   "headlines": {
+    "T1": "José Mantari es su colaborador más activo (4 coautores). José Gálvez publica mucho (11) pero sin coautores UTEC.",
+    "T2": "José Mantari es su principal puente. Ya publican con Electrónica y Mecatrónica, Mecánica y Energía.",
+    "T3": "Por temas, lo más cercano es Ciencia de Computación y de Datos, y aún no tienen ninguna coautoría.",
+    "T4": "1 colaboraciones probables involucran al departamento; la más clara: Xyoby Chavez y Jorge Tipe."
+   },
+   "lonely": [
+    28,
+    71
+   ],
+   "affinity": [
+    36
+   ]
+  },
+  "Civil y Ambiental": {
+   "members": 11,
+   "terms": [
+    "concretos",
+    "ambientales",
+    "bajo",
+    "carbono"
+   ],
+   "closest": [
+    "Bioingeniería y Química",
+    "Mecánica y Energía",
+    "Ciencia de Computación y de Datos"
+   ],
+   "gap": "Bioingeniería y Química",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC. Pedro Rau publica mucho (35) pero sin coautores UTEC.",
+    "T2": "Luis Bedriñana es su principal puente. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Bioingeniería y Química, y aún no tienen ninguna coautoría.",
+    "T4": "4 colaboraciones probables involucran al departamento; la más clara: Luis Bedriñana y Carlos Benedetty."
+   },
+   "lonely": [
+    64,
+    37,
+    10
+   ],
+   "affinity": [
+    9,
+    10,
+    24,
+    38
+   ]
+  },
+  "Electrónica y Mecatrónica": {
+   "members": 12,
+   "terms": [
+    "inteligencia artificial",
+    "inteligentes",
+    "aprendizaje",
+    "redes comunicación"
+   ],
+   "closest": [
+    "Ciencia de Computación y de Datos",
+    "Bioingeniería y Química",
+    "Mecánica y Energía"
+   ],
+   "gap": "Ciencia de Computación y de Datos",
+   "headlines": {
+    "T1": "Ruth Canahuire es su colaborador más activo (5 coautores).",
+    "T2": "Ruth Canahuire es su principal puente. Ya publican con Bioingeniería y Química, Ciencias, Facultad de Ingeniería, Mecánica y Energía.",
+    "T3": "Por temas, lo más cercano es Ciencia de Computación y de Datos, y aún no tienen ninguna coautoría.",
+    "T4": "11 colaboraciones probables involucran al departamento; la más clara: Jhedmar Callupe y Elvis Jara."
+   },
+   "lonely": [],
+   "affinity": [
+    14,
+    18,
+    22,
+    23,
+    26,
+    27,
+    30,
+    33
+   ]
+  },
+  "Facultad de Computación": {
+   "members": 1,
+   "terms": [
+    "arquitectura",
+    "software",
+    "servicios"
+   ],
+   "closest": [
+    "Ciencia de Computación y de Datos",
+    "Sistemas y Seguridad de la Información",
+    "Bioingeniería y Química"
+   ],
+   "gap": "Ciencia de Computación y de Datos",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Ciencia de Computación y de Datos, y aún no tienen ninguna coautoría.",
+    "T4": "1 colaboraciones probables involucran al departamento; la más clara: Jesús Bellido y Yamilet Serrano."
+   },
+   "lonely": [],
+   "affinity": [
+    31
+   ]
+  },
+  "Facultad de Ingeniería": {
+   "members": 1,
+   "terms": [
+    "renovables eficiencia",
+    "energética electrónica",
+    "eficiencia energética"
+   ],
+   "closest": [
+    "Mecánica y Energía",
+    "Bioingeniería y Química",
+    "Ciencia de Computación y de Datos"
+   ],
+   "gap": "Mecánica y Energía",
+   "headlines": {
+    "T1": "Eunice Villicaña es su colaborador más activo (1 coautores).",
+    "T2": "Eunice Villicaña es su principal puente. Ya publican con Electrónica y Mecatrónica.",
+    "T3": "Por temas, lo más cercano es Mecánica y Energía, y aún no tienen ninguna coautoría.",
+    "T4": "3 colaboraciones probables involucran al departamento; la más clara: Rafael Vera y Eunice Villicaña."
+   },
+   "lonely": [],
+   "affinity": [
+    1,
+    4,
+    32
+   ]
+  },
+  "Facultad de Negocios": {
+   "members": 1,
+   "terms": [
+    "educativos",
+    "corporativas",
+    "consultoría empresarial"
+   ],
+   "closest": [
+    "Negocios Digitales",
+    "Industrial y Gestión",
+    "Civil y Ambiental"
+   ],
+   "gap": "Negocios Digitales",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Negocios Digitales, y aún no tienen ninguna coautoría.",
+    "T4": "No hay colaboraciones probables claras para el departamento."
+   },
+   "lonely": [],
+   "affinity": []
+  },
+  "Física": {
+   "members": 2,
+   "terms": [
+    "física",
+    "fundamentales",
+    "experimental partículas",
+    "simetría"
+   ],
+   "closest": [
+    "Ciencias",
+    "Civil y Ambiental",
+    "Ciencia de Computación y de Datos"
+   ],
+   "gap": "Ciencias",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC. Diego Milanés publica mucho (532) pero sin coautores UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Ciencias, y aún no tienen ninguna coautoría.",
+    "T4": "No hay colaboraciones probables claras para el departamento."
+   },
+   "lonely": [
+    49
+   ],
+   "affinity": []
+  },
+  "Humanidades y Artes": {
+   "members": 8,
+   "terms": [
+    "patrimonio",
+    "arte",
+    "antropología",
+    "género"
+   ],
+   "closest": [
+    "Negocios Digitales",
+    "Industrial y Gestión",
+    "Electrónica y Mecatrónica"
+   ],
+   "gap": "Negocios Digitales",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC. Giancarlo Marcone publica mucho (11) pero sin coautores UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Negocios Digitales, y aún no tienen ninguna coautoría.",
+    "T4": "2 colaboraciones probables involucran al departamento; la más clara: Christian Flores y Oscar Hidalgo."
+   },
+   "lonely": [
+    48
+   ],
+   "affinity": [
+    34,
+    39
+   ]
+  },
+  "Industrial y Gestión": {
+   "members": 8,
+   "terms": [
+    "información",
+    "operaciones",
+    "gestión",
+    "logística"
+   ],
+   "closest": [
+    "Ciencia de Computación y de Datos",
+    "Facultad de Negocios",
+    "Negocios Digitales"
+   ],
+   "gap": "Ciencia de Computación y de Datos",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Ciencia de Computación y de Datos, y aún no tienen ninguna coautoría.",
+    "T4": "3 colaboraciones probables involucran al departamento; la más clara: Claudia Antonini y Jose Larco."
+   },
+   "lonely": [],
+   "affinity": [
+    2,
+    17,
+    19
+   ]
+  },
+  "Mecánica y Energía": {
+   "members": 10,
+   "terms": [
+    "biomecánica",
+    "energías",
+    "rehabilitación",
+    "estructuras mecánicas"
+   ],
+   "closest": [
+    "Facultad de Ingeniería",
+    "Bioingeniería y Química",
+    "Ciencias"
+   ],
+   "gap": "Facultad de Ingeniería",
+   "headlines": {
+    "T1": "Helard Alvarez es su colaborador más activo (2 coautores).",
+    "T2": "Samuel Charca es su principal puente. Ya publican con Bioingeniería y Química, Ciencias, Electrónica y Mecatrónica.",
+    "T3": "Por temas, lo más cercano es Facultad de Ingeniería, y aún no tienen ninguna coautoría.",
+    "T4": "11 colaboraciones probables involucran al departamento; la más clara: Rafael Vera y Eunice Villicaña."
+   },
+   "lonely": [],
+   "affinity": [
+    1,
+    3,
+    4,
+    6,
+    10,
+    13,
+    16,
+    21
+   ]
+  },
+  "Negocios Digitales": {
+   "members": 2,
+   "terms": [
+    "negocio",
+    "economía finanzas",
+    "gestión"
+   ],
+   "closest": [
+    "Facultad de Negocios",
+    "Industrial y Gestión",
+    "Sistemas y Seguridad de la Información"
+   ],
+   "gap": "Facultad de Negocios",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Facultad de Negocios, y aún no tienen ninguna coautoría.",
+    "T4": "1 colaboraciones probables involucran al departamento; la más clara: José Aguilar y Jose Larco."
+   },
+   "lonely": [],
+   "affinity": [
+    17
+   ]
+  },
+  "Sin departamento": {
+   "members": 5,
+   "terms": [
+    "conservación dinámica",
+    "biología conservación",
+    "ecología",
+    "ecológicas"
+   ],
+   "closest": [
+    "Bioingeniería y Química",
+    "Ciencias",
+    "Humanidades y Artes"
+   ],
+   "gap": "Bioingeniería y Química",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC. Akira Wong publica mucho (12) pero sin coautores UTEC.",
+    "T2": "El departamento no tiene puentes propios. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Bioingeniería y Química, y aún no tienen ninguna coautoría.",
+    "T4": "No hay colaboraciones probables claras para el departamento."
+   },
+   "lonely": [
+    88
+   ],
+   "affinity": []
+  },
+  "Sistemas y Seguridad de la Información": {
+   "members": 4,
+   "terms": [
+    "computación",
+    "ciencia",
+    "gestión",
+    "sostenibles inteligencia artificial"
+   ],
+   "closest": [
+    "Ciencia de Computación y de Datos",
+    "Facultad de Computación",
+    "Negocios Digitales"
+   ],
+   "gap": "Ciencia de Computación y de Datos",
+   "headlines": {
+    "T1": "Nadie del departamento registra coautorías con colegas UTEC.",
+    "T2": "Yamilet Serrano es su principal puente. Aún no publican con otros departamentos.",
+    "T3": "Por temas, lo más cercano es Ciencia de Computación y de Datos, y aún no tienen ninguna coautoría.",
+    "T4": "3 colaboraciones probables involucran al departamento; la más clara: Germain García y Yamilet Serrano."
+   },
+   "lonely": [],
+   "affinity": [
+    7,
+    31,
+    35
+   ]
+  }
+ }
+}

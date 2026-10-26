@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>UtecVis: hallazgos de la red de colaboración</title>{% include "_print.css.html" %}</head>
+<body><div class="page">
+  <div class="bar"><a href="/">Volver a la red</a><button onclick="print()">Guardar como PDF</button></div>
+  <div class="brand">Utec<span>Vis</span></div>
+  <h1>Hallazgos de la red de colaboración científica de UTEC</h1>
+  <p class="muted">{{ meta.summary.researchers }} investigadores, {{ meta.summary.coauthorships }} coautorías, {{ meta.summary.group_ties }} vínculos por grupo de investigación. Datos: cris.utec.edu.pe{% if meta.summary.external_available %} y OpenAlex{% endif %}. Generado el {{ meta.generated_at[:10] }}.</p>
+
+  {% for t in ins.tasks %}
+  <h2><span class="k">{{ t.id }}</span> {{ t.question }}</h2>
+  <p><b>{{ t.finding }}</b></p>
+  <ul>{% for e in t.evidence if e %}<li>{{ e }}</li>{% endfor %}</ul>
+  <p class="action"><b>Para los investigadores:</b> {{ t.action }}</p>
+  <p class="muted">Métrica: {{ t.metric }}</p>
+  {% endfor %}
+
+  <h2>Colaboraciones recomendadas</h2>
+  <table><tr><th>#</th><th>Pareja</th><th>Por qué</th><th class="n">Puntaje</th></tr>
+  {% for a in affinity %}<tr><td>{{ a.rank }}</td><td>{{ nodes[a.source].name }} y {{ nodes[a.target].name }}</td>
+  <td>{% if a.shared_groups %}Mismo grupo. {% endif %}{{ a.shared_terms|join(", ") }}</td><td class="n">{{ "%.2f"|format(a.score) }}</td></tr>{% endfor %}</table>
+
+  <h2>Por departamento</h2>
+  <table><tr><th>Departamento</th><th>Facultad</th><th class="n">Inv.</th><th class="n">Publ.</th><th class="n">Publ. conjuntas internas</th><th class="n">Publ. conjuntas con otros dptos.</th></tr>
+  {% for d in meta.departments %}<tr><td>{{ d.name }}</td><td>{{ meta.organisation.faculty_of_department.get(d.name, "Sin facultad") }}</td><td class="n">{{ d.researchers }}</td><td class="n">{{ d.publications }}</td><td class="n">{{ d.coauthorships_internal }}</td><td class="n">{{ d.coauthorships_external }}</td></tr>{% endfor %}</table>
+  <p class="muted">Cada investigador tiene una ficha propia con su rol en la red y a quién le conviene escribir: /investigador/&lt;id&gt; (enlace desde la ficha en la red).</p>
+</div></body></html>

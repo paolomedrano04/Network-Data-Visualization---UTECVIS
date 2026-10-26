@@ -1,0 +1,58 @@
+{
+ "note": "Complemento curado de páginas de CRIS (grupos, centros y cargos) que el árbol de /organisations/ no lista; solo se agrega si falta.",
+ "people_roles": [
+    {
+   "name": "Ruth Canahuire Cabello",
+   "role": "Directora General Académica",
+   "org": "Universidad de Ingeniería y Tecnología - UTEC"
+  },
+  {
+   "name": "Jesús Edwin Bellido Angulo",
+   "role": "Decano",
+   "org": "Facultad de Computación",
+   "source": "CRIS lo adscribe directamente a la facultad; cargo indicado por el equipo"
+  },
+  {
+   "name": "Eunice Villicaña Ortiz",
+   "role": "Decana",
+   "org": "Facultad de Ingeniería",
+   "source": "CRIS la adscribe directamente a la facultad; cargo indicado por el equipo"
+  },
+  {
+   "name": "Enrique Stiglich Labarthe",
+   "role": "Decano",
+   "org": "Facultad de Negocios",
+   "source": "CRIS lo adscribe directamente a la facultad; cargo indicado por el equipo"
+  }
+ ],
+ "organisations": [
+  {
+   "name": "Grupo de Investigación en Computación Científica (SciCompUTEC)",
+   "type": "Grupo de Investigación",
+   "parent": "Grupos de Investigación",
+   "leaders": [
+    {
+     "name": "Jose Fiestas Iquira",
+     "role": "Coordinador"
+    }
+   ]
+  },
+  {
+   "name": "Centro de Investigación en Sostenibilidad Computacional - CompSust",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "leaders": []
+  },
+  {
+   "name": "Centro de Impacto y Responsabilidad Social - CIRSO",
+   "type": "Centro",
+   "parent": "Dirección de Investigación",
+   "leaders": [
+    {
+     "name": "Giancarlo Marcone Flores",
+     "role": "Director"
+    }
+   ]
+  }
+ ]
+}
