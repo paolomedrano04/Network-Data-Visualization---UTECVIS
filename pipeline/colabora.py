@@ -168,7 +168,8 @@ def _prompt(ctx):
         + "Formato exacto:\n"
         '{"resumen": "1 frase: por qué esta pareja tiene sentido", '
         '"temas": [{"titulo": "máx. 12 palabras", "por_que": "1 a 2 frases ligadas a sus áreas reales", '
-        '"aporte_a": "qué aporta la primera persona", "aporte_b": "qué aporta la segunda persona"}], '
+        '"aporte_a": "qué aporta la primera persona", "aporte_b": "qué aporta la segunda persona", '
+        '"evidencia": "copia literal el área o título de publicación en que te basas"}], '
         '"primer_paso": "una acción concreta para empezar esta semana"}'
     )
 
@@ -181,10 +182,10 @@ def ask_llm(ctx):
     try:
         r = requests.post(API_URL, timeout=45, headers={
             "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-            json={"model": model, "max_tokens": 1200, "system": SYSTEM,
+            json={"model": model, "max_tokens": 6000, "system": SYSTEM,
                   "messages": [{"role": "user", "content": _prompt(ctx)}]})
         if r.status_code != 200:
-            return None, f"Respuesta de{r.status_code}: se muestra una sugerencia automática."
+            return None, f"El LLM respondió {r.status_code}: se muestra una sugerencia automática."
         text = "".join(c.get("text", "") for c in r.json().get("content", []) if c.get("type") == "text")
         text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.M).strip()
         out = json.loads(text[text.find("{"): text.rfind("}") + 1])
@@ -193,7 +194,7 @@ def ask_llm(ctx):
         out["modelo"] = model
         return out, None
     except Exception as e:  # sin internet, JSON inválido, etc.
-        return None, f"No se pudo consultar({type(e).__name__}): se muestra una sugerencia automática."
+        return None, f"No se pudo consultar el LLM ({type(e).__name__}): se muestra una sugerencia automática."
 
 
 def suggest(a, b, interests=(), refresh=False):
@@ -219,7 +220,7 @@ import time
 
 LINE_PROMPT = (
     "Responde SOLO con líneas en este formato, sin nada más:\n"
-    "ANALISIS: <observación breve sobre lo que tienen en común o se complementa> (escribe 2 o 3 líneas ANALISIS)\n"
+    "ANALISIS: <observación breve, máximo 25 palabras> (escribe 2 líneas ANALISIS)\n"
     "RESUMEN: <1 frase: por qué esta pareja tiene sentido>\n"
     "TEMA: <título, máx. 12 palabras> || <por qué, 1 a 2 frases> || <qué aporta la primera persona> || "
     "<qué aporta la segunda persona> || <evidencia: copia literal el área o el título de publicación en que te basas>\n"
@@ -248,6 +249,8 @@ def parse_lines(text, ctx):
             out["resumen"] = rest
         elif tag == "TEMA":
             p = [x.strip() for x in rest.split("||")] + [""] * 5
+            if not all(p[:4]):          # línea incompleta (la respuesta se cortó a la mitad): no cuenta
+                continue
             out["temas"].append({"titulo": p[0], "por_que": p[1], "aporte_a": p[2], "aporte_b": p[3],
                                  "evidencia": p[4], "verificada": verify(p[4], ctx)})
         elif tag == "PASO":
@@ -311,11 +314,11 @@ def provider():
     return None, None
 
 
-def _ollama_stream(ctx):
+def _ollama_stream(ctx, info=None):
     """Modelo local con Ollama: gratis y sin internet. Entrega el texto a medida que se genera."""
     sys_txt = SYSTEM.replace("Responde ÚNICAMENTE con un objeto JSON válido, sin texto adicional ni bloques de código.", "")
     r = requests.post(f"{OLLAMA_URL}/api/chat", timeout=180, stream=True, json={
-        "model": OLLAMA_MODEL, "stream": True, "options": {"temperature": 0.4},
+        "model": OLLAMA_MODEL, "stream": True, "options": {"temperature": 0.4, "num_predict": 1500},
         "messages": [{"role": "system", "content": sys_txt}, {"role": "user", "content": _line_prompt(ctx)}]})
     if r.status_code != 200:
         raise RuntimeError(f"Ollama respondió {r.status_code}")
@@ -327,33 +330,41 @@ def _ollama_stream(ctx):
         if chunk:
             yield chunk
         if ev.get("done"):
+            if info is not None:
+                info["stop_reason"] = "max_tokens" if ev.get("done_reason") == "length" else ev.get("done_reason")
             break
 
 
-def _llm_stream(ctx):
-    """Llama a la API con stream=true y va entregando los fragmentos de texto."""
+def _llm_stream(ctx, info=None):
+    """Llama a la API con stream=true y va entregando los fragmentos de texto.
+    En info['stop_reason'] queda por qué terminó (end_turn = completo, max_tokens = se cortó)."""
+    info = info if info is not None else {}
     if provider()[0] == "ollama":
-        yield from _ollama_stream(ctx)
+        yield from _ollama_stream(ctx, info)
         return
     key = os.environ.get("ANTHROPIC_API_KEY")
     model = os.environ.get("UTECVIS_MODEL", DEFAULT_MODEL)
     r = requests.post(API_URL, timeout=60, stream=True, headers={
         "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-        json={"model": model, "max_tokens": 1400, "stream": True, "system": SYSTEM.replace(
+        json={"model": model, "max_tokens": 6000, "stream": True, "system": SYSTEM.replace(
             "Responde ÚNICAMENTE con un objeto JSON válido, sin texto adicional ni bloques de código.", ""),
             "messages": [{"role": "user", "content": _line_prompt(ctx)}]})
     if r.status_code != 200:
-        raise RuntimeError(f"Respondió{r.status_code}")
+        raise RuntimeError(f"El LLM respondió {r.status_code}")
     for raw in r.iter_lines(decode_unicode=True):
         if not raw or not raw.startswith("data:"):
             continue
         ev = json.loads(raw[5:].strip())
         if ev.get("type") == "content_block_delta" and ev.get("delta", {}).get("type") == "text_delta":
             yield ev["delta"]["text"]
+        elif ev.get("type") == "message_delta":
+            info["stop_reason"] = ev.get("delta", {}).get("stop_reason")
+        elif ev.get("type") == "error":
+            raise RuntimeError(f"El LLM devolvió un error ({ev.get('error', {}).get('type')})")
 
 
 def _typed(text, step=18, delay=0.012):
-    """Para la sugerencia por reglas o guardada: se 'escribe' en vivo."""
+    """Para la sugerencia por reglas o guardada: se 'escribe' en vivo igual que el LLM."""
     for k in range(0, len(text), step):
         time.sleep(delay)
         yield text[k:k + step]
@@ -385,14 +396,19 @@ def stream_events(a, b, interests=(), refresh=False):
             yield {"type": "delta", "text": chunk}
     elif prov:
         yield {"type": "llm", "source": "llm", "model": model, "provider": prov}
+        info = {}
         try:
-            for chunk in _llm_stream(ctx):
+            for chunk in _llm_stream(ctx, info):
                 text += chunk
                 yield {"type": "delta", "text": chunk}
             source = "llm"
-            if text.strip():
+            complete = len(parse_lines(text, ctx)["temas"]) >= 3 and info.get("stop_reason") in (None, "end_turn", "stop", "stop_sequence")
+            if complete:
                 cache[key] = {"text": text, "model": model}
                 CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=1), "utf-8")
+            else:
+                why = {"max_tokens": "se alcanzó el límite de longitud"}.get(info.get("stop_reason"), f"motivo: {info.get('stop_reason') or 'desconocido'}")
+                note = f"El LLM no terminó la respuesta ({why})."
         except Exception as e:
             note = f"{e if isinstance(e, RuntimeError) else type(e).__name__}: se muestra una sugerencia automática."
             text = ""
@@ -403,7 +419,16 @@ def stream_events(a, b, interests=(), refresh=False):
             text += chunk
             yield {"type": "delta", "text": chunk}
     result = parse_lines(text, ctx)
-    if not result["temas"]:   # el LLM no respetó el formato: se recurre a las reglas
+    if source == "llm" and (len(result["temas"]) < 3 or note):
+        # el LLM se cortó o no respetó el formato: se le pide de nuevo, en un formato más estricto (JSON)
+        yield {"type": "retry", "note": note}
+        out, err = ask_llm(ctx)
+        if out and len(out.get("temas", [])) >= len(result["temas"]):
+            result = {"analisis": result["analisis"], "resumen": out.get("resumen", ""), "primer_paso": out.get("primer_paso", ""),
+                      "temas": [{**t, "evidencia": t.get("evidencia", ""), "verificada": verify(t.get("evidencia", ""), ctx)}
+                                for t in out.get("temas", [])]}
+            note = None
+    if not result["temas"]:   # sin LLM utilizable: reglas
         result = parse_lines(_rules_as_lines(ctx), ctx)
         source = "rules"
     yield {"type": "done", "source": source, "model": model, "provider": prov, "note": note, "result": result, "context": ctx}

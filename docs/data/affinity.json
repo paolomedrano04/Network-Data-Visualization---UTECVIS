@@ -1,0 +1,861 @@
+[
+ {
+  "source": 86,
+  "target": 87,
+  "rank": 1,
+  "score": 0.7972,
+  "topic_sim": 0.2771,
+  "adamic_adar": 2.5661,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "shared_terms": [
+   "renovables",
+   "energías"
+  ],
+  "common_neighbors": [
+   2,
+   5,
+   60,
+   62,
+   67
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 3,
+  "target": 44,
+  "rank": 2,
+  "score": 0.7423,
+  "topic_sim": 0.2339,
+  "adamic_adar": 3.0038,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "shared_terms": [
+   "logísticos alimentarios",
+   "tradicional",
+   "canal"
+  ],
+  "common_neighbors": [
+   0,
+   17,
+   26,
+   34,
+   74,
+   98
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 43,
+  "target": 85,
+  "rank": 3,
+  "score": 0.7149,
+  "topic_sim": 0.1925,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "biomecánica",
+   "rehabilitación"
+  ],
+  "common_neighbors": [
+   6,
+   13,
+   14,
+   23,
+   25,
+   39,
+   40,
+   63,
+   69,
+   83
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 62,
+  "target": 87,
+  "rank": 4,
+  "score": 0.6994,
+  "topic_sim": 0.2195,
+  "adamic_adar": 2.6103,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "shared_terms": [
+   "energías",
+   "eficiencia energética",
+   "renovables"
+  ],
+  "common_neighbors": [
+   2,
+   5,
+   60,
+   67,
+   86
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 23,
+  "target": 83,
+  "rank": 5,
+  "score": 0.6556,
+  "topic_sim": 0.1583,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "biología",
+   "sintética"
+  ],
+  "common_neighbors": [
+   6,
+   13,
+   14,
+   25,
+   39,
+   40,
+   43,
+   63,
+   69,
+   85
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 6,
+  "target": 43,
+  "rank": 6,
+  "score": 0.6194,
+  "topic_sim": 0.1374,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "biomecánica"
+  ],
+  "common_neighbors": [
+   13,
+   14,
+   23,
+   25,
+   39,
+   40,
+   63,
+   69,
+   83,
+   85
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 30,
+  "target": 74,
+  "rank": 7,
+  "score": 0.6087,
+  "topic_sim": 0.1879,
+  "adamic_adar": 1.8205,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "shared_terms": [
+   "computación",
+   "datos",
+   "ciencia"
+  ],
+  "common_neighbors": [
+   9,
+   45
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 52,
+  "target": 81,
+  "rank": 8,
+  "score": 0.5909,
+  "topic_sim": 0.1876,
+  "adamic_adar": 1.4427,
+  "shared_groups": [
+   "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)"
+  ],
+  "shared_terms": [
+   "discretas",
+   "teoría grafos",
+   "matemática"
+  ],
+  "common_neighbors": [
+   33
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 7,
+  "target": 10,
+  "rank": 9,
+  "score": 0.5447,
+  "topic_sim": 0.1609,
+  "adamic_adar": 1.4427,
+  "shared_groups": [
+   "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)"
+  ],
+  "shared_terms": [
+   "concretos",
+   "estructuras",
+   "materiales",
+   "armado"
+  ],
+  "common_neighbors": [
+   24
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 7,
+  "target": 15,
+  "rank": 10,
+  "score": 0.5348,
+  "topic_sim": 0.1572,
+  "adamic_adar": 1.3654,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "shared_terms": [
+   "estructural",
+   "materiales",
+   "daño",
+   "evaluación"
+  ],
+  "common_neighbors": [
+   20,
+   67
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 14,
+  "target": 69,
+  "rank": 11,
+  "score": 0.5334,
+  "topic_sim": 0.0878,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "biológicos",
+   "automático",
+   "aprendizaje"
+  ],
+  "common_neighbors": [
+   6,
+   13,
+   23,
+   25,
+   39,
+   40,
+   43,
+   63,
+   83,
+   85
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 14,
+  "target": 83,
+  "rank": 12,
+  "score": 0.5102,
+  "topic_sim": 0.0745,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "células",
+   "inmunología"
+  ],
+  "common_neighbors": [
+   6,
+   13,
+   23,
+   25,
+   39,
+   40,
+   43,
+   63,
+   69,
+   85
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 62,
+  "target": 86,
+  "rank": 13,
+  "score": 0.5082,
+  "topic_sim": 0.1104,
+  "adamic_adar": 2.5661,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "shared_terms": [
+   "energías",
+   "renovables"
+  ],
+  "common_neighbors": [
+   2,
+   5,
+   60,
+   67,
+   87
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 12,
+  "target": 41,
+  "rank": 14,
+  "score": 0.5006,
+  "topic_sim": 0.1066,
+  "adamic_adar": 2.5425,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "shared_terms": [
+   "inteligencia artificial"
+  ],
+  "common_neighbors": [
+   4,
+   13,
+   27,
+   39,
+   40,
+   61
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 45,
+  "target": 76,
+  "rank": 15,
+  "score": 0.5,
+  "topic_sim": 0.2883,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "aprendizaje",
+   "datos",
+   "profundo",
+   "automático"
+  ],
+  "common_neighbors": [],
+  "cross_department": false
+ },
+ {
+  "source": 6,
+  "target": 85,
+  "rank": 16,
+  "score": 0.4993,
+  "topic_sim": 0.0682,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "biomecánica"
+  ],
+  "common_neighbors": [
+   13,
+   14,
+   23,
+   25,
+   39,
+   40,
+   43,
+   63,
+   69,
+   83
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 0,
+  "target": 44,
+  "rank": 17,
+  "score": 0.4979,
+  "topic_sim": 0.093,
+  "adamic_adar": 3.0038,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "shared_terms": [
+   "gestión",
+   "comportamiento"
+  ],
+  "common_neighbors": [
+   3,
+   17,
+   26,
+   34,
+   74,
+   98
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 41,
+  "target": 61,
+  "rank": 18,
+  "score": 0.4946,
+  "topic_sim": 0.1031,
+  "adamic_adar": 2.5425,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "shared_terms": [
+   "aprendizaje",
+   "automático"
+  ],
+  "common_neighbors": [
+   4,
+   12,
+   13,
+   27,
+   39,
+   40
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 3,
+  "target": 17,
+  "rank": 19,
+  "score": 0.4937,
+  "topic_sim": 0.0905,
+  "adamic_adar": 3.0038,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "shared_terms": [
+   "logística",
+   "investigación operaciones"
+  ],
+  "common_neighbors": [
+   0,
+   26,
+   34,
+   44,
+   74,
+   98
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 6,
+  "target": 25,
+  "rank": 20,
+  "score": 0.4795,
+  "topic_sim": 0.0568,
+  "adamic_adar": 3.9788,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "shared_terms": [
+   "biomateriales"
+  ],
+  "common_neighbors": [
+   13,
+   14,
+   23,
+   39,
+   40,
+   43,
+   63,
+   69,
+   83,
+   85
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 5,
+  "target": 86,
+  "rank": 21,
+  "score": 0.4787,
+  "topic_sim": 0.0945,
+  "adamic_adar": 2.5219,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "shared_terms": [
+   "energías",
+   "industriales"
+  ],
+  "common_neighbors": [
+   2,
+   60,
+   62,
+   67,
+   87
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 50,
+  "target": 61,
+  "rank": 22,
+  "score": 0.4704,
+  "topic_sim": 0.2713,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "aprendizaje",
+   "visión computacional",
+   "automático"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 4,
+  "target": 61,
+  "rank": 23,
+  "score": 0.4695,
+  "topic_sim": 0.0896,
+  "adamic_adar": 2.5095,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "shared_terms": [
+   "inteligentes"
+  ],
+  "common_neighbors": [
+   12,
+   13,
+   27,
+   39,
+   40,
+   41
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 24,
+  "target": 37,
+  "rank": 24,
+  "score": 0.4693,
+  "topic_sim": 0.2706,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "computacional",
+   "alto rendimiento",
+   "modelos"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 30,
+  "target": 76,
+  "rank": 25,
+  "score": 0.4668,
+  "topic_sim": 0.2692,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "datos",
+   "análisis",
+   "aprendizaje",
+   "ciencia"
+  ],
+  "common_neighbors": [],
+  "cross_department": false
+ },
+ {
+  "source": 27,
+  "target": 41,
+  "rank": 26,
+  "score": 0.4638,
+  "topic_sim": 0.0838,
+  "adamic_adar": 2.6013,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "shared_terms": [
+   "automático",
+   "aprendizaje"
+  ],
+  "common_neighbors": [
+   4,
+   12,
+   13,
+   39,
+   40,
+   61
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 27,
+  "target": 61,
+  "rank": 27,
+  "score": 0.4614,
+  "topic_sim": 0.0834,
+  "adamic_adar": 2.5683,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "shared_terms": [
+   "aprendizaje",
+   "automático"
+  ],
+  "common_neighbors": [
+   4,
+   12,
+   13,
+   39,
+   40,
+   41
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 5,
+  "target": 62,
+  "rank": 28,
+  "score": 0.4603,
+  "topic_sim": 0.0827,
+  "adamic_adar": 2.5661,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "shared_terms": [
+   "energías",
+   "gasificación",
+   "combustibles",
+   "procesos"
+  ],
+  "common_neighbors": [
+   2,
+   60,
+   67,
+   86,
+   87
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 30,
+  "target": 45,
+  "rank": 29,
+  "score": 0.4586,
+  "topic_sim": 0.1138,
+  "adamic_adar": 1.3445,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "shared_terms": [
+   "datos",
+   "aprendizaje",
+   "automático"
+  ],
+  "common_neighbors": [
+   9,
+   74
+  ],
+  "cross_department": false
+ },
+ {
+  "source": 41,
+  "target": 76,
+  "rank": 30,
+  "score": 0.4321,
+  "topic_sim": 0.2492,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "datos",
+   "aprendizaje",
+   "inteligencia artificial",
+   "análisis"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 9,
+  "target": 74,
+  "rank": 31,
+  "score": 0.4223,
+  "topic_sim": 0.0804,
+  "adamic_adar": 1.8205,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "shared_terms": [
+   "software"
+  ],
+  "common_neighbors": [
+   30,
+   45
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 5,
+  "target": 87,
+  "rank": 32,
+  "score": 0.4208,
+  "topic_sim": 0.06,
+  "adamic_adar": 2.5661,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "shared_terms": [
+   "energías"
+  ],
+  "common_neighbors": [
+   2,
+   60,
+   62,
+   67,
+   86
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 61,
+  "target": 76,
+  "rank": 33,
+  "score": 0.4178,
+  "topic_sim": 0.2409,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "aprendizaje",
+   "profundo",
+   "automático"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 27,
+  "target": 36,
+  "rank": 34,
+  "score": 0.4064,
+  "topic_sim": 0.2344,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "cerebro",
+   "interfaz"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 74,
+  "target": 76,
+  "rank": 35,
+  "score": 0.3795,
+  "topic_sim": 0.2189,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "ciencia",
+   "datos",
+   "inteligencia artificial"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 16,
+  "target": 81,
+  "rank": 36,
+  "score": 0.37,
+  "topic_sim": 0.2134,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "matemática aplicada"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ },
+ {
+  "source": 12,
+  "target": 43,
+  "rank": 37,
+  "score": 0.367,
+  "topic_sim": 0.1838,
+  "adamic_adar": 1.0596,
+  "shared_groups": [],
+  "shared_terms": [
+   "bioingeniería"
+  ],
+  "common_neighbors": [
+   13,
+   39,
+   40
+  ],
+  "cross_department": true
+ },
+ {
+  "source": 7,
+  "target": 84,
+  "rank": 38,
+  "score": 0.3636,
+  "topic_sim": 0.0944,
+  "adamic_adar": 0.0,
+  "shared_groups": [
+   "Centro de Investigación del Cemento y Concreto - CIC"
+  ],
+  "shared_terms": [
+   "concretos",
+   "bajo"
+  ],
+  "common_neighbors": [],
+  "cross_department": false
+ },
+ {
+  "source": 1,
+  "target": 48,
+  "rank": 39,
+  "score": 0.3608,
+  "topic_sim": 0.2081,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "antropología",
+   "patrimonio"
+  ],
+  "common_neighbors": [],
+  "cross_department": false
+ },
+ {
+  "source": 45,
+  "target": 61,
+  "rank": 40,
+  "score": 0.3546,
+  "topic_sim": 0.2045,
+  "adamic_adar": 0.0,
+  "shared_groups": [],
+  "shared_terms": [
+   "aprendizaje",
+   "profundo",
+   "automático"
+  ],
+  "common_neighbors": [],
+  "cross_department": true
+ }
+]

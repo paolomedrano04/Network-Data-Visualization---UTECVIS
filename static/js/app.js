@@ -5,7 +5,16 @@
   const { shortName, METRICS, fmt, fmt2, fmtInt, pct } = UtecVis;
   const $ = (s) => document.querySelector(s);
 
-  const data = await (await fetch("/api/graph")).json();
+  // Dos modos: con Flask (rutas /api/...) o publicado como sitio estático (GitHub Pages: archivos .json y .html)
+  const STATIC = !!window.UTECVIS_STATIC;
+  const slug = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const URLS = {
+    graph: STATIC ? "data/graph.json" : "/api/graph",
+    report: (dept) => (STATIC ? (dept ? `reporte/${slug(dept)}.html` : "reporte.html") : dept ? `/reporte?d=${encodeURIComponent(dept)}` : "/reporte"),
+    person: (id) => (STATIC ? `investigador/${id}.html` : `/investigador/${id}`),
+    photo: (id) => (STATIC ? `static/photos/${id}.jpg` : `/photo/${id}`),
+  };
+  const data = await (await fetch(URLS.graph)).json();
   const meta = data.meta, S = meta.summary, INS = data.insights;
   const vis = UtecVis.create($("#chart"), data, {
     tooltip: $("#tooltip"),
@@ -161,7 +170,7 @@
   function updateReportLink() {
     const id = vis.state.selected ? vis.state.selected.id : null;
     const a = $("#report-link");
-    a.href = id != null ? `/investigador/${id}` : myDept ? `/reporte?d=${encodeURIComponent(myDept)}` : "/reporte";
+    a.href = id != null ? URLS.person(id) : URLS.report(myDept || null);
     a.textContent = id != null ? "Reporte de la persona" : myDept ? "Reporte del departamento" : "Reporte general";
   }
 
@@ -253,7 +262,10 @@
   // Ventana al centro: dos personas con su foto y áreas; al pedir ideas se ve, paso a paso, lo que hace
   // el sistema (perfiles, temas en común, conexiones en la red) y el texto del LLM llegando en tiempo real.
   const colab = { a: null, b: null, interests: new Set(), estado: null, es: null };
-  fetch("/api/colabora/estado").then((r) => r.json()).then((e) => { colab.estado = e; }).catch(() => {});
+  if (!STATIC) fetch("/api/colabora/estado").then((r) => r.json()).then((e) => { colab.estado = e; }).catch(() => {});
+  // versión publicada: propuestas ya generadas (incluidas las del LLM hechas antes de publicar)
+  let PRE = null;
+  if (STATIC) fetch("data/colabora.json").then((r) => r.json()).then((x) => { PRE = x; }).catch(() => { PRE = {}; });
   const findPerson = (q) => {
     q = (q || "").trim().toLowerCase();
     return q ? N.find((x) => x.name.toLowerCase() === q) || N.find((x) => x.name.toLowerCase().includes(q)) : null;
@@ -261,7 +273,7 @@
   const avatar = (sel, d, size) => {
     const w = sel.append("span").attr("class", "cbm-av").style("width", `${size}px`).style("height", `${size}px`);
     if (!d) { w.classed("empty", true).text("?"); return w; }
-    const src = d.photo || (d.photo_local ? `/photo/${d.id}` : d.image_url);
+    const src = d.photo || (d.photo_local ? URLS.photo(d.id) : d.image_url);
     if (src) w.append("img").attr("src", src).attr("alt", "").on("error", function () { d3.select(this).remove(); w.text(UtecVis.initials(d.name)); });
     else w.text(UtecVis.initials(d.name));
     return w;
@@ -407,13 +419,20 @@
         if (tag === "PASO") right.append("p").attr("class", "cb-step").html(`<b>Primer paso:</b> ${esc(rest)}`);
       }
 
-      const url = `/api/colabora/stream?a=${A.id}&b=${B.id}&i=${encodeURIComponent([...colab.interests].join("|"))}${refresh ? "&refresh=1" : ""}`;
-      const es = new EventSource(url);
+      let es;
+      if (STATIC) {
+        // sin servidor: se reproduce una propuesta ya generada (o se arma con reglas aquí mismo)
+        const pre = !colab.interests.size && PRE && PRE[`${A.id}-${B.id}`];
+        es = replay(pre || staticEvents(A, B, [...colab.interests]));
+      } else {
+        const url = `/api/colabora/stream?a=${A.id}&b=${B.id}&i=${encodeURIComponent([...colab.interests].join("|"))}${refresh ? "&refresh=1" : ""}`;
+        es = new EventSource(url);
+      }
       colab.es = es;
       es.onmessage = (msg) => {
-        const ev = JSON.parse(msg.data);
+        const ev = typeof msg.data === "string" ? JSON.parse(msg.data) : msg.data;
         if (ev.type === "step" && ev.id === "perfiles") {
-          done("perfiles", `${ev.a_areas} y ${ev.b_areas} áreas de investigación, ${ev.a_titles} y ${ev.b_titles} títulos de publicaciones`);
+          done("perfiles", `${ev.a_areas} y ${ev.b_areas} áreas de investigación` + (ev.a_titles + ev.b_titles ? `, ${ev.a_titles} y ${ev.b_titles} títulos de publicaciones` : ""));
           step("comun", "Buscando temas en común");
         }
         if (ev.type === "step" && ev.id === "comun") {
@@ -489,6 +508,52 @@
     }
   }
   const nbrsOf = (id) => vis.nbrs.get(id) || new Set();
+
+  // ---- versión estática: reproduce eventos con el mismo ritmo que el servidor
+  function replay(events) {
+    const es = { onmessage: null, onerror: null, timers: [], close() { this.timers.forEach(clearTimeout); } };
+    let t = 150;
+    const push = (ev, wait) => { t += wait; es.timers.push(setTimeout(() => es.onmessage && es.onmessage({ data: ev }), t)); };
+    events.forEach((ev) => {
+      if (ev.type === "text") {                     // texto completo: se "escribe" en vivo
+        for (let k = 0; k < ev.text.length; k += 18) push({ type: "delta", text: ev.text.slice(k, k + 18) }, 14);
+      } else push(ev, ev.type === "step" ? 350 : 60);
+    });
+    return es;
+  }
+  // reglas en el navegador (para parejas o intereses que no se generaron antes de publicar)
+  function staticEvents(A, B, interests) {
+    const STOP = new Set(["de", "la", "el", "en", "y", "a", "los", "las", "del", "para", "con", "por", "and", "of", "the", "in"]);
+    const words = (arr) => new Set(arr.join(" ").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOP.has(w)));
+    const wa = words(A.areas), wb = words(B.areas);
+    const rec = A.recommendations.find((r) => r.id === B.id) || B.recommendations.find((r) => r.id === A.id);
+    const shared = rec ? rec.shared_terms : [...wa].filter((w) => wb.has(w)).slice(0, 4);
+    const common = [...nbrsOf(A.id)].filter((x) => nbrsOf(B.id).has(x)).slice(0, 5);
+    const ka = [...A.areas.filter((x) => interests.includes(x)), ...A.areas.filter((x) => !interests.includes(x))];
+    const kb = [...B.areas.filter((x) => interests.includes(x)), ...B.areas.filter((x) => !interests.includes(x))];
+    const fa = A.name.split(" ")[0], fb = B.name.split(" ")[0];
+    const temas = [];
+    for (let k = 0; k < 6 && temas.length < 3 && ka.length && kb.length; k++) {
+      const x = ka[k % ka.length], y = kb[k % kb.length];
+      if (x.toLowerCase() === y.toLowerCase() || temas.some((t) => t.titulo.startsWith(x) && t.titulo.endsWith(y.toLowerCase()))) continue;
+      temas.push({ titulo: `${x} aplicado a ${y.toLowerCase()}`, por_que: `Une una línea de ${fa} (${x}) con una de ${fb} (${y})${shared.length ? `; ya comparten intereses en ${shared.slice(0, 3).join(", ")}` : ""}.`,
+        aporte_a: `experiencia en ${x.toLowerCase()}.`, aporte_b: `experiencia en ${y.toLowerCase()}.`, evidencia: x, verificada: true });
+    }
+    const sameG = A.groups.filter((g) => B.groups.includes(g));
+    const resumen = `${fa} y ${fb} ${[sameG.length ? "están en el mismo grupo" : "", shared.length ? `comparten temas como ${shared.slice(0, 3).join(", ")}` : "", common.length ? "tienen colegas en común" : ""].filter(Boolean).join(", ") || "tienen áreas que se pueden complementar"}.`;
+    const paso = common.length ? `Pedirle a ${byId.get(common[0]).name} que los presente.` : `Proponer una reunión de 30 minutos para revisar ${temas[0] ? temas[0].titulo.toLowerCase() : "un tema común"}.`;
+    const text = [`ANALISIS: ${fa} tiene ${A.areas.length} áreas registradas y ${fb} tiene ${B.areas.length}.`,
+      shared.length ? `ANALISIS: Los términos que comparten son ${shared.slice(0, 4).join(", ")}.` : "", `RESUMEN: ${resumen}`,
+      ...temas.map((t) => `TEMA: ${t.titulo} || ${t.por_que} || ${fa}: ${t.aporte_a} || ${fb}: ${t.aporte_b} || ${t.evidencia}`), `PASO: ${paso}`].filter(Boolean).join("\n");
+    return [
+      { type: "step", id: "perfiles", a_areas: A.areas.length, b_areas: B.areas.length, a_titles: 0, b_titles: 0 },
+      { type: "step", id: "comun", shared_terms: shared },
+      { type: "step", id: "red", common_ids: common, already_coauthors: nbrsOf(A.id).has(B.id) },
+      { type: "llm", source: "rules" },
+      { type: "text", text },
+      { type: "done", source: "rules", result: { resumen, temas, primer_paso: paso } },
+    ];
+  }
 
   function renderRanking() {
     const p = d3.select("#pop-ranking").html("");
@@ -617,8 +682,8 @@
     if (d.photo || d.image_url || d.photo_local) {
       let tried = false;
       head.append("img").attr("class", "avatar").attr("alt", d.name).attr("referrerpolicy", "no-referrer")
-        .attr("src", d.photo || (d.photo_local ? `/photo/${d.id}` : d.image_url))
-        .on("error", function () { if (!tried && !d.photo) { tried = true; this.src = `/photo/${d.id}`; } else { d3.select(this).remove(); ph(); } });
+        .attr("src", d.photo || (d.photo_local ? URLS.photo(d.id) : d.image_url))
+        .on("error", function () { if (!tried && !d.photo) { tried = true; this.src = URLS.photo(d.id); } else { d3.select(this).remove(); ph(); } });
     } else ph();
     const h = head.append("div");
     h.append("h3").text(d.name);
@@ -661,7 +726,7 @@
       .text(`Intermediación ${fmt.format(d.betweenness)}, cercanía ${fmt.format(d.closeness)}, vector propio ${fmt.format(d.eigenvector)}, PageRank ${fmt.format(d.pagerank)}, participación ${fmt2.format(d.participation)}.`);
 
     const share = p.append("div").attr("class", "share");
-    share.append("a").attr("href", `/investigador/${d.id}`).attr("target", "_blank").text("Su reporte");
+    share.append("a").attr("href", URLS.person(d.id)).attr("target", "_blank").text("Su reporte");
     share.append("button").text("Copiar enlace").on("click", function () {
       navigator.clipboard && navigator.clipboard.writeText(`${location.origin}/#p=${d.id}`);
       this.textContent = "Copiado";

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Civil y Ambiental: reporte de colaboración UtecVis</title><style>
+@font-face { font-family: "Montserrat"; font-weight: 400; src: url("../static/fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 600; src: url("../static/fonts/montserrat-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; src: url("../static/fonts/montserrat-latin-800-normal.woff2") format("woff2"); }
+:root { --ink:#15181c; --muted:#69737d; --cyan:#00aeef; --line:#e2e7eb; }
+* { box-sizing: border-box; }
+body { font-family: "Montserrat", Arial, sans-serif; color: var(--ink); margin: 0; background: #f4f7f9; }
+.page { max-width: 820px; margin: 24px auto; background: #fff; padding: 44px 52px; border-radius: 14px; box-shadow: 0 6px 24px rgba(16,32,44,.08); }
+.brand { font-weight: 800; font-size: 14px; } .brand span { color: var(--cyan); }
+h1 { font-size: 26px; font-weight: 800; margin: 14px 0 4px; line-height: 1.2; }
+h1::after { content: ""; display: block; width: 56px; height: 5px; background: var(--cyan); margin-top: 10px; }
+h2 { font-size: 16px; font-weight: 800; margin: 28px 0 6px; }
+.k { color: #0084b8; font-weight: 800; font-size: 12.5px; }
+p, li { font-size: 13px; line-height: 1.55; }
+.muted { color: var(--muted); font-size: 12px; }
+.action { background: #e9f7fd; border-radius: 10px; padding: 9px 12px; font-size: 12.5px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 6px; }
+th { text-align: left; color: var(--muted); font-weight: 600; padding: 4px 6px; border-bottom: 2px solid var(--line); }
+td { padding: 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11px; font-weight: 800; background: var(--cyan); padding: 3px 8px; border-radius: 999px; margin: 0 4px 4px 0; }
+.bar { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 6px; }
+.bar button, .bar a { font: inherit; font-size: 12px; font-weight: 600; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 12px; cursor: pointer; color: var(--ink); text-decoration: none; }
+@media print { body { background: #fff; } .page { box-shadow: none; margin: 0; max-width: none; padding: 0; } .bar { display: none; } h2 { break-after: avoid; } tr { break-inside: avoid; } }
+  .credit { margin-top: 18px; } .credit a { color: #0084b8; }
+</style></head>
+<body><div class="page">
+  <div class="bar"><a href="../index.html">Volver a la red</a><button onclick="print()">Guardar como PDF</button></div>
+  <div class="brand">Utec<span>Vis</span> <span class="muted">Reporte para el departamento</span></div>
+  <h1>Civil y Ambiental</h1>
+  <p class="muted">11 investigadores. Facultad de Ingeniería. Temas principales: concretos, ambientales, bajo, carbono.</p>
+
+  <h2>En una frase por tarea</h2>
+  <table>
+    <tr><td style="width:34%"><span class="k">T1</span> ¿Quiénes son los colaboradores más prolíficos?</td><td>Nadie del departamento registra coautorías con colegas UTEC. Pedro Rau publica mucho (35) pero sin coautores UTEC.</td></tr><tr><td style="width:34%"><span class="k">T2</span> ¿Quiénes actúan como puentes entre departamentos y grupos?</td><td>Luis Bedriñana es su principal puente. Aún no publican con otros departamentos.</td></tr><tr><td style="width:34%"><span class="k">T3</span> ¿Los departamentos colaboran entre sí o trabajan en silos?</td><td>Por temas, lo más cercano es Bioingeniería y Química, y aún no tienen ninguna coautoría.</td></tr><tr><td style="width:34%"><span class="k">T4</span> ¿Qué nuevas colaboraciones son más probables?</td><td>4 colaboraciones probables involucran al departamento; la más clara: Luis Bedriñana y Carlos Benedetty.</td></tr>
+  </table>
+
+  <h2>Departamentos más afines por temas</h2>
+  <p class="muted">Similitud de áreas de investigación (TF-IDF, coseno) y publicaciones conjuntas registradas. Afinidad alta sin coautorías = oportunidad.</p>
+  <table><tr><th>Departamento</th><th class="n">Afinidad</th><th class="n">Publicaciones conjuntas</th></tr>
+  <tr><td>Bioingeniería y Química</td><td class="n">0.07</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Mecánica y Energía</td><td class="n">0.06</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Ciencia de Computación y de Datos</td><td class="n">0.06</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Ciencias</td><td class="n">0.04</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Física</td><td class="n">0.02</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr></table>
+
+  <h2>Integrantes</h2>
+  <table><tr><th>Investigador</th><th>Rol en la red</th><th class="n">Publ.</th><th class="n">Coautores UTEC</th><th>Podría escribirle a</th></tr>
+  <tr>
+    <td>Pedro Rau Lavado<br><span class="muted">Coordinador</span></td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">35</td><td class="n">0</td>
+    <td></td></tr><tr>
+    <td>Daniel Vicente Horna Muñoz<br><span class="muted">Director</span></td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">14</td><td class="n">0</td>
+    <td>Jose Fiestas Iquira<br><span class="muted">Ciencia de Computación y de Datos; computacional, alto rendimiento, modelos</span></td></tr><tr>
+    <td>Carlos Alberto Benedetty Torres</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">13</td><td class="n">0</td>
+    <td>Luis Bedriñana Mera<br><span class="muted">mismo grupo; concretos, estructuras, materiales</span></td></tr><tr>
+    <td>Luis Bedriñana Mera<br><span class="muted">Coordinador</span></td>
+    <td>Puente, n.º 4</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td>Carlos Alberto Benedetty Torres<br><span class="muted">mismo grupo; concretos, estructuras, materiales</span></td></tr><tr>
+    <td>Enrique Juarez Aquino</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td>José Manuel Aguilar Alfaro<br><span class="muted">Negocios Digitales; gestión</span></td></tr><tr>
+    <td>Monica C. Santa-Maria</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td>Ursula Rodriguez Zuñiga<br><span class="muted">Bioingeniería y Química; ambientales</span></td></tr><tr>
+    <td>Elba Rosaura Vazques Arrieta</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td>Luis Bedriñana Mera<br><span class="muted">mismo grupo; concretos, bajo</span></td></tr><tr>
+    <td>Sheyla Chero Osorio</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td></td></tr><tr>
+    <td>Ada Congrains Castillo</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td></td></tr><tr>
+    <td>Ronald R. Gutierrez</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td></td></tr><tr>
+    <td>Lucia Rivera Charún</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td></td></tr></table>
+
+  <h2>Colaboraciones probables que involucran al departamento</h2>
+  <table><tr><th>Pareja</th><th>Por qué</th><th class="n">Puntaje</th></tr>
+  <tr><td>Luis Bedriñana Mera y Carlos Alberto Benedetty Torres</td><td>Mismo grupo. concretos, estructuras, materiales, armado</td><td class="n">0.54</td></tr><tr><td>Luis Bedriñana Mera y Samuel Charca Mamani</td><td>Mismo grupo. estructural, materiales, daño, evaluación</td><td class="n">0.53</td></tr><tr><td>Jose Fiestas Iquira y Daniel Vicente Horna Muñoz</td><td>computacional, alto rendimiento, modelos</td><td class="n">0.47</td></tr><tr><td>Luis Bedriñana Mera y Elba Rosaura Vazques Arrieta</td><td>Mismo grupo. concretos, bajo</td><td class="n">0.36</td></tr></table>
+  <p class="muted">Fuente: cris.utec.edu.pe. Cada integrante tiene su reporte individual en /investigador/&lt;id&gt;.</p>
+  <p class="muted credit">UtecVis, elaborado por <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener">Gianella Lira Ñaupari</a> y <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener">Paolo Medrano Terán</a> (LinkedIn) para el curso DS5343 Visualización de Datos, UTEC.</p>
+</div></body></html>

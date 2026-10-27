@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>UtecVis: hallazgos de la red de colaboración</title><style>
+@font-face { font-family: "Montserrat"; font-weight: 400; src: url("static/fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 600; src: url("static/fonts/montserrat-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; src: url("static/fonts/montserrat-latin-800-normal.woff2") format("woff2"); }
+:root { --ink:#15181c; --muted:#69737d; --cyan:#00aeef; --line:#e2e7eb; }
+* { box-sizing: border-box; }
+body { font-family: "Montserrat", Arial, sans-serif; color: var(--ink); margin: 0; background: #f4f7f9; }
+.page { max-width: 820px; margin: 24px auto; background: #fff; padding: 44px 52px; border-radius: 14px; box-shadow: 0 6px 24px rgba(16,32,44,.08); }
+.brand { font-weight: 800; font-size: 14px; } .brand span { color: var(--cyan); }
+h1 { font-size: 26px; font-weight: 800; margin: 14px 0 4px; line-height: 1.2; }
+h1::after { content: ""; display: block; width: 56px; height: 5px; background: var(--cyan); margin-top: 10px; }
+h2 { font-size: 16px; font-weight: 800; margin: 28px 0 6px; }
+.k { color: #0084b8; font-weight: 800; font-size: 12.5px; }
+p, li { font-size: 13px; line-height: 1.55; }
+.muted { color: var(--muted); font-size: 12px; }
+.action { background: #e9f7fd; border-radius: 10px; padding: 9px 12px; font-size: 12.5px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 6px; }
+th { text-align: left; color: var(--muted); font-weight: 600; padding: 4px 6px; border-bottom: 2px solid var(--line); }
+td { padding: 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11px; font-weight: 800; background: var(--cyan); padding: 3px 8px; border-radius: 999px; margin: 0 4px 4px 0; }
+.bar { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 6px; }
+.bar button, .bar a { font: inherit; font-size: 12px; font-weight: 600; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 12px; cursor: pointer; color: var(--ink); text-decoration: none; }
+@media print { body { background: #fff; } .page { box-shadow: none; margin: 0; max-width: none; padding: 0; } .bar { display: none; } h2 { break-after: avoid; } tr { break-inside: avoid; } }
+  .credit { margin-top: 18px; } .credit a { color: #0084b8; }
+</style></head>
+<body><div class="page">
+  <div class="bar"><a href="index.html">Volver a la red</a><button onclick="print()">Guardar como PDF</button></div>
+  <div class="brand">Utec<span>Vis</span></div>
+  <h1>Hallazgos de la red de colaboración científica de UTEC</h1>
+  <p class="muted">104 investigadores, 17 coautorías, 185 vínculos por grupo de investigación. Datos: cris.utec.edu.pe. Generado el 2026-10-27.</p>
+
+  
+  <h2><span class="k">T1</span> ¿Quiénes son los colaboradores más prolíficos?</h2>
+  <p><b>Ruth Canahuire Cabello es quien más colabora dentro de UTEC: 5 coautores y 9 publicaciones compartidas. Le sigue José Luis Mantari Laureano (4 y 8).</b></p>
+  <ul><li>Solo 19 de 104 investigadores (18 %) tienen al menos una coautoría con un colega de la lista.</li><li>2 de los 5 que más publican no tienen ningún coautor UTEC: Diego Milanés (532), Pedro Rau (35).</li></ul>
+  <p class="action"><b>Para los investigadores:</b> Publicar mucho no implica colaborar adentro. Los investigadores muy productivos sin coautores UTEC son la mayor oportunidad para crear equipos internos.</p>
+  <p class="muted">Métrica: Grado (n.º de coautores UTEC) y grado ponderado (publicaciones compartidas)</p>
+  
+  <h2><span class="k">T2</span> ¿Quiénes actúan como puentes entre departamentos y grupos?</h2>
+  <p><b>Ruth Canahuire Cabello (Electrónica y Mecatrónica) y José Luis Mantari Laureano (Ciencias) son los principales puentes (intermediación 0,046 y 0,027).</b></p>
+  <ul><li>La red tiene caminos alternativos: retirar a Ruth Canahuire no la divide, pero alarga las rutas.</li><li>Ruth Canahuire y José Mantari son puente también en la red de coautoría pura: conectan departamentos con publicaciones, no solo con pertenencia a grupos.</li><li>3 de los 5 principales puentes ocupan un cargo según la estructura de CRIS: Ruth Canahuire (directora general académica de UTEC); José Mantari (coordinador de MSP); Luis Bedriñana (coordinador de ReSusCon). Ser puente va de la mano con coordinar.</li><li>Con solo coautorías, 5 de 104 tendrían intermediación mayor que cero; por eso se mide sobre la red ampliada.</li></ul>
+  <p class="action"><b>Para los investigadores:</b> Los puentes son los mejores intermediarios para presentar a colegas de otros departamentos. Depender de pocos puentes es un riesgo: conviene que surjan otros.</p>
+  <p class="muted">Métrica: Intermediación de Brandes (distancia = 1 / peso) en la red de coautoría + grupos; coeficiente de participación</p>
+  
+  <h2><span class="k">T3</span> ¿Los departamentos colaboran entre sí o trabajan en silos?</h2>
+  <p><b>La estructura ya es interdisciplinaria: 9 de 18 grupos de investigación reúnen a varios departamentos y 9 de 17 coautorías cruzan departamentos (4 incluso cruzan facultades). Pero compartir grupo casi no se traduce en publicar: solo 9 de 185 pares del mismo grupo tienen una coautoría (5 %).</b></p>
+  <ul><li>6 departamentos con 3 o más investigadores no registran ninguna coautoría UTEC: Ciencia de Computación y de Datos, Civil y Ambiental, Humanidades y Artes, Industrial y Gestión, Sin departamento, Sistemas y Seguridad de la Información.</li><li>Línea cian: coautoría entre departamentos. Punteado: comparten grupo pero no han publicado juntos.</li></ul>
+  <p class="action"><b>Para los investigadores:</b> El potencial está dentro de los propios grupos: los pares punteados ya se conocen y comparten agenda; convertir esa pertenencia en una publicación es el paso más corto.</p>
+  <p class="muted">Métrica: Proporción de coautorías entre departamentos; grupos con miembros de varios departamentos; pares de grupo que publican juntos</p>
+  
+  <h2><span class="k">T4</span> ¿Qué nuevas colaboraciones son más probables?</h2>
+  <p><b>40 pares con intereses afines aún no publican juntos; el más claro es Rafael Vera Pomalaza y Eunice Villicaña Ortiz, por renovables, energías.</b></p>
+  <ul><li>18 de las 40 sugerencias cruzan departamentos.</li><li>Validación: usando las 17 coautorías reales como positivos, el puntaje obtiene AUC 0,82 (solo texto: 0,68). Es mejor que el azar (0,5), así que las sugerencias tienen base.</li></ul>
+  <p class="action"><b>Para los investigadores:</b> Cada investigador tiene en su ficha sus 3 colegas más afines y el porqué (grupo, temas en común).</p>
+  <p class="muted">Métrica: Predicción de enlaces: 0,5 similitud de áreas (NLP, TF-IDF) + 0,3 Adamic-Adar + 0,2 mismo grupo</p>
+  
+
+  <h2>Colaboraciones recomendadas</h2>
+  <table><tr><th>#</th><th>Pareja</th><th>Por qué</th><th class="n">Puntaje</th></tr>
+  <tr><td>1</td><td>Rafael Vera Pomalaza y Eunice Villicaña Ortiz</td>
+  <td>Mismo grupo. renovables, energías</td><td class="n">0.80</td></tr><tr><td>2</td><td>Claudia Antonini Bova y Jose Larco Martinelli</td>
+  <td>Mismo grupo. logísticos alimentarios, tradicional, canal</td><td class="n">0.74</td></tr><tr><td>3</td><td>Wangdo Kim y Emir Augusto Vela Saavedra</td>
+  <td>Mismo grupo. biomecánica, rehabilitación</td><td class="n">0.71</td></tr><tr><td>4</td><td>José Ramos Saravia y Eunice Villicaña Ortiz</td>
+  <td>Mismo grupo. energías, eficiencia energética, renovables</td><td class="n">0.70</td></tr><tr><td>5</td><td>Alberto Donayre Torres y Julio Ernesto Valdivia Silva</td>
+  <td>Mismo grupo. biología, sintética</td><td class="n">0.66</td></tr><tr><td>6</td><td>Andrés Julián Arias Moreno y Wangdo Kim</td>
+  <td>Mismo grupo. biomecánica</td><td class="n">0.62</td></tr><tr><td>7</td><td>Germain García Zanabria y Yamilet Rosario Serrano Llerena</td>
+  <td>Mismo grupo. computación, datos, ciencia</td><td class="n">0.61</td></tr><tr><td>8</td><td>Angel Napa Bernuy y Jorge Tipe Villanueva</td>
+  <td>Mismo grupo. discretas, teoría grafos, matemática</td><td class="n">0.59</td></tr><tr><td>9</td><td>Luis Bedriñana Mera y Carlos Alberto Benedetty Torres</td>
+  <td>Mismo grupo. concretos, estructuras, materiales, armado</td><td class="n">0.54</td></tr><tr><td>10</td><td>Luis Bedriñana Mera y Samuel Charca Mamani</td>
+  <td>Mismo grupo. estructural, materiales, daño, evaluación</td><td class="n">0.53</td></tr><tr><td>11</td><td>Paul Cardenas Lizana y Harry Gustavo Saavedra Espinoza</td>
+  <td>Mismo grupo. biológicos, automático, aprendizaje</td><td class="n">0.53</td></tr><tr><td>12</td><td>Paul Cardenas Lizana y Julio Ernesto Valdivia Silva</td>
+  <td>Mismo grupo. células, inmunología</td><td class="n">0.51</td></tr><tr><td>13</td><td>José Ramos Saravia y Rafael Vera Pomalaza</td>
+  <td>Mismo grupo. energías, renovables</td><td class="n">0.51</td></tr><tr><td>14</td><td>Jhedmar Jhonatan Callupe Luna y Elvis Jara Alegria</td>
+  <td>Mismo grupo. inteligencia artificial</td><td class="n">0.50</td></tr><tr><td>15</td><td>Cristian Lopez Del Alamo y Aurea Rossy Soriano Vargas</td>
+  <td>aprendizaje, datos, profundo, automático</td><td class="n">0.50</td></tr></table>
+
+  <h2>Por departamento</h2>
+  <table><tr><th>Departamento</th><th>Facultad</th><th class="n">Inv.</th><th class="n">Publ.</th><th class="n">Publ. conjuntas internas</th><th class="n">Publ. conjuntas con otros dptos.</th></tr>
+  <tr><td>Física</td><td>Departamentos Transversales</td><td class="n">2</td><td class="n">532</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Electrónica y Mecatrónica</td><td>Facultad de Ingeniería</td><td class="n">12</td><td class="n">285</td><td class="n">17</td><td class="n">5</td></tr><tr><td>Ciencias</td><td>Departamentos Transversales</td><td class="n">12</td><td class="n">159</td><td class="n">0</td><td class="n">8</td></tr><tr><td>Bioingeniería y Química</td><td>Facultad de Ingeniería</td><td class="n">13</td><td class="n">123</td><td class="n">1</td><td class="n">3</td></tr><tr><td>Ciencia de Computación y de Datos</td><td>Facultad de Computación</td><td class="n">14</td><td class="n">111</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Mecánica y Energía</td><td>Facultad de Ingeniería</td><td class="n">10</td><td class="n">98</td><td class="n">0</td><td class="n">11</td></tr><tr><td>Civil y Ambiental</td><td>Facultad de Ingeniería</td><td class="n">11</td><td class="n">62</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Humanidades y Artes</td><td>Departamentos Transversales</td><td class="n">8</td><td class="n">21</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Industrial y Gestión</td><td>Facultad de Ingeniería</td><td class="n">8</td><td class="n">19</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Facultad de Ingeniería</td><td>Facultad de Ingeniería</td><td class="n">1</td><td class="n">14</td><td class="n">0</td><td class="n">1</td></tr><tr><td>Sin departamento</td><td>Sin facultad</td><td class="n">5</td><td class="n">12</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Sistemas y Seguridad de la Información</td><td>Facultad de Computación</td><td class="n">4</td><td class="n">5</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Facultad de Computación</td><td>Facultad de Computación</td><td class="n">1</td><td class="n">4</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Facultad de Negocios</td><td>Facultad de Negocios</td><td class="n">1</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr><tr><td>Negocios Digitales</td><td>Facultad de Negocios</td><td class="n">2</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr></table>
+  <p class="muted">Cada investigador tiene una ficha propia con su rol en la red y a quién le conviene escribir: /investigador/&lt;id&gt; (enlace desde la ficha en la red).</p>
+  <p class="muted credit">UtecVis, elaborado por <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener">Gianella Lira Ñaupari</a> y <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener">Paolo Medrano Terán</a> (LinkedIn) para el curso DS5343 Visualización de Datos, UTEC.</p>
+</div></body></html>

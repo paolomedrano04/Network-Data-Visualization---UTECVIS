@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+data/raw/html_cache/
+data/raw/.browser_profile/
+data/raw/openalex_cache/

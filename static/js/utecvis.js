@@ -50,6 +50,8 @@
     return (w[0][0] + (w.length > 2 ? w[w.length - 2][0] : (w[1] || " ")[0])).toUpperCase();
   }
 
+  // en GitHub Pages (versión estática) no hay servidor: las fotos se leen como archivos
+  const photoURL = (id) => (global.UTECVIS_STATIC ? `static/photos/${id}.jpg` : `/photo/${id}`);
   const reduce = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const DUR = reduce ? 0 : 900;
 
@@ -293,10 +295,10 @@
       g.filter((d) => d.photo || d.image_url || d.photo_local).append("image")
         .attr("clip-path", (d) => `url(#c${d.id})`).attr("preserveAspectRatio", "xMidYMid slice")
         // cadena de carga: caché local, luego CRIS directo, luego proxy de Flask, luego iniciales
-        .attr("href", (d) => d.photo || (d.photo_local ? `/photo/${d.id}` : d.image_url))
+        .attr("href", (d) => d.photo || (d.photo_local ? photoURL(d.id) : d.image_url))
         .on("error", function (ev, d) {
           const img = d3.select(this);
-          if (!d._tried && !d.photo) { d._tried = true; img.attr("href", `/photo/${d.id}`); } else img.remove();
+          if (!d._tried && !d.photo) { d._tried = true; img.attr("href", photoURL(d.id)); } else img.remove();
         });
       g.append("circle").attr("class", "ring");
       g.filter((d) => d.leadership && d.leadership.length).append("circle").attr("class", "lead").attr("r", 4.5);

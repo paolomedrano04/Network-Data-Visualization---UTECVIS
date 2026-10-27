@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Bioingeniería y Química: reporte de colaboración UtecVis</title><style>
+@font-face { font-family: "Montserrat"; font-weight: 400; src: url("../static/fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 600; src: url("../static/fonts/montserrat-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; src: url("../static/fonts/montserrat-latin-800-normal.woff2") format("woff2"); }
+:root { --ink:#15181c; --muted:#69737d; --cyan:#00aeef; --line:#e2e7eb; }
+* { box-sizing: border-box; }
+body { font-family: "Montserrat", Arial, sans-serif; color: var(--ink); margin: 0; background: #f4f7f9; }
+.page { max-width: 820px; margin: 24px auto; background: #fff; padding: 44px 52px; border-radius: 14px; box-shadow: 0 6px 24px rgba(16,32,44,.08); }
+.brand { font-weight: 800; font-size: 14px; } .brand span { color: var(--cyan); }
+h1 { font-size: 26px; font-weight: 800; margin: 14px 0 4px; line-height: 1.2; }
+h1::after { content: ""; display: block; width: 56px; height: 5px; background: var(--cyan); margin-top: 10px; }
+h2 { font-size: 16px; font-weight: 800; margin: 28px 0 6px; }
+.k { color: #0084b8; font-weight: 800; font-size: 12.5px; }
+p, li { font-size: 13px; line-height: 1.55; }
+.muted { color: var(--muted); font-size: 12px; }
+.action { background: #e9f7fd; border-radius: 10px; padding: 9px 12px; font-size: 12.5px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 6px; }
+th { text-align: left; color: var(--muted); font-weight: 600; padding: 4px 6px; border-bottom: 2px solid var(--line); }
+td { padding: 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11px; font-weight: 800; background: var(--cyan); padding: 3px 8px; border-radius: 999px; margin: 0 4px 4px 0; }
+.bar { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 6px; }
+.bar button, .bar a { font: inherit; font-size: 12px; font-weight: 600; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 12px; cursor: pointer; color: var(--ink); text-decoration: none; }
+@media print { body { background: #fff; } .page { box-shadow: none; margin: 0; max-width: none; padding: 0; } .bar { display: none; } h2 { break-after: avoid; } tr { break-inside: avoid; } }
+  .credit { margin-top: 18px; } .credit a { color: #0084b8; }
+</style></head>
+<body><div class="page">
+  <div class="bar"><a href="../index.html">Volver a la red</a><button onclick="print()">Guardar como PDF</button></div>
+  <div class="brand">Utec<span>Vis</span> <span class="muted">Reporte para el departamento</span></div>
+  <h1>Bioingeniería y Química</h1>
+  <p class="muted">13 investigadores. Facultad de Ingeniería. Temas principales: biomateriales, biología, molecular, producción.</p>
+
+  <h2>En una frase por tarea</h2>
+  <table>
+    <tr><td style="width:34%"><span class="k">T1</span> ¿Quiénes son los colaboradores más prolíficos?</td><td>Julio Valdivia es su colaborador más activo (2 coautores). Juan Rodríguez publica mucho (28) pero sin coautores UTEC.</td></tr><tr><td style="width:34%"><span class="k">T2</span> ¿Quiénes actúan como puentes entre departamentos y grupos?</td><td>Juan Rodríguez es su principal puente. Ya publican con Electrónica y Mecatrónica, Mecánica y Energía.</td></tr><tr><td style="width:34%"><span class="k">T3</span> ¿Los departamentos colaboran entre sí o trabajan en silos?</td><td>Por temas, lo más cercano es Mecánica y Energía; con Ciencia de Computación y de Datos también son afines y no tienen ninguna coautoría.</td></tr><tr><td style="width:34%"><span class="k">T4</span> ¿Qué nuevas colaboraciones son más probables?</td><td>6 colaboraciones probables involucran al departamento; la más clara: Alberto Donayre y Julio Valdivia.</td></tr>
+  </table>
+
+  <h2>Departamentos más afines por temas</h2>
+  <p class="muted">Similitud de áreas de investigación (TF-IDF, coseno) y publicaciones conjuntas registradas. Afinidad alta sin coautorías = oportunidad.</p>
+  <table><tr><th>Departamento</th><th class="n">Afinidad</th><th class="n">Publicaciones conjuntas</th></tr>
+  <tr><td>Mecánica y Energía</td><td class="n">0.10</td><td class="n">2</td></tr><tr><td>Ciencia de Computación y de Datos</td><td class="n">0.09</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Ciencias</td><td class="n">0.07</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Sin departamento</td><td class="n">0.07</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr><tr><td>Civil y Ambiental</td><td class="n">0.07</td><td class="n">0 <b style="color:#0084b8">oportunidad</b></td></tr></table>
+
+  <h2>Integrantes</h2>
+  <table><tr><th>Investigador</th><th>Rol en la red</th><th class="n">Publ.</th><th class="n">Coautores UTEC</th><th>Podría escribirle a</th></tr>
+  <tr>
+    <td>Julio Ernesto Valdivia Silva<br><span class="muted">Director Académico</span></td>
+    <td>Colabora</td>
+    <td class="n">32</td><td class="n">2</td>
+    <td>Alberto Donayre Torres<br><span class="muted">mismo grupo; biología, sintética</span></td></tr><tr>
+    <td>Francisco Tarazona Vásquez</td>
+    <td>Colabora</td>
+    <td class="n">15</td><td class="n">1</td>
+    <td>Jose Renom Andara<br><span class="muted">Ciencias; ssimulación, análisis</span></td></tr><tr>
+    <td>Ursula Rodriguez Zuñiga</td>
+    <td>Colabora</td>
+    <td class="n">14</td><td class="n">1</td>
+    <td>Monica C. Santa-Maria<br><span class="muted">Civil y Ambiental; ambientales</span></td></tr><tr>
+    <td>Juan Carlos Rodríguez Reyes</td>
+    <td>Puente, n.º 11</td>
+    <td class="n">28</td><td class="n">0</td>
+    <td>Alejandro Rios Cuadros<br><span class="muted">Ciencias; nanomateriales</span></td></tr><tr>
+    <td>Carolina Parada Quinaya</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">13</td><td class="n">0</td>
+    <td>Elena Flores Barreda<br><span class="muted">Bioingeniería y Química; compuestos, residuos, biomateriales</span></td></tr><tr>
+    <td>Paul Cardenas Lizana</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">7</td><td class="n">0</td>
+    <td>Harry Gustavo Saavedra Espinoza<br><span class="muted">mismo grupo; biológicos, automático, aprendizaje</span></td></tr><tr>
+    <td>Alberto Donayre Torres</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">7</td><td class="n">0</td>
+    <td>Julio Ernesto Valdivia Silva<br><span class="muted">mismo grupo; biología, sintética</span></td></tr><tr>
+    <td>Harry Gustavo Saavedra Espinoza</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">6</td><td class="n">0</td>
+    <td>Paul Cardenas Lizana<br><span class="muted">mismo grupo; biológicos, automático, aprendizaje</span></td></tr><tr>
+    <td>Andrés Julián Arias Moreno</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">2</td><td class="n">0</td>
+    <td>Wangdo Kim<br><span class="muted">mismo grupo; biomecánica</span></td></tr><tr>
+    <td>Elena Flores Barreda</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td>Andrés Julián Arias Moreno<br><span class="muted">mismo grupo; biomateriales</span></td></tr><tr>
+    <td>Alejandra Ratti Parandelli</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td>Ursula Rodriguez Zuñiga<br><span class="muted">Bioingeniería y Química; bioquímica, enzimas</span></td></tr><tr>
+    <td>Heinner Hilario Guio Chunga</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td></td></tr><tr>
+    <td>Leandro Neodini Remedio</td>
+    <td>Sin coautorías UTEC</td>
+    <td class="n">0</td><td class="n">0</td>
+    <td></td></tr></table>
+
+  <h2>Colaboraciones probables que involucran al departamento</h2>
+  <table><tr><th>Pareja</th><th>Por qué</th><th class="n">Puntaje</th></tr>
+  <tr><td>Alberto Donayre Torres y Julio Ernesto Valdivia Silva</td><td>Mismo grupo. biología, sintética</td><td class="n">0.66</td></tr><tr><td>Andrés Julián Arias Moreno y Wangdo Kim</td><td>Mismo grupo. biomecánica</td><td class="n">0.62</td></tr><tr><td>Paul Cardenas Lizana y Harry Gustavo Saavedra Espinoza</td><td>Mismo grupo. biológicos, automático, aprendizaje</td><td class="n">0.53</td></tr><tr><td>Paul Cardenas Lizana y Julio Ernesto Valdivia Silva</td><td>Mismo grupo. células, inmunología</td><td class="n">0.51</td></tr><tr><td>Andrés Julián Arias Moreno y Emir Augusto Vela Saavedra</td><td>Mismo grupo. biomecánica</td><td class="n">0.50</td></tr><tr><td>Andrés Julián Arias Moreno y Elena Flores Barreda</td><td>Mismo grupo. biomateriales</td><td class="n">0.48</td></tr></table>
+  <p class="muted">Fuente: cris.utec.edu.pe. Cada integrante tiene su reporte individual en /investigador/&lt;id&gt;.</p>
+  <p class="muted credit">UtecVis, elaborado por <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener">Gianella Lira Ñaupari</a> y <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener">Paolo Medrano Terán</a> (LinkedIn) para el curso DS5343 Visualización de Datos, UTEC.</p>
+</div></body></html>

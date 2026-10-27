@@ -1,0 +1,2375 @@
+[
+ {
+  "source": 2,
+  "target": 13,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Computational and experimental analysis of a Glaucoma flat drainage device",
+    "url": "https://cris.utec.edu.pe/es/publications/computational-and-experimental-analysis-of-a-glaucoma-flat-draina/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 2,
+  "target": 47,
+  "type": "coauthor",
+  "weight": 2,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Computational and experimental analysis of a Glaucoma flat drainage device",
+    "url": "https://cris.utec.edu.pe/es/publications/computational-and-experimental-analysis-of-a-glaucoma-flat-draina/"
+   },
+   {
+    "title": "Estimation of the power consumed in disc crushers using a static analysis",
+    "url": "https://cris.utec.edu.pe/es/publications/estimation-of-the-power-consumed-in-disc-crushers-using-a-static-/"
+   }
+  ],
+  "shared_groups": [
+   "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)"
+  ]
+ },
+ {
+  "source": 4,
+  "target": 12,
+  "type": "coauthor",
+  "weight": 2,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "A Touch-Free Interface for 2D Telesurgery Using a UR5 Robot",
+    "url": "https://cris.utec.edu.pe/es/publications/a-touch-free-interface-for-2d-telesurgery-using-a-ur5-robot/"
+   },
+   {
+    "title": "Intuitive Arm Motion Transmission for Tele-Surgery based on Computer Vision and the Sawyer Robot",
+    "url": "https://cris.utec.edu.pe/es/publications/intuitive-arm-motion-transmission-for-tele-surgery-based-on-compu/"
+   }
+  ],
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ]
+ },
+ {
+  "source": 13,
+  "target": 47,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Computational and experimental analysis of a Glaucoma flat drainage device",
+    "url": "https://cris.utec.edu.pe/es/publications/computational-and-experimental-analysis-of-a-glaucoma-flat-draina/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 13,
+  "target": 61,
+  "type": "coauthor",
+  "weight": 5,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "A Teleoperated Robotic System with Haptic Feedback for Soft Tissue Incision",
+    "url": "https://cris.utec.edu.pe/es/publications/a-teleoperated-robotic-system-with-haptic-feedback-for-soft-tissu/"
+   },
+   {
+    "title": "Charlotte: Low-cost open-source semi-autonomous quadruped robot",
+    "url": "https://cris.utec.edu.pe/es/publications/charlotte-low-cost-open-source-semi-autonomous-quadruped-robot/"
+   },
+   {
+    "title": "Sensorless Impedance Control for the UR5 Robot",
+    "url": "https://cris.utec.edu.pe/es/publications/sensorless-impedance-control-for-the-ur5-robot/"
+   },
+   {
+    "title": "Task-space Kinematic Control of a Quadruped Robot with a Floating Base",
+    "url": "https://cris.utec.edu.pe/es/publications/task-space-kinematic-control-of-a-quadruped-robot-with-a-floating/"
+   },
+   {
+    "title": "Trajectory Tracking Control of UR5 Robot: A PD with Gravity Compensation and Sliding Mode Control Comparison",
+    "url": "https://cris.utec.edu.pe/es/publications/trajectory-tracking-control-of-ur5-robot-a-pd-with-gravity-compen/"
+   }
+  ],
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ]
+ },
+ {
+  "source": 13,
+  "target": 83,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Pressure and Volume Control of a Non-invasive Mechanical Ventilator: A PI and LQR Approach",
+    "url": "https://cris.utec.edu.pe/es/publications/pressure-and-volume-control-of-a-non-invasive-mechanical-ventilat/"
+   }
+  ],
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ]
+ },
+ {
+  "source": 13,
+  "target": 85,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Pressure and Volume Control of a Non-invasive Mechanical Ventilator: A PI and LQR Approach",
+    "url": "https://cris.utec.edu.pe/es/publications/pressure-and-volume-control-of-a-non-invasive-mechanical-ventilat/"
+   }
+  ],
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ]
+ },
+ {
+  "source": 15,
+  "target": 47,
+  "type": "coauthor",
+  "weight": 4,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "An axiomatic/asymptotic evaluation of the best theories for free vibration of laminated and sandwich shells using non-polynomial functions",
+    "url": "https://cris.utec.edu.pe/es/publications/an-axiomaticasymptotic-evaluation-of-the-best-theories-for-free-v/"
+   },
+   {
+    "title": "Analysis of HDPE Configurations Reinforced with Fiberglass as Hull Material for Artisanal Fishing Vessels",
+    "url": "https://cris.utec.edu.pe/es/publications/analysis-of-hdpe-configurations-reinforced-with-fiberglass-as-hul/"
+   },
+   {
+    "title": "Assessment of the mechanical properties of peruvian Stipa Obtusa fibers for their use as reinforcement in composite materials",
+    "url": "https://cris.utec.edu.pe/es/publications/assessment-of-the-mechanical-properties-of-peruvian-stipa-obtusa-/"
+   },
+   {
+    "title": "Experimental investigation of seawater exposure and specimen geometry effects on the mechanical performance of 3D-printed ABS and ABS/CF",
+    "url": "https://cris.utec.edu.pe/es/publications/experimental-investigation-of-seawater-exposure-and-specimen-geom/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 27,
+  "target": 39,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "Comparative Analysis of state-of-art pre-trained Human Pose Estimation models in underwater condition",
+    "url": "https://cris.utec.edu.pe/es/publications/comparative-analysis-of-state-of-art-pre-trained-human-pose-estim/"
+   }
+  ],
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ]
+ },
+ {
+  "source": 27,
+  "target": 80,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "FPGA-Based Brain-Computer Interface System for Real-Time Eye State Classification",
+    "url": "https://cris.utec.edu.pe/es/publications/fpga-based-brain-computer-interface-system-for-real-time-eye-stat/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 27,
+  "target": 87,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Interdisciplinary projects as active learning method for strengthening of technical and soft skills of UTEC students",
+    "url": "https://cris.utec.edu.pe/es/publications/interdisciplinary-projects-as-active-learning-method-for-strength/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 40,
+  "target": 54,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "Design and Implementation of a Portable PWM Solar Charge Controller for an Intelligent LED Lighting System in Peruvian Pitahaya Crops",
+    "url": "https://cris.utec.edu.pe/es/publications/design-and-implementation-of-a-portable-pwm-solar-charge-controll/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 41,
+  "target": 54,
+  "type": "coauthor",
+  "weight": 4,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "Analysis of Quadcopter Body Frame Vibration During Hovering Flight with Variable Rotor Speeds",
+    "url": "https://cris.utec.edu.pe/es/publications/analysis-of-quadcopter-body-frame-vibration-during-hovering-fligh/"
+   },
+   {
+    "title": "Comparative Analysis and Design Optimization of Drone Arms with Vibration Assessment",
+    "url": "https://cris.utec.edu.pe/es/publications/comparative-analysis-and-design-optimization-of-drone-arms-with-v/"
+   },
+   {
+    "title": "Critical Modal Frequency in Quadcopters: An Analytical and Simulation-Based Arm Study",
+    "url": "https://cris.utec.edu.pe/es/publications/critical-modal-frequency-in-quadcopters-an-analytical-and-simulat/"
+   },
+   {
+    "title": "LoRa Protocol for Coordinated Data Transmission in Shrimp Feeding Systems",
+    "url": "https://cris.utec.edu.pe/es/publications/lora-protocol-for-coordinated-data-transmission-in-shrimp-feeding/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 47,
+  "target": 62,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Bibliometric Analysis of Environmental Impact in Shipbuilding with Wood, Steel, Fiberglass and Plastic",
+    "url": "https://cris.utec.edu.pe/es/publications/bibliometric-analysis-of-environmental-impact-in-shipbuilding-wit/"
+   }
+  ],
+  "shared_groups": [
+   "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)"
+  ]
+ },
+ {
+  "source": 54,
+  "target": 80,
+  "type": "coauthor",
+  "weight": 3,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "Automated Selection Prototype of LoRa Parameters to Optimize Power Consumption and Bit Rate",
+    "url": "https://cris.utec.edu.pe/es/publications/automated-selection-prototype-of-lora-parameters-to-optimize-powe/"
+   },
+   {
+    "title": "Smart Energy Management in Agricultural Wireless Sensor Nodes Using TinyML-Based Adaptive Sampling",
+    "url": "https://cris.utec.edu.pe/es/publications/smart-energy-management-in-agricultural-wireless-sensor-nodes-usi/"
+   },
+   {
+    "title": "Wireless Sensor Network for Environmental Monitoring in Pitaya Farming",
+    "url": "https://cris.utec.edu.pe/es/publications/wireless-sensor-network-for-environmental-monitoring-in-pitaya-fa/"
+   }
+  ],
+  "shared_groups": [
+   "Grupo de Investigación en Sistemas Embebidos, Reconfigurables, Monitoreo Inteligente, y Comunicaciones (SERMIC)"
+  ]
+ },
+ {
+  "source": 68,
+  "target": 79,
+  "type": "coauthor",
+  "weight": 1,
+  "years": [],
+  "cross_department": false,
+  "publications": [
+   {
+    "title": "Energy-Efficient Enhancements on the Ethylene Process by Oxidative Dehydrogenation of Ethane Improve Economic Viability and Help Reduce Carbon Intensity",
+    "url": "https://cris.utec.edu.pe/es/publications/energy-efficient-enhancements-on-the-ethylene-process-by-oxidativ/"
+   }
+  ],
+  "shared_groups": []
+ },
+ {
+  "source": 83,
+  "target": 85,
+  "type": "coauthor",
+  "weight": 2,
+  "years": [],
+  "cross_department": true,
+  "publications": [
+   {
+    "title": "Pressure and Volume Control of a Non-invasive Mechanical Ventilator: A PI and LQR Approach",
+    "url": "https://cris.utec.edu.pe/es/publications/pressure-and-volume-control-of-a-non-invasive-mechanical-ventilat/"
+   },
+   {
+    "title": "Systematic review: Microfluidics and plasmodium",
+    "url": "https://cris.utec.edu.pe/es/publications/systematic-review-microfluidics-and-plasmodium/"
+   }
+  ],
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ]
+ },
+ {
+  "source": 0,
+  "target": 3,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 0,
+  "target": 17,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 0,
+  "target": 26,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 0,
+  "target": 34,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 0,
+  "target": 44,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 0,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 0,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 2,
+  "target": 5,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 2,
+  "target": 47,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)"
+  ],
+  "coauthored": 2
+ },
+ {
+  "source": 2,
+  "target": 60,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 2,
+  "target": 62,
+  "type": "group",
+  "weight": 2,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)",
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 2,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 2,
+  "target": 86,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 2,
+  "target": 87,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 3,
+  "target": 17,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 3,
+  "target": 26,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 3,
+  "target": 34,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 3,
+  "target": 44,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 3,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 3,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 4,
+  "target": 12,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 2
+ },
+ {
+  "source": 4,
+  "target": 13,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 4,
+  "target": 27,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 4,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 4,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 4,
+  "target": 41,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 4,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 5,
+  "target": 60,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 5,
+  "target": 62,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 5,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 5,
+  "target": 86,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 5,
+  "target": 87,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 13,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 14,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 23,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 25,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 6,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 7,
+  "target": 10,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 7,
+  "target": 15,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 7,
+  "target": 20,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 7,
+  "target": 24,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 7,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 7,
+  "target": 84,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación del Cemento y Concreto - CIC"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 9,
+  "target": 30,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 9,
+  "target": 45,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 9,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 10,
+  "target": 24,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Infraestructura de Concreto Resiliente y Sostenible (ReSusCon)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 12,
+  "target": 13,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 12,
+  "target": 27,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 12,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 12,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 12,
+  "target": 41,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 12,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 14,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 23,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 25,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 27,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 39,
+  "type": "group",
+  "weight": 2,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO",
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 40,
+  "type": "group",
+  "weight": 2,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO",
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 41,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 5
+ },
+ {
+  "source": 13,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 13,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 1
+ },
+ {
+  "source": 13,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 1
+ },
+ {
+  "source": 14,
+  "target": 23,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 25,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 14,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 15,
+  "target": 20,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 15,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 17,
+  "target": 26,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 17,
+  "target": 34,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 17,
+  "target": 44,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 17,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 17,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 18,
+  "target": 36,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Impacto y Responsabilidad Social - CIRSO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 18,
+  "target": 48,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Impacto y Responsabilidad Social - CIRSO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 18,
+  "target": 78,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Impacto y Responsabilidad Social - CIRSO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 20,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación y Conservación del Patrimonio"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 25,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 23,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 25,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 26,
+  "target": 34,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 26,
+  "target": 44,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 26,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 26,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 27,
+  "target": 39,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 1
+ },
+ {
+  "source": 27,
+  "target": 40,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 27,
+  "target": 41,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 27,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 28,
+  "target": 49,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Física Fundamental (GIFF)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 30,
+  "target": 45,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 30,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 33,
+  "target": 52,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 33,
+  "target": 81,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 34,
+  "target": 44,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 34,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 34,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 36,
+  "target": 48,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Impacto y Responsabilidad Social - CIRSO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 36,
+  "target": 78,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Impacto y Responsabilidad Social - CIRSO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 37,
+  "target": 64,
+  "type": "group",
+  "weight": 2,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación y Tecnología del Agua - CITA",
+   "Grupo de Investigación en Seguridad Hídrica y Cambio Climático (SeHClim)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 37,
+  "target": 72,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación y Tecnología del Agua - CITA"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 37,
+  "target": 99,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación y Tecnología del Agua - CITA"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 40,
+  "type": "group",
+  "weight": 2,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO",
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 41,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 39,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 41,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 43,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 40,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 41,
+  "target": 61,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Robótica, Inteligencia Artificial y Control Avanzado (RIC)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 43,
+  "target": 63,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 43,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 43,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 43,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 44,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 44,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 45,
+  "target": 74,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Inteligencia Artificial (GINIA)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 47,
+  "target": 62,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Diseño de Productos con Simulación Computacional (MSP)"
+  ],
+  "coauthored": 1
+ },
+ {
+  "source": 48,
+  "target": 78,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Impacto y Responsabilidad Social - CIRSO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 52,
+  "target": 81,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Algoritmos, Combinatoria y Teoría de la Computación (ALGCOMB)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 54,
+  "target": 80,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de Investigación en Sistemas Embebidos, Reconfigurables, Monitoreo Inteligente, y Comunicaciones (SERMIC)"
+  ],
+  "coauthored": 3
+ },
+ {
+  "source": 60,
+  "target": 62,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 60,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 60,
+  "target": 86,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 60,
+  "target": 87,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 62,
+  "target": 67,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 62,
+  "target": 86,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 62,
+  "target": 87,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 63,
+  "target": 69,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 63,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 63,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 64,
+  "target": 72,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación y Tecnología del Agua - CITA"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 64,
+  "target": 99,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación y Tecnología del Agua - CITA"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 67,
+  "target": 86,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 67,
+  "target": 87,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 69,
+  "target": 83,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 69,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 72,
+  "target": 99,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Centro de Investigación y Tecnología del Agua - CITA"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 74,
+  "target": 98,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de Investigación en Analítica de Datos y Ciencias de Decisión (DADS)"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 83,
+  "target": 85,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Centro de Investigación en Bioingeniería - BIO"
+  ],
+  "coauthored": 2
+ },
+ {
+  "source": 86,
+  "target": 87,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Grupo de investigación en energía y minas"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 88,
+  "target": 94,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 88,
+  "target": 95,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 88,
+  "target": 104,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 88,
+  "target": 106,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 94,
+  "target": 95,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 94,
+  "target": 104,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 94,
+  "target": 106,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 95,
+  "target": 104,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 95,
+  "target": 106,
+  "type": "group",
+  "weight": 1,
+  "cross_department": false,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ },
+ {
+  "source": 104,
+  "target": 106,
+  "type": "group",
+  "weight": 1,
+  "cross_department": true,
+  "shared_groups": [
+   "Instituto de Investigación para la Sostenibilidad de la Amazonía - ASRI"
+  ],
+  "coauthored": 0
+ }
+]
