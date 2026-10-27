@@ -40,24 +40,8 @@ def graph():
     ensure_data()
     out = {k: read(f"{k}.json") for k in ("nodes", "edges", "affinity", "meta", "insights")}
     for n in out["nodes"]:  # fotos ya guardadas localmente (se sirven sin internet)
-        f = PHOTOS / f"{n['id']}.jpg"
-        n["photo_local"] = f.exists()
-        # La foto va incrustada en los datos (son ~4 KB cada una): no depende de rutas, caché ni de
-        # que el navegador pida 100 imágenes aparte. Así siempre se ve, también sin internet.
-        if n["photo_local"]:
-            n["photo"] = photo_data(f)
+        n["photo_local"] = (PHOTOS / f"{n['id']}.jpg").exists()
     return jsonify(out)
-
-
-_photo_cache = {}
-
-
-def photo_data(f):
-    import base64
-    key = (str(f), f.stat().st_mtime)
-    if key not in _photo_cache:
-        _photo_cache[key] = "data:image/jpeg;base64," + base64.b64encode(f.read_bytes()).decode()
-    return _photo_cache[key]
 
 
 @app.get("/reporte")
@@ -94,7 +78,7 @@ def person(pid):
 
 @app.post("/api/colabora")
 def colabora():
-    """'Yo quiero colaborar con...': temas sugeridos por un LLM (o por reglas si no hay clave de API)."""
+    """'Yo quiero colaborar con...': temas sugeridos"""
     from pipeline.colabora import suggest
     ensure_data()
     body = request.get_json(force=True, silent=True) or {}
@@ -109,7 +93,7 @@ def colabora():
 
 @app.get("/api/colabora/stream")
 def colabora_stream():
-    """Versión en vivo: Server-Sent Events con cada paso y el texto del LLM a medida que llega."""
+    """Versión en vivo: Server-Sent Events con cada paso y el texto a medida que llega."""
     from flask import Response, stream_with_context
     from pipeline.colabora import stream_events
     ensure_data()
