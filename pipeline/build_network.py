@@ -341,11 +341,21 @@ def copy_local_photos(people):
     dest_dir = ROOT / "static" / "photos"
     dest_dir.mkdir(parents=True, exist_ok=True)
     n = 0
+    manual = RAW / "manual"
     for p in people:
         src = p.get("local_image")
         dest = dest_dir / f"{p['id']}.jpg"
-        if src and Path(src).exists() and not dest.exists():
-            shutil.copyfile(src, dest)
+        if not src or dest.exists():
+            continue
+        # la ruta puede venir de otra carpeta (otra PC o el proyecto descomprimido en otro lugar):
+        # se prueba tal cual, relativa al proyecto y, por último, buscando el archivo en data/raw/manual
+        name = src.replace("\\", "/").split("/")[-1]
+        cands = [Path(src), ROOT / src]
+        if manual.exists():
+            cands += list(manual.rglob(name))
+        found = next((c for c in cands if c.exists() and c.is_file()), None)
+        if found:
+            shutil.copyfile(found, dest)
             n += 1
     return n
 
@@ -493,7 +503,9 @@ def build():
         other = sorted({dept[u] for u in nb if dept[u] != dept[v]})
         nodes.append({
             "id": v, "name": p["name"], "department": p["dept"], "department_full": p.get("department", ""),
-            "faculty": fac[v], "leadership": leadership(org, p["name"]),
+            # el rector no pertenece a una facultad: encabeza toda la universidad
+            "faculty": "Rectorado" if any(l["role"].lower().startswith("rector") for l in leadership(org, p["name"])) else fac[v],
+            "leadership": leadership(org, p["name"]),
             "groups": p["groups"], "areas": p["areas"], "renacyt": p["renacyt"],
             "image_url": p.get("image_url", "") if "no-portrait" not in (p.get("image_url") or "") else "",
             "email": p.get("email", ""), "profile_url": p.get("profile_url", ""),

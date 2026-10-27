@@ -82,8 +82,9 @@ def build_insights(nodes, edges, affinity, meta, X):
         "question": "¿Quiénes actúan como puentes entre departamentos y grupos?",
         "metric": "Intermediación de Brandes (distancia = 1 / peso) en la red de coautoría + grupos; coeficiente de participación",
         "finding": (f"{tb[0]['name']} ({tb[0]['department']}) y {tb[1]['name']} ({tb[1]['department']}) son los "
-                    f"principales puentes (intermediación {num(tb[0]['betweenness'], 3)} y {num(tb[1]['betweenness'], 3)}), aunque no registran coautorías UTEC: su rol de puente viene de pertenecer a grupos de varios departamentos."
-                    if tb[0]["coauthors"] == 0 else f"{num(tb[1]['betweenness'], 3)})."),
+                    f"principales puentes (intermediación {num(tb[0]['betweenness'], 3)} y {num(tb[1]['betweenness'], 3)})"
+                    + (", aunque no registran coautorías UTEC: su rol de puente viene de pertenecer a grupos de varios departamentos."
+                       if tb[0]["coauthors"] == 0 else ".")),
         "evidence": [
             f"Si {first_last(tb[0]['name'])} no estuviera, la red ampliada se dividiría en "
             f"{impact[tb[0]['id']]} grupo(s) más: es un punto único de conexión." if impact[tb[0]['id']] > 0 else
@@ -176,7 +177,10 @@ def build_insights(nodes, edges, affinity, meta, X):
     for n in nodes:
         tags, lines = [], []
         dean = next((l for l in n.get("leadership", []) if "decan" in l["role"].lower()), None)
-        if dean:
+        rector = next((l for l in n.get("leadership", []) if l["role"].lower().startswith("rector")), None)
+        if rector:
+            tags.append("Rector de UTEC")
+        elif dean:
             tags.append(f"{dean['role']} de la {dean['unit']}")
         if n["coauthors"] >= 3:
             tags.append("Núcleo de colaboración")

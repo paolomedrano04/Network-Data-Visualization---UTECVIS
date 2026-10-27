@@ -1,7 +1,7 @@
 {
  "note": "Complemento curado de páginas de CRIS (grupos, centros y cargos) que el árbol de /organisations/ no lista; solo se agrega si falta.",
  "people_roles": [
-    {
+  {
    "name": "Ruth Canahuire Cabello",
    "role": "Directora General Académica",
    "org": "Universidad de Ingeniería y Tecnología - UTEC"
@@ -20,9 +20,9 @@
   },
   {
    "name": "Enrique Stiglich Labarthe",
-   "role": "Decano",
-   "org": "Facultad de Negocios",
-   "source": "CRIS lo adscribe directamente a la facultad; cargo indicado por el equipo"
+   "role": "Rector",
+   "org": "Universidad de Ingeniería y Tecnología - UTEC",
+   "source": "Rector de UTEC (asumió el rectorado en 2025-2026, según prensa); en CRIS sigue adscrito a la Facultad de Negocios"
   }
  ],
  "organisations": [

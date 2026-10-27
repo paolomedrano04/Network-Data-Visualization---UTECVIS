@@ -37,6 +37,14 @@
     radial: [sv('<circle cx="13" cy="8" r="3" fill="#00aeef"/><circle cx="13" cy="8" r="7" fill="none" stroke="#c4cdd3" stroke-dasharray="2 2"/>'), "Centro: tu departamento. Más cerca = temas más afines"],
     aff: [sv('<line x1="1" y1="8" x2="25" y2="8" stroke="#15181c" stroke-width="2" stroke-dasharray="5 3" opacity=".6"/>'), "Discontinua: colaboración probable (sin coautoría aún)"],
   };
+  const GROUP_TXT = { faculty: "facultad", department: "departamento", group: "grupo de investigación" };
+  function groupLegend() {
+    const g = vis.state.groupBy;
+    if (g === "affinity") return [[sv('<circle cx="7" cy="8" r="4" fill="#e7ecef" stroke="#c4cdd3"/><circle cx="19" cy="8" r="4" fill="#e7ecef" stroke="#c4cdd3"/><line x1="11" y1="8" x2="15" y2="8" stroke="#c4cdd3"/>'), "Juntos = temas de investigación parecidos (NLP)"]];
+    if (!GROUP_TXT[g]) return [];
+    return [[sv('<rect x="1" y="2" width="24" height="12" rx="6" fill="#eff3f6"/>'), `Fondo gris: ${GROUP_TXT[g]} (clic en el nombre para filtrar)`],
+      ...(g === "department" ? [L.faculty] : [])];
+  }
   const setLegend = (keys) => { $("#legend").innerHTML = keys.map(([s, t]) => `<li>${s}<span>${t}</span></li>`).join(""); };
 
   // ======================================================= pasos: panorama + tareas
@@ -45,10 +53,11 @@
   let pathAnchor = null;                             // origen del camino (shift + clic)                                   // contexto elegido en "Soy de"
   const mine = (d) => !myDept || d.department === myDept;
   const touches = (e) => !myDept || e.source.department === myDept || e.target.department === myDept;
-  const layoutFor = () => (myDept ? "radial" : "clusters");
+  let useRadial = true;   // con "Soy de": mapa radial; si el usuario elige una agrupación, se usa esa
+  const layoutFor = () => (myDept && useRadial ? "radial" : "clusters");
   const VIEWS = {
     P: { tab: "Panorama", view: { size: "publications", layers: {} },
-      legend: () => (myDept ? [L.radial, L.cross, L.same] : [L.faculty, L.territory, L.size("publicaciones"), L.cross]),
+      legend: () => (myDept && useRadial ? [L.radial, L.cross, L.same] : [...groupLegend(), L.size("publicaciones"), L.cross]),
       apply() { if (myDept) vis.setHighlight({ co: touches }); } },
     T1: { view: { size: "coauthors", layers: {} }, legend: () => [L.size("número de coautores UTEC"), L.width, L.cross, L.same],
       apply() {
@@ -64,7 +73,7 @@
         const ids = new Set(N.filter((d) => d.betweenness > 0 || d.coauthors > 0 || (myDept && mine(d))).map((d) => d.id));
         vis.setHighlight({ nodes: ids, ranked, co: touches, gr: (e) => e.cross_department && (top.has(e.source.id) || top.has(e.target.id)) });
       } },
-    T3: { view: { size: "publications", layers: { group: true } }, legend: () => [L.cross, L.same, L.groupdot, myDept ? L.radial : L.faculty],
+    T3: { view: { size: "publications", layers: { group: true } }, legend: () => [L.cross, L.same, L.groupdot, ...(myDept && useRadial ? [L.radial] : groupLegend())],
       apply() {
         if (myDept) vis.setHighlight({ co: touches, gr: touches });
         setTimeout(() => vis.drawIn((e) => e.cross_department && touches(e)), 400);
@@ -126,6 +135,7 @@
     setLegend(s.legend());
     caption(s);
     syncSettings();
+    syncGroupingUI();
     stepLi.classed("active", (x, k) => k === current);
     $("#prev").disabled = current === 0;
     $("#next").disabled = current === STEPS.length - 1;
@@ -138,6 +148,7 @@
     .attr("class", "d").attr("value", (d) => d).text((d) => d);
   function setMyDept(d) {
     myDept = d;
+    useRadial = !!d;   // al elegir un departamento se abre su mapa de afinidad
     try { d ? localStorage.setItem("utecvis-dept", d) : localStorage.removeItem("utecvis-dept"); } catch (e) { /* sin almacenamiento */ }
     $("#my-dept").value = d;
     vis.setMyDept(d || null);
@@ -154,13 +165,43 @@
     a.textContent = id != null ? "Reporte de la persona" : myDept ? "Reporte del departamento" : "Reporte general";
   }
 
+  // ======================================================= agrupar en vivo
+  // Siempre activo: en "Soy de" o en beeswarm, elegir una agrupación vuelve a la red con esa agrupación;
+  // "Mapa de mi departamento" (solo con "Soy de") regresa al mapa radial de afinidad.
+  function setGrouping(g) {
+    if (g === "radial") {
+      useRadial = true;
+      vis.setLayout("radial", myDept);
+    } else {
+      useRadial = false;
+      vis.setGroupBy(g);
+      try { localStorage.setItem("utecvis-group", g); } catch (e) { /* sin almacenamiento */ }
+      if (vis.state.layout !== "clusters") vis.setLayout("clusters");
+    }
+    STEPS[current].apply();
+    setLegend(STEPS[current].legend());
+    syncSettings();
+    syncGroupingUI();
+  }
+  document.querySelectorAll("[data-group]").forEach((b) => b.addEventListener("click", () => setGrouping(b.dataset.group)));
+  function syncGroupingUI() {
+    const radial = vis.state.layout === "radial";
+    const mine = document.querySelector('[data-group="radial"]');
+    mine.hidden = !myDept;
+    document.querySelectorAll("[data-group]").forEach((b) => b.classList.toggle("on",
+      b.dataset.group === "radial" ? radial : !radial && vis.state.layout === "clusters" && b.dataset.group === vis.state.groupBy));
+  }
+
   // ======================================================= ajustes
   function syncSettings() {
     document.querySelectorAll("[data-layout]").forEach((b) => b.classList.toggle("on", b.dataset.layout === vis.state.layout));
     document.querySelectorAll(".tg").forEach((b) => b.classList.toggle("on", !!vis.state.layers[b.dataset.layer]));
     $("#size-metric").value = vis.state.size in METRICS ? vis.state.size : "publications";
   }
-  document.querySelectorAll("[data-layout]").forEach((b) => b.addEventListener("click", () => { vis.setLayout(b.dataset.layout); syncSettings(); }));
+  document.querySelectorAll("[data-layout]").forEach((b) => b.addEventListener("click", () => {
+    if (b.dataset.layout === "clusters" && myDept) useRadial = false;
+    vis.setLayout(b.dataset.layout, myDept); syncSettings(); syncGroupingUI();
+  }));
   document.querySelectorAll(".tg").forEach((b) => b.addEventListener("click", () => {
     vis.setLayers({ [b.dataset.layer]: !vis.state.layers[b.dataset.layer] }); syncSettings();
   }));
@@ -171,7 +212,7 @@
   // ======================================================= herramientas flotantes
   let openPop = null;
   const RENDER = { ranking: renderRanking, org: renderOrg, metrics: renderMetrics, settings: () => {} };
-  document.querySelectorAll("button.tool").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll("button.tool[data-pop]").forEach((b) => b.addEventListener("click", () => {
     const name = b.dataset.pop;
     if (openPop === name) return closePops();
     closePops(); closeProfile();
@@ -207,6 +248,247 @@
     li.append("span").attr("class", "val").text((e) => fmt2.format(e.score));
   }
   const roleOf = (d) => (d.leadership && d.leadership[0] ? `${d.leadership[0].role}, ${d.leadership[0].unit.replace(/^Grupo de Investigación en /, "")}` : d.department);
+
+  // ======================================================= "Yo quiero colaborar con..." (LLM, en vivo)
+  // Ventana al centro: dos personas con su foto y áreas; al pedir ideas se ve, paso a paso, lo que hace
+  // el sistema (perfiles, temas en común, conexiones en la red) y el texto del LLM llegando en tiempo real.
+  const colab = { a: null, b: null, interests: new Set(), estado: null, es: null };
+  fetch("/api/colabora/estado").then((r) => r.json()).then((e) => { colab.estado = e; }).catch(() => {});
+  const findPerson = (q) => {
+    q = (q || "").trim().toLowerCase();
+    return q ? N.find((x) => x.name.toLowerCase() === q) || N.find((x) => x.name.toLowerCase().includes(q)) : null;
+  };
+  const avatar = (sel, d, size) => {
+    const w = sel.append("span").attr("class", "cbm-av").style("width", `${size}px`).style("height", `${size}px`);
+    if (!d) { w.classed("empty", true).text("?"); return w; }
+    const src = d.photo || (d.photo_local ? `/photo/${d.id}` : d.image_url);
+    if (src) w.append("img").attr("src", src).attr("alt", "").on("error", function () { d3.select(this).remove(); w.text(UtecVis.initials(d.name)); });
+    else w.text(UtecVis.initials(d.name));
+    return w;
+  };
+  const esc = (t) => String(t || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function openColabora(a, b) {
+    closePops(); closeProfile();
+    if (a != null && a !== colab.a) { colab.a = a; colab.interests.clear(); }
+    if (b != null) colab.b = b;
+    if (colab.a == null && vis.state.selected) colab.a = vis.state.selected.id;
+    $("#cbm").hidden = false;
+    document.body.classList.add("cbm-open");
+    renderColabora();
+  }
+  function closeColabora() {
+    if (colab.es) { colab.es.close(); colab.es = null; }
+    $("#cbm").hidden = true;
+    document.body.classList.remove("cbm-open");
+  }
+  $("#open-colabora").addEventListener("click", () => openColabora());
+  d3.select("#cbm").on("click", (ev) => { if (ev.target.id === "cbm") closeColabora(); });
+  document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && !$("#cbm").hidden) closeColabora(); });
+
+  function renderColabora() {
+    if (colab.es) { colab.es.close(); colab.es = null; }
+    const card = d3.select("#cbm .cbm-card").html("");
+    card.append("button").attr("class", "cbm-x").attr("aria-label", "Cerrar").text("×").on("click", closeColabora);
+    const e = colab.estado;
+    const head = card.append("header").attr("class", "cbm-head");
+    head.append("h2").text("Ideas para colaborar");
+    head.append("p").text("Elige a dos personas y te proponemos temas para trabajar juntos, a partir de sus áreas y publicaciones.");
+
+    // ---- las dos personas y el puente entre ellas
+    const pair = card.append("div").attr("class", "cbm-pair");
+    const side = (key, label) => {
+      const d = colab[key] != null ? byId.get(colab[key]) : null;
+      const box = pair.append("div").attr("class", `cbm-person ${key}`);
+      avatar(box, d, 84);
+      box.append("label").attr("class", "cbm-l").text(label);
+      box.append("input").attr("list", "people").attr("placeholder", "Escribe un nombre").property("value", d ? d.name : "")
+        .on("change", function () {
+          const x = findPerson(this.value);
+          if (x) { colab[key] = x.id; if (key === "a") colab.interests.clear(); renderColabora(); }
+        });
+      if (!d) return;
+      box.append("div").attr("class", "cbm-dept").text(d.department);
+      const tags = box.append("div").attr("class", "cb-tags");
+      tags.selectAll("button").data(d.areas.slice(0, 8)).join("button")
+        .attr("class", (t) => `cb-tag${colab.interests.has(t) ? " on" : ""}`).text((t) => t).attr("title", "Marcar como tema de interés")
+        .on("click", (ev, t) => { colab.interests.has(t) ? colab.interests.delete(t) : colab.interests.add(t); renderColabora(); });
+      if (!d.areas.length) tags.append("span").attr("class", "cb-empty").text("Sin áreas registradas en CRIS.");
+    };
+    side("a", "Yo soy");
+    const bridge = pair.append("div").attr("class", "cbm-bridge");
+    bridge.append("svg").attr("viewBox", "0 0 200 20").attr("preserveAspectRatio", "none")
+      .append("line").attr("x1", 0).attr("x2", 200).attr("y1", 10).attr("y2", 10);
+    const A = colab.a != null ? byId.get(colab.a) : null, B = colab.b != null ? byId.get(colab.b) : null;
+    const bInfo = bridge.append("div").attr("class", "cbm-binfo");
+    if (A && B) {
+      const sameG = A.groups.filter((g) => B.groups.includes(g));
+      const rec = A.recommendations.find((r) => r.id === B.id);
+      bInfo.append("div").attr("class", "cbm-bt").text(nbrsOf(A.id).has(B.id) ? "Ya publicaron juntos" : "Aún no publican juntos");
+      if (sameG.length) bInfo.append("div").attr("class", "cbm-bg").text((sameG[0].match(/\(([^)]+)\)/) || [])[1] || "Mismo grupo");
+      if (rec) bInfo.append("div").attr("class", "cbm-bs").text(`Afinidad ${fmt2.format(rec.score)}`);
+      bInfo.append("div").attr("class", "cbm-shared");
+      bInfo.append("div").attr("class", "cbm-common");
+    } else bInfo.append("div").attr("class", "cbm-bt").text("¿Con quién?");
+    side("b", "Quiero colaborar con");
+
+    if (A && A.recommendations.length) {
+      const q = card.append("div").attr("class", "cbm-quick");
+      q.append("span").text("Afines a ti:");
+      const bt = q.selectAll("button").data(A.recommendations).join("button").classed("on", (r) => r.id === colab.b)
+        .on("click", (ev, r) => { colab.b = r.id; renderColabora(); });
+      bt.each(function (r) { avatar(d3.select(this), byId.get(r.id), 22); });
+      bt.append("span").text((r) => shortName(byId.get(r.id).name));
+    }
+    const ok = A && B && A.id !== B.id;
+    const go = card.append("button").attr("class", "cb-go").property("disabled", !ok)
+      .text(colab.interests.size ? `Sugerir temas (enfocado en ${colab.interests.size} interés${colab.interests.size > 1 ? "es" : ""})` : "Sugerir temas");
+    const live = card.append("div").attr("class", "cbm-live");
+    go.on("click", () => run(false));
+
+    // ---- ejecución en vivo
+    function run(refresh) {
+      live.html("").classed("on", true);
+      card.classed("thinking", true);
+      // baja hasta el panel en vivo para que se vea cómo avanza
+      setTimeout(() => card.node().scrollTo({ top: live.node().offsetTop - 20, behavior: "smooth" }), 60);
+      go.property("disabled", true);
+      vis.setHighlight({ nodes: new Set([A.id, B.id]), ranked: [A.id, B.id] });
+      const steps = live.append("ol").attr("class", "cbm-steps");
+      const right = live.append("div").attr("class", "cbm-right");
+      const think = right.append("div").attr("class", "cbm-think");
+      think.append("div").attr("class", "cbm-think-h").text("Pensando en voz alta");
+      const thinkBody = think.append("div").attr("class", "cbm-think-b");
+      const summary = right.append("p").attr("class", "cb-sum");
+      const ideas = right.append("ol").attr("class", "cbm-ideas");
+      const stepEl = {};
+      const step = (id, title) => {
+        const li = steps.append("li").attr("class", "run");
+        li.append("span").attr("class", "dot");
+        const t = li.append("div");
+        t.append("b").text(title);
+        stepEl[id] = { li, d: t.append("div").attr("class", "det") };
+        return stepEl[id];
+      };
+      const done = (id, html) => { const s = stepEl[id]; if (!s) return; s.li.attr("class", "ok"); s.d.html(html); };
+      step("perfiles", "Leyendo perfiles");
+
+      let buf = "", nIdea = 0;
+      const typing = thinkBody.append("p").attr("class", "typing");
+      function feed(text) {
+        buf += text;
+        const parts = buf.split("\n");
+        buf = parts.pop();
+        parts.forEach(line);
+        typing.text(buf.replace(/^\s*(ANALISIS|RESUMEN|TEMA|PASO)\s*:\s*/i, "").replace(/\s*\|\|\s*/g, ". "));
+      }
+      function addIdea(p) {
+        const li = ideas.append("li").attr("class", "idea");
+        li.append("span").attr("class", "n").text(++nIdea);
+        const w = li.append("div");
+        w.append("b").text(p[0]);
+        w.append("p").text(p[1] || "");
+        const ap = w.append("div").attr("class", "ap");
+        [[A, p[2]], [B, p[3]]].forEach(([d, t]) => {
+          if (!t) return;
+          const r = ap.append("div").attr("class", "apr");
+          avatar(r, d, 20);
+          r.append("span").html(`<b>${esc(shortName(d.name))}</b> ${esc(t.replace(/^[^:]+:\s*/, ""))}`);
+        });
+        if (p[4]) w.append("div").attr("class", "ev pend").text(`Basado en: ${p[4]}`);
+      }
+      function line(raw) {
+        const m = raw.trim().replace(/^[-*#\s]+/, "").replace(/\*\*/g, "").match(/^(ANALISIS|ANÁLISIS|RESUMEN|TEMA|PASO)\s*:\s*(.*)$/i);
+        if (!m) return;
+        const tag = m[1].toUpperCase().replace("Á", "A"), rest = m[2];
+        if (tag === "ANALISIS") thinkBody.insert("p", ".typing").attr("class", "an").text(rest);
+        if (tag === "RESUMEN") summary.text(rest);
+        if (tag === "TEMA") addIdea(rest.split("||").map((x) => x.trim()));
+        if (tag === "PASO") right.append("p").attr("class", "cb-step").html(`<b>Primer paso:</b> ${esc(rest)}`);
+      }
+
+      const url = `/api/colabora/stream?a=${A.id}&b=${B.id}&i=${encodeURIComponent([...colab.interests].join("|"))}${refresh ? "&refresh=1" : ""}`;
+      const es = new EventSource(url);
+      colab.es = es;
+      es.onmessage = (msg) => {
+        const ev = JSON.parse(msg.data);
+        if (ev.type === "step" && ev.id === "perfiles") {
+          done("perfiles", `${ev.a_areas} y ${ev.b_areas} áreas de investigación, ${ev.a_titles} y ${ev.b_titles} títulos de publicaciones`);
+          step("comun", "Buscando temas en común");
+        }
+        if (ev.type === "step" && ev.id === "comun") {
+          done("comun", ev.shared_terms.length ? `Comparten: ${ev.shared_terms.map((t) => `<span class="mini">${esc(t)}</span>`).join(" ")}` : "No comparten términos: se buscan áreas complementarias");
+          const sh = d3.select(".cbm-shared").html("");
+          sh.selectAll("span").data(ev.shared_terms.slice(0, 4)).join("span").attr("class", "mini pop").style("animation-delay", (t, i) => `${i * 120}ms`).text((t) => t);
+          step("red", "Revisando la red de colaboración");
+        }
+        if (ev.type === "step" && ev.id === "red") {
+          done("red", ev.already_coauthors ? "Ya publicaron juntos" : ev.common_ids.length ? `${ev.common_ids.length} colega(s) en común que pueden presentarlos` : "Sin colegas en común directos");
+          const cm = d3.select(".cbm-common").html("");
+          ev.common_ids.forEach((id) => avatar(cm, byId.get(id), 22).attr("title", byId.get(id).name).classed("pop", true));
+          vis.setHighlight({ nodes: new Set([A.id, B.id, ...ev.common_ids]), ranked: [A.id, B.id], labels: ev.common_ids,
+            co: (e) => [A.id, B.id].includes(e.source.id) || [A.id, B.id].includes(e.target.id) });
+        }
+        if (ev.type === "llm") {
+          step("llm", "Proponiendo temas");
+          // el detalle técnico (modelo, proveedor, motivo) queda solo para quien lo busque: tooltip y consola
+          stepEl.llm.li.attr("title", ev.source === "llm" ? `${ev.provider || "claude"}: ${ev.model}` : ev.source);
+          if (ev.note) console.info("UtecVis:", ev.note);
+
+        }
+        if (ev.type === "delta") feed(ev.text);
+        if (ev.type === "retry") {
+          done("llm", "Faltaban detalles");
+          if (ev.note) console.info("UtecVis:", ev.note);
+          step("retry", "Completando la propuesta");
+        }
+        if (ev.type === "done") {
+          es.close(); colab.es = null;
+          feed("\n"); typing.remove();
+          // el resultado final del servidor manda: si algo no llegó completo en vivo, se dibuja aquí
+          if (ev.result.resumen) summary.text(ev.result.resumen);
+          const shown = ideas.selectAll("li.idea > div > b").nodes().map((n) => n.textContent);
+          const same = shown.length === ev.result.temas.length && ev.result.temas.every((t, i) => shown[i] === t.titulo)
+            && ideas.selectAll("li.idea").nodes().every((n) => n.querySelectorAll(".apr").length >= 2);
+          if (!same) {
+            ideas.html(""); nIdea = 0;
+            ev.result.temas.forEach((t) => addIdea([t.titulo, t.por_que, t.aporte_a, t.aporte_b, t.evidencia]));
+            right.selectAll(".cb-step").remove();
+            if (ev.result.primer_paso) right.append("p").attr("class", "cb-step").html(`<b>Primer paso:</b> ${esc(ev.result.primer_paso)}`);
+          }
+          if (stepEl.retry) done("retry", "Listo");
+          if (!stepEl.retry) done("llm", ev.source === "cache" ? "Propuesta guardada de una consulta anterior" : "Listo");
+          if (ev.note) console.info("UtecVis:", ev.note);
+          step("fin", "Ideas listas"); done("fin", `${ev.result.temas.length} temas, cada uno con su evidencia verificada contra CRIS`);
+          ideas.selectAll("li.idea").each(function (_, i) {
+            const t = ev.result.temas[i]; if (!t) return;
+            d3.select(this).select(".ev").attr("class", `ev ${t.verificada ? "ok" : "no"}`)
+              .text(`${t.verificada ? "✓ Verificado:" : "Sin verificar:"} ${t.evidencia}`);
+          });
+          card.classed("thinking", false);
+          go.property("disabled", false);
+          const act = right.append("div").attr("class", "share");
+          act.append("button").text("Ver en la red").on("click", () => {
+            closeColabora();
+            if (!vis.showPath(A.id, B.id)) vis.setHighlight({ nodes: new Set([A.id, B.id]), ranked: [A.id, B.id] });
+          });
+          if (colab.estado && colab.estado.llm) act.append("button").text("Otra propuesta").on("click", () => run(true));
+          act.append("button").text("Copiar").on("click", function () {
+            const r = ev.result;
+            navigator.clipboard && navigator.clipboard.writeText(`${A.name} y ${B.name}\n${r.resumen}\n`
+              + r.temas.map((t, i) => `${i + 1}. ${t.titulo}: ${t.por_que}`).join("\n") + (r.primer_paso ? `\nPrimer paso: ${r.primer_paso}` : ""));
+            this.textContent = "Copiado";
+          });
+          right.append("p").attr("class", "cb-src").text(ev.source === "rules" ? "Ideas armadas a partir de las áreas de ambos." : "Ideas generadas con IA a partir de datos de CRIS. Revísalas antes de usarlas.");
+        }
+      };
+      es.onerror = () => {
+        es.close(); colab.es = null; card.classed("thinking", false); go.property("disabled", false);
+        if (!ideas.selectAll("li").size()) live.append("p").attr("class", "cb-wait").text("Se cortó la conexión con el servidor. Intenta de nuevo.");
+      };
+    }
+  }
+  const nbrsOf = (id) => vis.nbrs.get(id) || new Set();
 
   function renderRanking() {
     const p = d3.select("#pop-ranking").html("");
@@ -252,7 +534,11 @@
     p.append("h2").text("Estructura organizativa");
     p.append("p").attr("class", "sub").text("Facultades y departamentos de cris.utec.edu.pe. Clic en un departamento para filtrar; en un grupo, para ver a sus miembros.");
     const count = (dep) => N.filter((d) => d.department_full === dep || d.department === dep.replace(/^Departamento de /, "")).length;
-    const deptShort = (full) => (meta.departments.find((d) => full.endsWith(d.name) || d.name === full.replace(/^Departamento de /, "")) || {}).name;
+    // nombre completo de CRIS -> nombre corto usado en la red (se toma de los propios investigadores,
+    // porque CRIS y la red no siempre escriben igual el departamento)
+    const fullToShort = new Map(N.map((d) => [d.department_full, d.department]));
+    const deptShort = (full) => fullToShort.get(full)
+      || (meta.departments.find((d) => full.endsWith(d.name) || d.name === full.replace(/^Departamento de /, "")) || {}).name || null;
     const tree = p.append("ul").attr("class", "tree");
     const parents = ["Facultad de Ingeniería", "Facultad de Computación", "Facultad de Negocios", "Departamentos Académicos Transversales"];
     parents.forEach((f) => {
@@ -261,8 +547,14 @@
       const li = tree.append("li");
       li.append("div").attr("class", "fac-h").html(`${f} <small>${kids.length} dpto${kids.length > 1 ? "s" : ""}.</small>`);
       li.append("ul").selectAll("li").data(kids).join("li")
-        .classed("on", (u) => deptShort(u.name) === vis.state.dept)
-        .on("click", (ev, u) => { setDept(deptShort(u.name)); renderOrg(); })
+        .classed("on", (u) => !!vis.state.dept && deptShort(u.name) === vis.state.dept)
+        .classed("empty", (u) => !deptShort(u.name))
+        .on("click", (ev, u) => {
+          const k = deptShort(u.name);
+          if (!k) return;                                      // departamento sin investigadores en la red
+          setDept(vis.state.dept === k ? null : k);            // segundo clic: quita el filtro
+          renderOrg();
+        })
         .html((u) => `<span>${u.name.replace(/^Departamento de /, "")}</span><span class="c">${count(u.name)} inv.</span>`);
     });
     const groups = units.filter((u) => u.type === "Grupo de Investigación" || (u.type === "Centro" && u.name !== "Grupos de Investigación"));
@@ -322,11 +614,11 @@
     top.append("button").attr("class", "close").attr("aria-label", "Quitar selección").text("×").on("click", () => closeProfile());
     const head = p.append("div").attr("class", "who-head");
     const ph = () => head.insert("div", ":first-child").attr("class", "avatar").text(UtecVis.initials(d.name));
-    if (d.image_url || d.photo_local) {
+    if (d.photo || d.image_url || d.photo_local) {
       let tried = false;
       head.append("img").attr("class", "avatar").attr("alt", d.name).attr("referrerpolicy", "no-referrer")
-        .attr("src", d.photo_local ? `/photo/${d.id}` : d.image_url)
-        .on("error", function () { if (!tried && !d.photo_local) { tried = true; this.src = `/photo/${d.id}`; } else { d3.select(this).remove(); ph(); } });
+        .attr("src", d.photo || (d.photo_local ? `/photo/${d.id}` : d.image_url))
+        .on("error", function () { if (!tried && !d.photo) { tried = true; this.src = `/photo/${d.id}`; } else { d3.select(this).remove(); ph(); } });
     } else ph();
     const h = head.append("div");
     h.append("h3").text(d.name);
@@ -341,6 +633,8 @@
       hoverRow(li, (r) => r.id);
       li.append("div").html((r) => `<b>${byId.get(r.id).name}</b>`);
       li.append("div").attr("class", "why").text((r) => [r.same_group ? "mismo grupo" : byId.get(r.id).department, r.shared_terms.join(", ")].filter(Boolean).join(". "));
+      li.append("button").attr("class", "cb-ideas").text("Ideas para colaborar")
+        .on("click", (ev, r) => { ev.stopPropagation(); openColabora(d.id, r.id); });
     }
 
     p.append("h4").text("¿Cómo llegar a alguien?");
@@ -412,6 +706,9 @@
   });
 
   const m = location.hash.match(/p=(\d+)/);  // enlace compartido: se lee antes de que goTo limpie el hash
-  goTo(0);
+  let savedGroup = "none", savedDept = "";
+  try { savedGroup = localStorage.getItem("utecvis-group") || "none"; savedDept = localStorage.getItem("utecvis-dept") || ""; } catch (e) { /* sin almacenamiento */ }
+  vis.setGroupBy(savedGroup);
+  if (savedDept && INS.departments[savedDept]) setMyDept(savedDept); else goTo(0);
   if (m && byId.has(+m[1])) setTimeout(() => { openProfile(+m[1]); vis.focusNode(+m[1]); }, 1200);
 })();

@@ -40,8 +40,24 @@ def graph():
     ensure_data()
     out = {k: read(f"{k}.json") for k in ("nodes", "edges", "affinity", "meta", "insights")}
     for n in out["nodes"]:  # fotos ya guardadas localmente (se sirven sin internet)
-        n["photo_local"] = (PHOTOS / f"{n['id']}.jpg").exists()
+        f = PHOTOS / f"{n['id']}.jpg"
+        n["photo_local"] = f.exists()
+        # La foto va incrustada en los datos (son ~4 KB cada una): no depende de rutas, caché ni de
+        # que el navegador pida 100 imágenes aparte. Así siempre se ve, también sin internet.
+        if n["photo_local"]:
+            n["photo"] = photo_data(f)
     return jsonify(out)
+
+
+_photo_cache = {}
+
+
+def photo_data(f):
+    import base64
+    key = (str(f), f.stat().st_mtime)
+    if key not in _photo_cache:
+        _photo_cache[key] = "data:image/jpeg;base64," + base64.b64encode(f.read_bytes()).decode()
+    return _photo_cache[key]
 
 
 @app.get("/reporte")
@@ -74,6 +90,48 @@ def person(pid):
     edges = [e for e in read("edges.json") if e["type"] == "coauthor" and pid in (e["source"], e["target"])]
     return render_template("person.html", n=nodes[pid], nodes=nodes, edges=edges,
                            ins=read("insights.json")["people"][str(pid)], meta=read("meta.json"))
+
+
+@app.post("/api/colabora")
+def colabora():
+    """'Yo quiero colaborar con...': temas sugeridos por un LLM (o por reglas si no hay clave de API)."""
+    from pipeline.colabora import suggest
+    ensure_data()
+    body = request.get_json(force=True, silent=True) or {}
+    try:
+        a, b = int(body.get("a")), int(body.get("b"))
+    except (TypeError, ValueError):
+        abort(400)
+    if a == b:
+        abort(400)
+    return jsonify(suggest(a, b, body.get("interests") or [], bool(body.get("refresh"))))
+
+
+@app.get("/api/colabora/stream")
+def colabora_stream():
+    """Versión en vivo: Server-Sent Events con cada paso y el texto del LLM a medida que llega."""
+    from flask import Response, stream_with_context
+    from pipeline.colabora import stream_events
+    ensure_data()
+    try:
+        a, b = int(request.args["a"]), int(request.args["b"])
+    except (KeyError, ValueError):
+        abort(400)
+    interests = [x for x in request.args.get("i", "").split("|") if x]
+    refresh = request.args.get("refresh") == "1"
+
+    def gen():
+        for ev in stream_events(a, b, interests, refresh):
+            yield f"data: {json.dumps(ev, ensure_ascii=False)}\n\n"
+    return Response(stream_with_context(gen()), mimetype="text/event-stream",
+                    headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+
+
+@app.get("/api/colabora/estado")
+def colabora_estado():
+    from pipeline.colabora import provider
+    prov, model = provider()
+    return jsonify({"llm": bool(prov), "proveedor": prov, "modelo": model})
 
 
 @app.post("/api/rebuild")
@@ -120,6 +178,19 @@ def data_file(fname):
     return send_from_directory(DATA, fname, as_attachment=fname.endswith(".csv"))
 
 
+def photo_check():
+    """Avisa en la consola cuántas fotos locales hay (si son 0, la red mostrará iniciales)."""
+    try:
+        nodes = json.loads((DATA / "nodes.json").read_text("utf-8"))
+        have = sum((PHOTOS / f"{n['id']}.jpg").exists() for n in nodes)
+        print(f"  Fotos locales: {have} de {len(nodes)} en {PHOTOS}")
+        if have < len(nodes) // 2:
+            print("  Pocas fotos: ejecute 'python -m pipeline.build_network' para copiarlas desde data/raw/manual.")
+    except Exception as e:
+        print(f"  No se pudo revisar las fotos: {e}")
+
+
 if __name__ == "__main__":
     ensure_data()
+    photo_check()
     app.run(debug=True, port=5000)

@@ -504,7 +504,10 @@ def parse_listing_people(html, folder=None):
         if src and "files-asset" not in src and folder is not None:
             cand = Path(folder) / unquote(src.split("?")[0])
             if cand.exists() and cand.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"):
-                local = str(cand.resolve())
+                try:   # ruta relativa al proyecto: sigue funcionando si la carpeta se mueve o se comparte
+                    local = cand.resolve().relative_to(ROOT).as_posix()
+                except ValueError:
+                    local = str(cand.resolve())
         people.append({
             "name": a.get_text(" ", strip=True), "slug": slug_from_url(a["href"]),
             "profile_url": urljoin(BASE, a["href"]), "email": f"{mail.group(1)}@utec.edu.pe" if mail else "",

@@ -46,7 +46,7 @@
    "headline": "Ruth Canahuire y José Mantari sostienen los puentes; 3 de los 5 principales tienen un cargo.",
    "question": "¿Quiénes actúan como puentes entre departamentos y grupos?",
    "metric": "Intermediación de Brandes (distancia = 1 / peso) en la red de coautoría + grupos; coeficiente de participación",
-   "finding": "0,027).",
+   "finding": "Ruth Canahuire Cabello (Electrónica y Mecatrónica) y José Luis Mantari Laureano (Ciencias) son los principales puentes (intermediación 0,046 y 0,027).",
    "evidence": [
     "La red tiene caminos alternativos: retirar a Ruth Canahuire no la divide, pero alarga las rutas.",
     "Ruth Canahuire y José Mantari son puente también en la red de coautoría pura: conectan departamentos con publicaciones, no solo con pertenencia a grupos.",
@@ -249,7 +249,9 @@
    ]
   },
   "9": {
-   "tags": [],
+   "tags": [
+    "Decano de la Facultad de Computación"
+   ],
    "lines": [
     "Aún no registra coautorías con otros investigadores de la lista.",
     "Colega más afín sin coautoría: Yamilet Rosario Serrano Llerena (comparten grupo; temas: software)."
@@ -739,6 +741,7 @@
   },
   "77": {
    "tags": [
+    "Rector de UTEC",
     "Por integrar"
    ],
    "lines": [
@@ -807,7 +810,9 @@
    ]
   },
   "87": {
-   "tags": [],
+   "tags": [
+    "Decana de la Facultad de Ingeniería"
+   ],
    "lines": [
     "Publica con 1 colega(s) UTEC, 1 de otros departamentos.",
     "Es puesto 10 de 104 como puente entre grupos.",

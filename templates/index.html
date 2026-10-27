@@ -15,6 +15,7 @@
   <!-- Título y respuesta de la tarea activa -->
   <header class="caption">
     <div class="brand">Utec<span>Vis</span></div>
+
     <label class="me">
       <span>Soy de</span>
       <select id="my-dept" aria-label="Elegir mi departamento"><option value="">toda la universidad</option></select>
@@ -25,6 +26,18 @@
     <p class="answer" id="answer"></p>
     <button class="why" id="why" aria-expanded="false">¿Por qué?</button>
     <div class="why-body" id="why-body" hidden></div>
+    <!-- Agrupar en vivo: en la columna izquierda, lejos de las herramientas -->
+    <div class="grouping" role="group" aria-label="Agrupar la red">
+      <span class="g-title">Agrupar por</span>
+      <div class="seg">
+        <button data-group="radial" title="Mapa de afinidad de mi departamento" hidden><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="2.2" fill="currentColor"/><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/></svg><span>Mi mapa</span></button>
+        <button data-group="none" title="Red libre: solo se acercan quienes publican juntos"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="3" cy="4" r="1.6"/><circle cx="9" cy="3" r="1.6"/><circle cx="13" cy="7" r="1.6"/><circle cx="5" cy="10" r="1.6"/><circle cx="11" cy="13" r="1.6"/></svg><span>Sin agrupar</span></button>
+        <button data-group="faculty" title="Una zona por facultad"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1.5" y="2" width="5.5" height="12" rx="2.5"/><rect x="9" y="2" width="5.5" height="12" rx="2.5"/></svg><span>Facultad</span></button>
+        <button data-group="department" title="Departamentos dentro de su facultad"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="2"/><rect x="9" y="1.5" width="5.5" height="5.5" rx="2"/><rect x="1.5" y="9" width="5.5" height="5.5" rx="2"/><rect x="9" y="9" width="5.5" height="5.5" rx="2"/></svg><span>Departamento</span></button>
+        <button data-group="group" title="Una zona por grupo de investigación"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="5" cy="6" r="3.6"/><circle cx="11" cy="6" r="3.6" opacity=".55"/><circle cx="8" cy="11" r="3.6" opacity=".3"/></svg><span>Grupo</span></button>
+        <button data-group="affinity" title="Se juntan quienes investigan temas parecidos (NLP)"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="3.5" cy="11.5" r="2"/><circle cx="8" cy="5" r="2"/><circle cx="12.5" cy="11.5" r="2"/><path d="M3.5 11.5 8 5l4.5 6.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span>Afinidad</span></button>
+      </div>
+    </div>
   </header>
 
   <!-- Herramientas flotantes -->
@@ -34,12 +47,15 @@
       <input id="search" list="people" placeholder="Buscar investigador" autocomplete="off" aria-label="Buscar investigador">
       <datalist id="people"></datalist>
     </label>
+    <button class="tool tool-ai" id="open-colabora">Colaborar</button>
     <button class="tool" data-pop="ranking" aria-expanded="false">Ranking</button>
     <button class="tool" data-pop="org" aria-expanded="false">Estructura</button>
     <button class="tool" data-pop="metrics" aria-expanded="false">Métricas</button>
     <button class="tool" data-pop="settings" aria-expanded="false">Ajustes</button>
     <a class="tool tool-cta" id="report-link" href="/reporte" target="_blank" rel="noopener">Mi reporte</a>
   </div>
+
+
 
   <section class="float pop" id="pop-ranking" hidden></section>
   <section class="float pop" id="pop-org" hidden></section>
@@ -83,6 +99,13 @@
 
   <aside class="float profile" id="profile" hidden aria-label="Ficha del investigador"></aside>
 
+  <!-- autoría: abajo a la derecha, visible siempre -->
+  <aside class="credits" aria-label="Autores">
+    <span class="credits-t">Made by</span>
+    <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener"><img src="/static/img/autor.jpg" alt="Foto de Paolo Medrano"><span><b>Paolo Medrano</b><small>LinkedIn ↗</small></span></a>
+     <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener"><img src="/static/img/autora_gianella.jpg" alt="Foto de Gianella Lira"><span><b>Gianella Lira</b><small>LinkedIn ↗</small></span></a>
+  </aside>
+
   <ul class="legend" id="legend" aria-label="Cómo leer la vista"></ul>
 
   <nav class="stepper" aria-label="Tareas analíticas">
@@ -92,6 +115,10 @@
   </nav>
 
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+  <!-- "Yo quiero colaborar con...": ventana al centro -->
+  <div class="cbm" id="cbm" hidden>
+    <section class="cbm-card" role="dialog" aria-modal="true" aria-label="Ideas para colaborar"></section>
+  </div>
 </main>
 
 <script src="{{ url_for('static', filename='js/d3.min.js') }}"></script>

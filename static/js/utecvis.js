@@ -40,6 +40,7 @@
     if (w.length <= 2) return name;
     let i = w.length >= 4 ? w.length - 2 : 1;
     if (/^[A-Z]\.$/.test(w[i])) i = w.length - 1;
+    if (PARTICLES.has(w[i].toLowerCase()) && i > 1) i -= 1;   // "Cristian Lopez Del Alamo" -> "Cristian Lopez"
     const sur = [w[i]];
     while (i - 1 > 0 && PARTICLES.has(w[i - 1].toLowerCase())) { i--; sur.unshift(w[i]); }
     return `${w[0]} ${sur.join(" ")}`;
@@ -60,9 +61,11 @@
 
     // Quien figura en CRIS directamente en la facultad (sin departamento) es su decano/a:
     // no forma un "departamento" aparte, se ubica en la cabecera de su facultad.
+    // El rector encabeza toda la universidad: va arriba y al centro, fuera de toda facultad.
+    const isRector = (d) => (d.leadership || []).some((l) => /^rector/i.test(l.role));
     const N = data.nodes.map((d) => ({ ...d, ext_institutions: d.external ? d.external.institutions : 0,
-      dean: /^Facultad/.test(d.department) }));
-    const deanTitle = (d) => ((d.leadership || []).find((l) => /decan/i.test(l.role)) || {}).role || "Decanato";
+      rector: isRector(d), dean: /^Facultad/.test(d.department) || isRector(d) }));
+    const deanTitle = (d) => ((d.leadership || []).find((l) => /decan|rector/i.test(l.role)) || {}).role || "Decanato";
     const byId = new Map(N.map((d) => [d.id, d]));
     const link = (e) => ({ ...e, source: byId.get(e.source), target: byId.get(e.target) });
     const CO = data.edges.filter((e) => e.type === "coauthor").map(link);
@@ -71,10 +74,31 @@
     const nbrs = new Map(N.map((d) => [d.id, new Set()]));
     CO.forEach((e) => { nbrs.get(e.source.id).add(e.target.id); nbrs.get(e.target.id).add(e.source.id); });
     const depts = data.meta.departments.map((d) => d.name); // ordenados por publicaciones
+    // Agrupación elegida por el usuario (en vivo): ninguna, facultad, departamento, grupo o afinidad temática
+    const grouped = () => ["faculty", "department", "group"].includes(state.groupBy);
+    const gkey = (d) => (state.groupBy === "faculty" ? d.faculty
+      : state.groupBy === "group" ? ((d.groups && d.groups[0]) || "Sin grupo registrado") : d.department);
+    const groupLabel = (k) => {
+      if (state.groupBy === "group" && state.layout === "clusters") {
+        const m = k.match(/\(([^)]+)\)/) || k.match(/ - (\w+)$/);
+        return m ? m[1] : k.replace(/^(Grupo de [Ii]nvestigación en |Centro de Investigación (en |y )?)/, "");
+      }
+      return deptLabel(k);
+    };
+    // vínculos de afinidad temática (3 recomendaciones por persona): en el modo "Afinidad" juntan a quienes investigan lo mismo
+    const REC = (() => {
+      const seen = new Map();
+      data.nodes.forEach((d) => (d.recommendations || []).forEach((r) => {
+        const k = d.id < r.id ? `${d.id}|${r.id}` : `${r.id}|${d.id}`;
+        if (!seen.has(k)) seen.set(k, { source: d.id, target: r.id, score: r.score });
+      }));
+      return [...seen.values()];
+    })();
 
     const state = {
       size: "publications", layout: "clusters",
       layers: { coauthor: true, group: false, affinity: false, halo: false, leaders: false },
+      groupBy: "none",   // none | faculty | department | group | affinity
       dept: null, highlight: null, selected: null, hover: null, dragging: null,
       resistance: 0.55,
     };
@@ -111,6 +135,42 @@
     // Dos niveles: primero se ubica cada facultad (estructura de CRIS) y luego sus departamentos a su alrededor,
     // así los departamentos de una misma facultad quedan contiguos ("group in a box").
     function clusterCenters() {
+      const bx = (BOX.x0 + BOX.x1) / 2, by = (BOX.y0 + BOX.y1) / 2;
+      if (!grouped()) {                       // red libre o por afinidad: sin centros, todo hacia el medio
+        N.forEach((d) => { d.cx = bx; d.cy = by; });
+        baseT = d3.zoomIdentity.translate(bx, by).scale(0.9).translate(-bx, -by);
+        return;
+      }
+      if (state.groupBy !== "department") return singleLevelCenters(bx, by);
+      deptCenters();
+    }
+    // facultad o grupo de investigación: un solo nivel de agrupación
+    function singleLevelCenters(bx, by) {
+      const groups = d3.group(N, gkey);
+      const lw = (id) => (groupLabel(id).length * 15 * 0.62) / 2 + 10;
+      const cn = [...groups].map(([id, arr]) => {
+        const r = Math.sqrt(d3.sum(arr, (d) => (d.r + 7) ** 2)) * 1.22 + 10;
+        return { id, r, rc: Math.max(r, lw(id)) };
+      });
+      const w = new Map();
+      const add = (a, b, v) => { if (a === b) return; const k = a < b ? `${a}|${b}` : `${b}|${a}`; w.set(k, (w.get(k) || 0) + v); };
+      CO.forEach((e) => add(gkey(e.source), gkey(e.target), e.weight));
+      const links = [...w].map(([k, v]) => { const [a, b] = k.split("|"); return { source: a, target: b, value: v }; })
+        .filter((l) => groups.has(l.source) && groups.has(l.target));
+      const sim = d3.forceSimulation(cn).randomSource(d3.randomLcg(5))
+        .force("l", d3.forceLink(links).id((d) => d.id).distance((l) => l.source.rc + l.target.rc + 20).strength(0.05))
+        .force("c", d3.forceManyBody().strength(-20)).force("k", d3.forceCollide((d) => d.rc + 16).iterations(3))
+        .force("x", d3.forceX(W / 2).strength(0.06)).force("y", d3.forceY(H / 2).strength(0.09)).stop();
+      for (let i = 0; i < 500; i++) sim.tick();
+      const x0 = d3.min(cn, (d) => d.x - d.rc), x1 = d3.max(cn, (d) => d.x + d.rc);
+      const y0 = d3.min(cn, (d) => d.y - d.r - 24), y1 = d3.max(cn, (d) => d.y + d.r + 20);
+      const fit = Math.min(1, (BOX.x1 - BOX.x0) / (x1 - x0), (BOX.y1 - BOX.y0) / (y1 - y0));
+      const mx = (x0 + x1) / 2, my = (y0 + y1) / 2;
+      const pos = new Map(cn.map((c) => [c.id, [bx + (c.x - mx), by + (c.y - my)]]));
+      N.forEach((d) => { [d.cx, d.cy] = pos.get(gkey(d)); });
+      baseT = d3.zoomIdentity.translate(bx, by).scale(fit).translate(-bx, -by);
+    }
+    function deptCenters() {
       const groups = d3.group(N.filter((d) => !d.dean), (d) => d.department);
       const facOf = new Map(N.map((d) => [d.department, d.faculty]));
       // el radio de choque incluye el ancho del nombre: así los rótulos caben sin pisarse
@@ -139,7 +199,8 @@
         .force("x", d3.forceX((d) => anchor.get(d.fac).x).strength(0.3)).force("y", d3.forceY((d) => anchor.get(d.fac).y).strength(0.3)).stop();
       for (let i = 0; i < 500; i++) sim.tick();
       const x0 = d3.min(cn, (d) => d.x - d.rc), x1 = d3.max(cn, (d) => d.x + d.rc);
-      const y0 = d3.min(cn, (d) => d.y - d.r - 24), y1 = d3.max(cn, (d) => d.y + d.r + 20);
+      // si hay rector, se reserva una franja arriba para él (encabeza toda la universidad)
+      const y0 = d3.min(cn, (d) => d.y - d.r - 24) - (N.some((d) => d.rector) ? 90 : 0), y1 = d3.max(cn, (d) => d.y + d.r + 20);
       // Las distancias NO se comprimen (comprimirlas hacía que fotos y rótulos se pisaran):
       // si no cabe, se aleja la cámara (zoom inicial) en lugar de juntar los departamentos.
       const bx = (BOX.x0 + BOX.x1) / 2, by = (BOX.y0 + BOX.y1) / 2;
@@ -149,8 +210,10 @@
         if (d.dean) return;
         const c = cn.find((q) => q.id === d.department); d.cx = bx + (c.x - mx); d.cy = by + (c.y - my);
       });
-      // decano/a: centrado sobre los departamentos de su facultad, en la parte superior
-      N.filter((d) => d.dean).forEach((d) => {
+      // decano/a: centrado sobre los departamentos de su facultad, en la parte superior;
+      // rector: arriba y al centro de toda la universidad
+      N.filter((d) => d.rector).forEach((d) => { d.cx = bx; d.cy = by + (y0 - my) + 45; });
+      N.filter((d) => d.dean && !d.rector).forEach((d) => {
         const deps = cn.filter((q) => q.fac === d.faculty);
         if (!deps.length) { d.cx = bx; d.cy = by; return; }
         d.cx = bx + (d3.mean(deps, (q) => q.x) - mx);
@@ -227,13 +290,13 @@
       g.append("circle").attr("class", "halo");
       g.append("circle").attr("class", "bg").attr("filter", "url(#lift)");
       g.append("text").attr("class", "initials").text((d) => initials(d.name));
-      g.filter((d) => d.image_url || d.photo_local).append("image")
+      g.filter((d) => d.photo || d.image_url || d.photo_local).append("image")
         .attr("clip-path", (d) => `url(#c${d.id})`).attr("preserveAspectRatio", "xMidYMid slice")
         // cadena de carga: caché local, luego CRIS directo, luego proxy de Flask, luego iniciales
-        .attr("href", (d) => (d.photo_local ? `/photo/${d.id}` : d.image_url))
+        .attr("href", (d) => d.photo || (d.photo_local ? `/photo/${d.id}` : d.image_url))
         .on("error", function (ev, d) {
           const img = d3.select(this);
-          if (!d._tried && !d.photo_local) { d._tried = true; img.attr("href", `/photo/${d.id}`); } else img.remove();
+          if (!d._tried && !d.photo) { d._tried = true; img.attr("href", `/photo/${d.id}`); } else img.remove();
         });
       g.append("circle").attr("class", "ring");
       g.filter((d) => d.leadership && d.leadership.length).append("circle").attr("class", "lead").attr("r", 4.5);
@@ -312,7 +375,8 @@
     const collideR = (d) => d.r + (state.layout === "swarm" ? 1.5 : 4 + (state.layers.halo ? haloW(d.betweenness) : 0));
 
     // ------------------------------------------------------------ simulación
-    const baseCo = (e) => (state.layout !== "clusters" ? 0 : e.cross_department ? 0.02 : 0.15);
+    const baseCo = (e) => (state.layout !== "clusters" ? 0
+      : state.groupBy === "none" ? 0.3 : state.groupBy === "affinity" ? 0.12 : e.cross_department ? 0.02 : 0.15);
     const sim = d3.forceSimulation(N).randomSource(d3.randomLcg(7))
       .force("co", d3.forceLink(CO).id((d) => d.id).distance((e) => e.source.r + e.target.r + 26).strength(baseCo))
       .force("charge", d3.forceManyBody().strength(-26))
@@ -320,12 +384,32 @@
       .force("x", d3.forceX((d) => d.cx).strength(0.17))
       .force("y", d3.forceY((d) => d.cy).strength(0.17))
       .velocityDecay(0.2 + 0.5 * state.resistance)
+      .force("aux", d3.forceLink([]).id((d) => d.id))
       .alphaDecay(0.03).on("tick", () => { followPointer(); ticked(); });
+
+    // fuerzas según disposición y agrupación (se llama al cambiar cualquiera de las dos)
+    function updateForces() {
+      const sw = state.layout === "swarm", rd = state.layout === "radial", free = state.layout === "clusters" && !grouped();
+      sim.force("x").x((d) => (sw ? d.sx : rd ? d.rx : d.cx)).strength(sw ? 0.9 : rd ? 0.22 : free ? 0.035 : 0.17);
+      sim.force("y").y((d) => (sw ? d.sy : rd ? d.ry : d.cy)).strength(sw ? 0.45 : rd ? 0.22 : free ? 0.05 : 0.17);
+      sim.force("charge").strength(sw ? 0 : free ? (state.groupBy === "affinity" ? -28 : -70) : -26);
+      sim.force("co").strength(baseCo);
+      const aux = !free ? [] : state.groupBy === "affinity"
+        ? REC.map((l) => ({ ...l }))                              // afinidad temática (NLP)
+        : GR.map((e) => ({ source: e.source.id, target: e.target.id, score: 0.15 }));  // red libre: grupos, muy débil
+      sim.force("aux").links(aux)
+        .distance((l) => (state.groupBy === "affinity" ? 14 + l.source.r + l.target.r : 90))
+        .strength((l) => (state.groupBy === "affinity" ? 0.5 + 0.5 * l.score : 0.012));
+    }
 
     // ------------------------------------------------------------ territorios (enclosure)
     const hullLine = d3.line().curve(d3.curveCatmullRomClosed.alpha(0.6));
+    const deptMode = () => state.layout === "radial" || (state.layout === "clusters" && state.groupBy === "department");
+    const showHulls = () => state.layout === "radial" || (state.layout === "clusters" && grouped());
     function hulls() {
-      return [...d3.group(N.filter((d) => !d.dean), (d) => d.department)].map(([k, arr]) => {
+      if (!showHulls()) return [];
+      const key = deptMode() ? (d) => d.department : gkey;
+      return [...d3.group(N.filter((d) => !(d.dean && deptMode())), key)].map(([k, arr]) => {
         const pts = [];
         arr.forEach((d) => { const rr = d.r + 13; for (let a = 0; a < 12; a++) pts.push([d.x + rr * Math.cos(a * Math.PI / 6), d.y + rr * Math.sin(a * Math.PI / 6)]); });
         const hull = d3.polygonHull(pts);
@@ -337,9 +421,10 @@
       pos(coSel); pos(hitCo); pos(groupSel); pos(affSel); pos(hitAf);
       nodeSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
       // el rótulo del decano va arriba de su foto (abajo están los departamentos de su facultad)
-      labelSel.attr("transform", (d) => `translate(${d.x},${d.dean ? d.y - d.r - 14 : d.y + d.r + 15})`);
+      labelSel.attr("transform", (d) => `translate(${d.x},${d.dean && deptMode() ? d.y - d.r - 14 : d.y + d.r + 15})`);
       if (state.layout === "swarm") return;
-      const fh = [...d3.group(N, (d) => d.faculty)].filter(([k]) => !/^Sin/.test(k)).map(([k, arr]) => {
+      const facOn = state.layout === "clusters" && state.groupBy === "department";
+      const fh = !facOn ? [] : [...d3.group(N, (d) => d.faculty)].filter(([k]) => !/^(Sin|Rectorado)/.test(k)).map(([k, arr]) => {
         const pts = [];
         arr.forEach((d) => { const rr = d.r + 46; for (let a = 0; a < 12; a++) pts.push([d.x + rr * Math.cos(a * Math.PI / 6), d.y + rr * Math.sin(a * Math.PI / 6)]); });
         const hull = d3.polygonHull(pts);
@@ -351,7 +436,7 @@
       const h = hulls();
       // ---- rótulos sin choques: primero facultades, luego departamentos de arriba hacia abajo;
       // si un rótulo choca con otro ya ubicado, se desplaza hacia arriba (o abajo si se aleja demasiado)
-      const labelOf = deptLabel;
+      const labelOf = groupLabel;
       const items = [
         ...fh.map((f) => ({ kind: "fac", key: f.key, text: f.key, x: f.bottom[0], fs: 12,
           cands: [f.bottom[1] + 14, f.bottom[1] + 28, f.top[1] - 10, f.top[1] - 24] })),
@@ -420,7 +505,8 @@
       }
       an.forEach((a) => pos.set(a.id, [a.x, a.y]));
       N.forEach((d) => { [d.rx, d.ry] = pos.get(d.department) || [cx, cy]; });
-      N.filter((d) => d.dean).forEach((d) => {
+      N.filter((d) => d.rector).forEach((d) => { d.rx = BOX.x1 - 30; d.ry = BOX.y0 - 20; });   // fuera del mapa: no es de ningún departamento
+      N.filter((d) => d.dean && !d.rector).forEach((d) => {
         const deps = [...pos].filter(([k]) => k !== d.department && N.some((n) => !n.dean && n.department === k && n.faculty === d.faculty));
         if (deps.length) { d.rx = d3.mean(deps, (p) => p[1][0]); d.ry = d3.min(deps, (p) => p[1][1]) - 60; }
       });
@@ -436,14 +522,12 @@
       if (mode === "radial") radialCenters(center || state.myDept);
       if (mode === state.layout && mode !== "radial") return;
       state.layout = mode;
-      svg.transition("zoom").duration(DUR).call(zoom.transform, homeT());
       setRadii();
       const sw = mode === "swarm", rd = mode === "radial";
-      sim.force("x").x((d) => (sw ? d.sx : rd ? d.rx : d.cx)).strength(sw ? 0.9 : rd ? 0.22 : 0.17);
-      sim.force("y").y((d) => (sw ? d.sy : rd ? d.ry : d.cy)).strength(sw ? 0.45 : rd ? 0.22 : 0.17);
+      if (mode === "clusters") clusterCenters();      // antes del zoom: el encuadre depende de los centros
+      svg.transition("zoom").duration(DUR).call(zoom.transform, homeT());
+      updateForces();
       gRad.transition().duration(DUR).attr("opacity", rd ? 1 : 0);
-      sim.force("charge").strength(sw ? 0 : -26);
-      sim.force("co").strength(baseCo);
       gHull.transition().duration(DUR / 2).attr("opacity", sw ? 0 : 1);
       gFac.transition().duration(DUR / 2).attr("opacity", sw || rd ? 0 : 1);
       gHullL.transition().duration(DUR / 2).attr("opacity", sw ? 0 : 1);
@@ -486,10 +570,13 @@
         (s.ranked || []).forEach((id, i) => labels.set(id, i + 1));
         (s.labels || []).forEach((id) => { if (!labels.has(id)) labels.set(id, 0); });
       } else if (state.dept) {
-        nodeOn = (d) => d.department === state.dept;
-        coOn = affOn = grOn = (e) => e.source.department === state.dept || e.target.department === state.dept;
+        // el filtro sirve para departamento, facultad o grupo (según lo que se haya pulsado)
+        const fk = (d) => (depts.includes(state.dept) ? d.department : gkey(d));
+        nodeOn = (d) => fk(d) === state.dept;
+        coOn = affOn = grOn = (e) => fk(e.source) === state.dept || fk(e.target) === state.dept;
       }
-      if (!focus && !(h && h.source) && state.layout !== "swarm") {
+      // rótulos de rector y decanos: solo en la vista por departamentos (en el mapa radial se amontonarían)
+      if (!focus && !(h && h.source) && state.layout === "clusters" && state.groupBy === "department") {
         N.filter((d) => d.dean && nodeOn(d) && !labels.has(d.id)).forEach((d) => labels.set(d.id, "dean"));
       }
 
@@ -590,12 +677,21 @@
     // ------------------------------------------------------------ API
     function setSize(m) {
       state.size = m; setRadii();
-      if (state.layout === "clusters") { clusterCenters(); sim.force("x").x((d) => d.cx); sim.force("y").y((d) => d.cy); svg.transition("zoom").duration(DUR).call(zoom.transform, baseT); }
+      if (state.layout === "clusters") { clusterCenters(); updateForces(); svg.transition("zoom").duration(DUR).call(zoom.transform, baseT); }
       drawRadii(); apply();
     }
     function setLayers(l) { Object.assign(state.layers, l); drawHalo(); sim.force("collide").radius(collideR); sim.alpha(0.2).restart(); apply(); }
     function setResistance(r) { state.resistance = r; sim.velocityDecay(0.2 + 0.5 * r); }
     function setDept(d) { state.dept = d; apply(); }
+    function setGroupBy(g) {
+      state.groupBy = g;
+      if (state.layout !== "clusters") { apply(); return; }
+      clusterCenters();
+      updateForces();
+      svg.transition("zoom").duration(DUR).call(zoom.transform, baseT);
+      sim.alpha(1).restart();
+      apply();
+    }
     function setMyDept(d) { state.myDept = d; apply(); }
     function setHighlight(h) { state.highlight = h; apply(); }
     function select(id) { state.selected = id == null ? null : byId.get(id); apply(); }
@@ -607,9 +703,10 @@
     }
     function resetZoom() { svg.transition("zoom").duration(DUR).call(zoom.transform, homeT()); }
 
+    updateForces();
     svg.call(zoom.transform, homeT());
     intro();
-    return { setMyDept, shortestPath, showPath, setSize, setLayout, setLayers, setResistance, setDept, setHighlight, select, hoverNode, hoverEdge,
+    return { setGroupBy, setMyDept, shortestPath, showPath, setSize, setLayout, setLayers, setResistance, setDept, setHighlight, select, hoverNode, hoverEdge,
       focusNode, resetZoom, drawIn, state, nodes: N, coauthor: CO, affinity: AF, byId, nbrs };
   }
 

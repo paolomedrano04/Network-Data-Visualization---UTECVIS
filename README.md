@@ -1,5 +1,7 @@
 # UtecVis: red de colaboración científica de UTEC
 
+Autores: Gianella Araceli Lira Ñaupari (https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/) y Paolo Medrano Terán (https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/)
+
 DS5343 Visualización de Datos, 2026-2. Flask + D3 v7 (sin otras librerías de visualización).
 
 ## Ejecutar
@@ -53,6 +55,8 @@ investigadores** con ese hallazgo. Los textos se generan desde los datos (`pipel
 actualizan solos al volver a hacer scraping.
 
 ## Uso desde el lado de un profesor (producto)
+
+- **Colaborar*: "Yo soy ___ y quiero colaborar con ___". Al elegir cada persona aparecen sus áreas de investigación como etiquetas (se pueden marcar como intereses) y sus 3 colegas más afines como atajos. El botón "Sugerir temas" envía al servidor los datos reales de ambos (áreas, grupos, títulos de publicaciones, términos compartidos por TF-IDF, colegas en común) y un LLM (Claude, API de Anthropic) propone 3 temas conjuntos con su porqué, lo que aporta cada uno y un primer paso. Se abre como ventana al centro con las fotos de ambos y muestra el proceso en vivo (Server-Sent Events): perfiles leídos, temas en común (TF-IDF), colegas en común en la red (que también se resaltan detrás) y el texto del LLM llegando en tiempo real. Cada tema cita su evidencia (un área o publicación) y el servidor la verifica contra los datos de CRIS: "✓ Verificado" o "Sin verificar". También se abre desde la ficha ("Ideas para colaborar"). Para activarlo: `$env:ANTHROPIC_API_KEY = "sk-ant-..."` antes de `python app.py` (por defecto `claude-sonnet-5-5`, de costo medio; configurable con `UTECVIS_MODEL`). Sin clave o sin internet, responde con reglas automáticas; las respuestas del LLM quedan guardadas en `data/colabora_cache.json` para mostrarlas sin conexión.
 
 - **Soy de (arriba a la izquierda)**: el profesor elige su departamento y toda la vista se reconfigura. Su departamento va al centro y los demás se ubican según su afinidad temática (TF-IDF de sus áreas): cerca y sin líneas es una oportunidad. Cada tarea responde desde su departamento y el botón cambia a "Reporte del departamento". La elección se recuerda en el navegador.
 - **Seleccionar**: clic en una foto para seleccionar (se resalta su red y se abre su ficha); clic de nuevo o Esc para quitar la selección.

@@ -23,4 +23,5 @@
   {% for e in edges %}{% set o = nodes[e.target] if e.source == n.id else nodes[e.source] %}<tr><td>{{ o.name }}</td><td class="n">{{ e.weight }}</td><td>{{ (e.publications[0].title if e.publications else "") }}</td></tr>{% endfor %}</table>
   {% else %}<p>Aún no registra coautorías con otros investigadores de la lista.</p>{% endif %}
   <p class="muted">Fuente: cris.utec.edu.pe (perfiles, grupos, estructura y publicaciones). Métricas calculadas con NetworkX.</p>
+  <p class="muted credit">UtecVis, elaborado por <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener">Gianella Lira Ñaupari</a> y <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener">Paolo Medrano Terán</a> (LinkedIn) para el curso DS5343 Visualización de Datos, UTEC.</p>
 </div></body></html>

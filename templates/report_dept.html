@@ -28,4 +28,5 @@
   <table><tr><th>Pareja</th><th>Por qué</th><th class="n">Puntaje</th></tr>
   {% for a in pairs %}<tr><td>{{ nodes[a.source].name }} y {{ nodes[a.target].name }}</td><td>{% if a.shared_groups %}Mismo grupo. {% endif %}{{ a.shared_terms|join(", ") }}</td><td class="n">{{ "%.2f"|format(a.score) }}</td></tr>{% endfor %}</table>{% endif %}
   <p class="muted">Fuente: cris.utec.edu.pe. Cada integrante tiene su reporte individual en /investigador/&lt;id&gt;.</p>
+  <p class="muted credit">UtecVis, elaborado por <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener">Gianella Lira Ñaupari</a> & <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener">Paolo Medrano Terán</a> (LinkedIn) para el curso DS5343 Visualización de Datos, UTEC.</p>
 </div></body></html>

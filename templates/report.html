@@ -23,4 +23,5 @@
   <table><tr><th>Departamento</th><th>Facultad</th><th class="n">Inv.</th><th class="n">Publ.</th><th class="n">Publ. conjuntas internas</th><th class="n">Publ. conjuntas con otros dptos.</th></tr>
   {% for d in meta.departments %}<tr><td>{{ d.name }}</td><td>{{ meta.organisation.faculty_of_department.get(d.name, "Sin facultad") }}</td><td class="n">{{ d.researchers }}</td><td class="n">{{ d.publications }}</td><td class="n">{{ d.coauthorships_internal }}</td><td class="n">{{ d.coauthorships_external }}</td></tr>{% endfor %}</table>
   <p class="muted">Cada investigador tiene una ficha propia con su rol en la red y a quién le conviene escribir: /investigador/&lt;id&gt; (enlace desde la ficha en la red).</p>
+  <p class="muted credit">UtecVis, elaborado por <a href="https://www.linkedin.com/in/gianella-araceli-lira-%C3%B1aupari-9102b524a/" target="_blank" rel="noopener">Gianella Lira Ñaupari</a> y <a href="https://www.linkedin.com/in/paolo-medrano-ter%C3%A1n-b45123246/" target="_blank" rel="noopener">Paolo Medrano Terán</a> (LinkedIn) para el curso DS5343 Visualización de Datos, UTEC.</p>
 </div></body></html>
