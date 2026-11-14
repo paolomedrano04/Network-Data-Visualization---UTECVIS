@@ -52,6 +52,7 @@
     <button class="tool" data-pop="org" aria-expanded="false">Estructura</button>
     <button class="tool" data-pop="metrics" aria-expanded="false">Métricas</button>
     <button class="tool" data-pop="settings" aria-expanded="false">Ajustes</button>
+    <button class="tool" id="open-guia" title="Guía de uso (tecla ?)">Guía</button>
     <a class="tool tool-cta" id="report-link" href="reporte.html" target="_blank" rel="noopener">Mi reporte</a>
   </div>
 
@@ -118,6 +119,11 @@
   <!-- "Yo quiero colaborar con...": ventana al centro -->
   <div class="cbm" id="cbm" hidden>
     <section class="cbm-card" role="dialog" aria-modal="true" aria-label="Ideas para colaborar"></section>
+  </div>
+  <!-- Guía de uso: recorrido paso a paso sobre los controles reales (no necesita servidor) -->
+  <div id="tour" hidden>
+    <div class="tour-hole" id="tour-hole"></div>
+    <section class="tour-card" id="tour-card" role="dialog" aria-modal="true" aria-labelledby="tour-title"></section>
   </div>
 </main>
 

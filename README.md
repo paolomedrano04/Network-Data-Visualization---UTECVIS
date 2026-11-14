@@ -17,11 +17,22 @@ python app.py                      # http://127.0.0.1:5000
 | `/reporte`, `/reporte?d=<dpto>` | Reporte imprimible (Guardar como PDF): general o del departamento elegido |
 | `/investigador/<id>` | Ficha individual imprimible: rol en la red y a quién le conviene escribir |
 | `/#p=<id>` | Enlace directo a la ficha de un investigador dentro de la red |
+| `/#guia` | Abre la guía de uso integrada (recorrido de 10 pasos) |
 | `/data/nodes.csv`, `/data/edges.csv` | Archivos de nodos y aristas |
 | `/api/graph`, `POST /api/rebuild` | Datos para D3 y recálculo tras actualizar los datos |
 
 D3, Montserrat y los datos van incluidos: la vista funciona sin internet. Las fotos se guardan solas en
 `static/photos/` la primera vez que se abre la app con internet (proxy con caché de `/photo/<id>`).
+
+## Guía de uso integrada
+
+El botón **Guía** (barra superior derecha) o la tecla `?` abren un recorrido de 10 pasos que resalta cada control
+real y muestra su efecto en vivo: cómo leer la red, selección de un investigador, camino más corto (Shift + clic),
+las cuatro tareas, agrupar en vivo, "Soy de", herramientas, Colaborar y atajos. Se abre sola la primera vez
+(se recuerda en `localStorage`, clave `utecvis-guia`), no se abre sola en un enlace `/#p=<id>` y, al cerrarse
+(Esc, ×, Terminar), la vista vuelve exactamente a como estaba, sin tocar el departamento ni la agrupación guardados.
+`/#guia` fuerza su apertura (útil para compartir el enlace). Es solo cliente: funciona igual en Flask y en GitHub Pages.
+Código: sección "guía de uso" de `static/js/app.js`, estilos `.tour-*` en `static/css/style.css`, contenedor `#tour` en `templates/index.html`.
 
 ## Datos y web scraping (cris.utec.edu.pe)
 
