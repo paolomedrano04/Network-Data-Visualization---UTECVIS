@@ -155,16 +155,17 @@
   const sel = d3.select("#my-dept");
   sel.selectAll("option.d").data(meta.departments.filter((d) => d.researchers >= 2).map((d) => d.name).sort()).join("option")
     .attr("class", "d").attr("value", (d) => d).text((d) => d);
-  function setMyDept(d) {
+  // o.persist === false: no guarda la elección (lo usa la guía para mostrar ejemplos); o.noGo: no redibuja el paso
+  function setMyDept(d, o = {}) {
     myDept = d;
     useRadial = !!d;   // al elegir un departamento se abre su mapa de afinidad
-    try { d ? localStorage.setItem("utecvis-dept", d) : localStorage.removeItem("utecvis-dept"); } catch (e) { /* sin almacenamiento */ }
+    if (o.persist !== false) { try { d ? localStorage.setItem("utecvis-dept", d) : localStorage.removeItem("utecvis-dept"); } catch (e) { /* sin almacenamiento */ } }
     $("#my-dept").value = d;
     vis.setMyDept(d || null);
     const D = d ? INS.departments[d] : null;
     $("#terms").innerHTML = D ? `Sus temas: <b>${D.terms.join(", ")}</b>. ${D.members} investigadores.` : "";
     updateReportLink();
-    goTo(current);
+    if (!o.noGo) goTo(current);
   }
   $("#my-dept").addEventListener("change", (e) => setMyDept(e.target.value));
   function updateReportLink() {
@@ -755,6 +756,229 @@
     if (location.hash) history.replaceState(null, "", location.pathname);
   }
 
+  // ======================================================= guía de uso: recorrido paso a paso
+  // Resalta cada control real, muestra su efecto sobre la red (selecciona, traza un camino, agrupa, cambia de
+  // departamento) y, al terminar o cerrarse, devuelve la vista exactamente como estaba. No usa servidor.
+  const tour = (() => {
+    const root = $("#tour"), hole = $("#tour-hole"), card = $("#tour-card");
+    const KEY = "utecvis-guia";
+    let list = [], i = 0, active = false, snap = null, pick = null, live = { sel: null, path: false }, lastFocus = null, settle = null;
+    const seen = () => { try { return !!localStorage.getItem(KEY); } catch (e) { return false; } };
+    const remember = () => { try { localStorage.setItem(KEY, "1"); } catch (e) { /* sin almacenamiento */ } };
+    const kb = (k) => `<kbd class="k">${k}</kbd>`;
+    const keys = (rows, cls = "") => `<div class="tour-keys ${cls}">${rows.map(([k, t]) => `${kb(k)}<span>${t}</span>`).join("")}</div>`;
+
+    const buildSteps = () => [
+      { title: "Guía de UtecVis", kicker: "Recorrido de un minuto", center: true, primary: "Empezar", skip: "Ahora no",
+        body: `${S.researchers} investigadores de UTEC y sus coautorías, en una sola vista. Te muestro cómo leerla y qué puedes hacer, con ejemplos en vivo.`,
+        extra: `<p class="tour-note">Para repetirla, usa el botón Guía o la tecla ${kb("?")}</p>` },
+      { title: "Cómo leer la red", target: "#legend", side: "dock", dim: 0.2, demo: { hover: true },
+        body: "Cada foto es un investigador y su tamaño sigue las publicaciones. Una línea es una coautoría: celeste si cruza departamentos. Pasa el cursor por una foto para resaltar sus conexiones.",
+        extra: `<p class="tour-note">La leyenda de abajo a la izquierda cambia con cada vista.</p>` },
+      { title: "Selecciona a alguien", target: "#profile", side: "dock", dim: 0.14, demo: { sel: true },
+        body: "Un clic en una foto abre su ficha: métricas, coautorías y a quién podría escribirle. Otro clic la suelta.",
+        extra: keys([["Clic", "seleccionar"], ["Arrastrar", "mover la foto"], ["Rueda", "acercar o alejar"]], "tight") },
+      { title: "¿Quién puede presentarme?", target: "#profile", side: "dock", dim: 0.14, demo: { sel: true, path: true },
+        body: "Con una ficha abierta, Shift + clic en otra foto traza el camino más corto entre ambas y muestra qué colegas sirven de puente.",
+        extra: keys([["Shift + clic", "camino hasta otra foto"]], "tight") },
+      { title: "Las cuatro tareas", target: ".stepper", side: "dock", dim: 0.3, demo: { task: 1 },
+        body: "Cada tarea reordena la red y responde una pregunta arriba a la izquierda. Cámbialas con los botones, las pestañas o las flechas del teclado.",
+        extra: `<div class="tour-chips">${INS.tasks.map((t) => `<span class="tour-chip">${t.id} ${esc(t.tab)}</span>`).join("")}</div>` },
+      { title: "Agrupa en vivo", target: ".caption .grouping", side: "right", dim: 0.14, demo: { group: "department" },
+        body: "La red nace libre. Agrúpala por facultad, departamento, grupo de investigación o afinidad temática y mira cómo se reordena." },
+      { title: "Elige tu departamento", target: ".me", side: "dock", dim: 0.14, demo: { dept: true },
+        body: "La vista se reorganiza alrededor de tu departamento: mapa de afinidad con los demás, resaltados propios y un reporte a tu medida.",
+        extra: pick && pick.dept && !snap.dept ? `<p class="tour-note">Ejemplo: ${esc(pick.dept)}. Al terminar la guía todo vuelve a como estaba.</p>` : "" },
+      { title: "Herramientas", target: ".toolbar", side: "below", dim: 0.4,
+        body: "",
+        extra: `<dl class="tour-list">
+          <dt>Buscar</dt><dd>ir directo a un investigador</dd>
+          <dt>Ranking</dt><dd>quién lidera en la tarea activa</dd>
+          <dt>Estructura</dt><dd>facultades, departamentos y grupos de CRIS</dd>
+          <dt>Métricas</dt><dd>grado, intermediación, PageRank y validación</dd>
+          <dt>Ajustes</dt><dd>tamaño de nodos, capas y resistencia al arrastrar</dd>
+          <dt>Reporte</dt><dd>versión para imprimir o guardar como PDF</dd></dl>` },
+      { title: "Ideas para colaborar", target: "#open-colabora", side: "below", dim: 0.4,
+        body: "Elige a dos investigadores y se proponen temas para trabajar juntos, cada uno con su evidencia verificada en las publicaciones de CRIS." },
+      { title: "Atajos y gestos", center: true, primary: "Terminar", dim: 0.4,
+        body: "",
+        extra: keys([["Clic", "seleccionar una foto"], ["Doble clic", "acercar a una persona"], ["Shift + clic", "camino hasta otra foto"], ["Arrastrar", "mover (vuelve a su lugar)"],
+          ["Rueda", "acercar o alejar"], ["← →", "cambiar de tarea"], ["Esc", "quitar la selección y volver"], ["?", "abrir esta guía"]]) },
+    ];
+
+    // personas y departamento de ejemplo, elegidos con los datos reales (y dentro del contexto "Soy de", si lo hay)
+    function pickDemo() {
+      const inCtx = (d) => !snap.dept || d.department === snap.dept;
+      const a = by("coauthors").find((d) => d.coauthors > 0 && inCtx(d)) || by("coauthors")[0];
+      let b = null;
+      for (const d of by("publications")) {
+        if (d.id === a.id) continue;
+        const r = vis.shortestPath(a.id, d.id);
+        if (r && r.ids.length >= 3 && r.ids.length <= 4) { b = d.id; break; }   // con un intermediario como mínimo
+      }
+      const dept = (meta.departments.filter((x) => x.researchers >= 2 && INS.departments[x.name]).sort((p, q) => q.researchers - p.researchers)[0] || {}).name || "";
+      return { a: a.id, b, dept };
+    }
+
+    // estado deseado de la vista en cada paso: lo que el usuario tenía, más la demostración del paso
+    function desired(s) {
+      const d = s.demo || {};
+      const w = { step: snap.step, dept: snap.dept, radial: snap.radial, group: snap.group, sel: null, path: null, hover: null };
+      if (d.task != null) w.step = d.task;
+      if (d.group) { w.group = d.group; w.radial = false; }
+      if (d.dept && pick.dept) { w.dept = snap.dept || pick.dept; w.radial = true; }
+      if (d.sel) w.sel = pick.a;
+      if (d.path) w.path = pick.b;
+      if (d.hover) w.hover = pick.a;
+      return w;
+    }
+    function setState(w) {
+      const same = myDept === w.dept && vis.state.groupBy === w.group && useRadial === w.radial && current === w.step;
+      if (!same) {
+        if (myDept !== w.dept) setMyDept(w.dept, { persist: false, noGo: true });
+        useRadial = w.radial;
+        vis.setGroupBy(w.group);
+        goTo(w.step);                     // redibuja el paso y cierra la ficha
+        live = { sel: null, path: false };
+      }
+      if (w.sel == null) {
+        if (live.sel != null) closeProfile();
+        live = { sel: null, path: false };
+      } else if (w.path) {
+        if (!(live.path && live.sel === w.sel)) pathTo(w.sel, w.path);
+        live = { sel: w.sel, path: true };
+      } else {
+        if (live.sel !== w.sel || live.path) openProfile(w.sel);
+        live = { sel: w.sel, path: false };
+      }
+      if (w.hover != null) vis.hoverNode(w.hover); else if (vis.state.hover) vis.hoverNode(null);
+    }
+
+    function render(s) {
+      const n = list.length, last = i === n - 1;
+      card.innerHTML = `<button class="tour-x" data-act="close" aria-label="Cerrar la guía">×</button>
+        <div class="tour-n">${s.kicker || `${i + 1} de ${n}`}</div>
+        <h3 id="tour-title">${s.title}</h3>
+        ${s.body ? `<p>${s.body}</p>` : ""}${s.extra || ""}
+        <div class="tour-foot">
+          <div class="tour-dots">${list.map((_, k) => `<button class="tour-dot${k === i ? " on" : ""}" data-i="${k}" aria-label="Ir al paso ${k + 1}"></button>`).join("")}</div>
+          ${i > 0 ? `<button class="tour-btn" data-act="back">Atrás</button>` : ""}
+          <button class="tour-btn pri" data-act="next">${s.primary || (last ? "Terminar" : "Siguiente")}</button>
+        </div>${s.skip ? `<button class="tour-skip" data-act="close">${s.skip}</button>` : ""}`;
+      const pri = card.querySelector(".pri");
+      if (pri) pri.focus({ preventScroll: true });
+    }
+
+    // resalta el control real y coloca la tarjeta a su lado (donde quepa), sin taparlo
+    function place(s) {
+      const pad = 8, m = 14, gap = 18, vw = innerWidth, vh = innerHeight;
+      const el = s.target ? document.querySelector(s.target) : null;
+      const r = el && !el.hidden ? el.getBoundingClientRect() : null;
+      const ok = r && r.width > 2 && r.height > 2 && r.bottom > 0 && r.top < vh;
+      root.style.setProperty("--tour-dim", s.dim != null ? s.dim : 0.42);
+      const cw = card.offsetWidth, ch = card.offsetHeight;
+      let x, y;
+      if (!ok) {
+        hole.classList.add("none");
+        Object.assign(hole.style, { left: `${vw / 2}px`, top: `${vh * 0.45}px`, width: "0px", height: "0px" });
+        x = (vw - cw) / 2; y = (vh - ch) / 2 - 10;
+      } else {
+        hole.classList.remove("none");
+        const R = { l: r.left - pad, t: r.top - pad, r: r.right + pad, b: r.bottom + pad };
+        if (s.side === "dock") {
+          // pasos con demostración: la tarjeta va en el hueco libre a la izquierda de la red, para no tapar lo que se muestra
+          const g = document.querySelector(".caption .grouping"), why = document.querySelector("#why"), leg = document.querySelector("#legend");
+          const yMin = (why ? why.getBoundingClientRect().bottom : 300) + 16;
+          const yMax = Math.min(vh - ch - m, (leg && leg.children.length ? leg.getBoundingClientRect().top : vh) - ch - 12);
+          x = (g ? g.getBoundingClientRect().right : 193) + 22;
+          y = Math.max(yMin, Math.min(yMax, vh / 2 - ch / 2 + 40));
+        }
+        const rad = Math.min(Math.max(parseFloat(getComputedStyle(el).borderTopLeftRadius) || 0, 10) + pad, (R.r - R.l) / 2, (R.b - R.t) / 2);
+        Object.assign(hole.style, { left: `${R.l}px`, top: `${R.t}px`, width: `${R.r - R.l}px`, height: `${R.b - R.t}px`, borderRadius: `${rad}px` });
+        if (s.side !== "dock") {
+          const cx = (R.l + R.r) / 2, cy = (R.t + R.b) / 2;
+          const spots = { below: [cx - cw / 2, R.b + gap], above: [cx - cw / 2, R.t - gap - ch], right: [R.r + gap, cy - ch / 2], left: [R.l - gap - cw, cy - ch / 2] };
+          const fits = { below: (p) => p[1] + ch <= vh - m, above: (p) => p[1] >= m, right: (p) => p[0] + cw <= vw - m, left: (p) => p[0] >= m };
+          const order = [s.side, "below", "above", "right", "left"].filter((v, k, a) => v && a.indexOf(v) === k);
+          const side = order.find((k) => fits[k](spots[k])) || order[0];
+          [x, y] = spots[side];
+        }
+      }
+      card.style.left = `${Math.min(Math.max(m, x), Math.max(m, vw - cw - m))}px`;
+      card.style.top = `${Math.min(Math.max(m, y), Math.max(m, vh - ch - m))}px`;
+      card.classList.add("in");
+    }
+
+    function show() {
+      const s = list[i];
+      setState(desired(s));
+      render(s);
+      place(s);
+      clearTimeout(settle);
+      settle = setTimeout(() => { if (active) place(s); }, 420);   // cuando terminan la ficha y el movimiento de la red
+    }
+    function go(k) {
+      if (k >= list.length) return close();
+      if (k < 0) return;
+      i = k; show();
+    }
+
+    function open(at = 0) {
+      if (active) return;
+      closePops();
+      if (!$("#cbm").hidden) closeColabora();
+      $("#tooltip").hidden = true;
+      const selNow = vis.state.selected ? vis.state.selected.id : ($("#profile").hidden ? null : pathAnchor);
+      snap = { step: current, dept: myDept, radial: useRadial, group: vis.state.groupBy, sel: selNow };
+      pick = pickDemo();
+      live = { sel: snap.sel, path: false };
+      list = buildSteps();
+      lastFocus = document.activeElement;
+      active = true;
+      document.body.classList.add("tour-open");
+      card.classList.remove("in");
+      root.hidden = false;
+      i = Math.min(Math.max(0, at), list.length - 1);
+      show();
+    }
+    function close() {
+      if (!active) return;
+      active = false;
+      clearTimeout(settle);
+      remember();
+      root.hidden = true;
+      card.classList.remove("in");
+      document.body.classList.remove("tour-open");
+      setState({ step: snap.step, dept: snap.dept, radial: snap.radial, group: snap.group, sel: snap.sel, path: null, hover: null });
+      try { if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true }); } catch (e) { /* sin foco */ }
+    }
+
+    card.addEventListener("click", (ev) => {
+      const t = ev.target.closest("[data-act],[data-i]");
+      if (!t) return;
+      if (t.dataset.i != null) return go(+t.dataset.i);
+      if (t.dataset.act === "next") go(i + 1);
+      else if (t.dataset.act === "back") go(i - 1);
+      else close();
+    });
+    // mientras la guía está abierta, el teclado es solo suyo (en captura, antes que los atajos de la red)
+    document.addEventListener("keydown", (ev) => {
+      if (!active) return;
+      if (ev.key === "Escape") close();
+      else if (ev.key === "ArrowRight") go(i + 1);
+      else if (ev.key === "ArrowLeft") go(i - 1);
+      else if (ev.key === "Tab") {
+        const f = [...card.querySelectorAll("button")];
+        const at = f.indexOf(document.activeElement);
+        f[(at + (ev.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      } else { ev.stopPropagation(); return; }              // Enter y Espacio activan el botón enfocado
+      ev.preventDefault(); ev.stopPropagation();
+    }, true);
+    window.addEventListener("resize", () => { if (active) place(list[i]); });
+    return { open, close, seen, isActive: () => active };
+  })();
+  $("#open-guia").addEventListener("click", () => tour.open());
+
   // ======================================================= búsqueda, teclado y enlace directo
   const dl = $("#people");
   N.slice().sort((a, b) => a.name.localeCompare(b.name, "es")).forEach((d) => { const o = document.createElement("option"); o.value = d.name; dl.appendChild(o); });
@@ -764,16 +988,23 @@
     if (d) { openProfile(d.id); vis.focusNode(d.id); }
   });
   document.addEventListener("keydown", (ev) => {
+    if (tour.isActive()) return;
     if (ev.target.matches("input, select")) { if (ev.key === "Escape") ev.target.blur(); return; }
+    if (ev.key === "?" && $("#cbm").hidden) return tour.open();
     if (ev.key === "ArrowRight") goTo(current + 1);
     if (ev.key === "ArrowLeft") goTo(current - 1);
     if (ev.key === "Escape") { closePops(); closeProfile(); vis.resetZoom(); }
   });
 
   const m = location.hash.match(/p=(\d+)/);  // enlace compartido: se lee antes de que goTo limpie el hash
+  const wantsGuide = /(^|[#&?])guia\b/.test(location.hash) || /[?&]guia\b/.test(location.search);
   let savedGroup = "none", savedDept = "";
   try { savedGroup = localStorage.getItem("utecvis-group") || "none"; savedDept = localStorage.getItem("utecvis-dept") || ""; } catch (e) { /* sin almacenamiento */ }
   vis.setGroupBy(savedGroup);
   if (savedDept && INS.departments[savedDept]) setMyDept(savedDept); else goTo(0);
   if (m && byId.has(+m[1])) setTimeout(() => { openProfile(+m[1]); vis.focusNode(+m[1]); }, 1200);
+
+  // guía: se abre sola la primera vez (y no en un enlace a una ficha); con #guia en la dirección, siempre
+  if (wantsGuide) setTimeout(() => tour.open(), 1000);
+  else if (!m && !tour.seen()) setTimeout(() => tour.open(), 2400);
 })();
