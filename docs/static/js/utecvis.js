@@ -632,8 +632,11 @@
       const delay = (d) => order.indexOf(d.department) * 90 + Math.random() * 120;
       nodeSel.select(".initials").style("font-size", (d) => `${Math.max(8, d.r * 0.62)}px`);
       nodeSel.selectAll(".bg, .ring").attr("r", 0).transition().delay(delay).duration(DUR).attr("r", (d) => d.r);
+      // la aparición de la foto usa su propia transición ("fade"): si otra transición de la misma foto (tamaño al cambiar
+      // de vista o de departamento) la interrumpe, la foto no debe quedar en opacidad 0
       nodeSel.select("image").attr("x", (d) => -d.r).attr("y", (d) => -d.r).attr("width", (d) => 2 * d.r).attr("height", (d) => 2 * d.r)
-        .style("opacity", 0).transition().delay(delay).duration(DUR).style("opacity", 1);
+        .style("opacity", 0).transition("fade").delay(delay).duration(DUR).style("opacity", 1)
+        .on("interrupt cancel", function () { this.style.opacity = 1; });
       clipC.transition().delay(delay).duration(DUR).attr("r", (d) => d.r);
       nodeSel.select(".halo").attr("r", (d) => d.r + 4).attr("stroke-opacity", 0);
       coSel.transition().delay(order.length * 90 + 300).duration(DUR).attr("stroke-opacity", 1);
